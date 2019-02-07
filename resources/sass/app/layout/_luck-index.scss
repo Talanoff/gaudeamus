@@ -1,0 +1,55 @@
+#luck {
+    padding: 100px 0 80px;
+
+    &::before {
+        content: '';
+        @extend %pos;
+        top: 100px;
+        left: 50%;
+        background: #e9fcfd;
+        z-index: -40;
+    }
+}
+
+.luck-item {
+    position: relative;
+    padding: 380px 50px 50px;
+    overflow: hidden;
+    @extend %img;
+
+    &-hover {
+        @extend %pos;
+        padding: 50px 30px 15px;
+        transform: translateY(560px);
+        background: rgba(#2f3743, 0.9);
+        transition: .7s;
+
+
+        @media (max-width: map_get($grid-breakpoints, lg)) {
+            transform: translateY(0);
+            padding: 30px 15px 15px;
+        }
+
+        &-title {
+            width: 100%;
+            font-family: 'FuturaMediumC', sans-serif;
+            border-bottom: 2px solid $primary;
+        }
+    }
+
+    &-title {
+        font-family: 'FuturaMediumC', sans-serif;
+        transition: .5s;
+    }
+
+    &:hover {
+
+        .luck-item-hover {
+            transform: translateY(0)
+        }
+
+        .luck-item-title {
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.about-item {
+    margin-top: 260px;
+    padding: 120px 110px 120px 15px;
+    background: #fff;
+    z-index: 5;
+
+    @media (max-width: map_get($grid-breakpoints, lg)) {
+        margin-top: 40px;
+        padding: 20px 15px 30px 15px;
+    }
+}
+
+.about-img {
+    top: 0;
+    z-index: 4;
+    @extend %img;
+
+    &--left {
+        left: 0;
+        right: 40%;
+        height: 680px;
+    }
+
+    &--right {
+        top: 420px;
+        left: 60%;
+        right: 0;
+        height: 1250px;
+    }
+}
+
+.quote-item {
+    padding: 200px 15px 120px 120px;
+    background: #fff;
+    z-index: 5;
+
+    @media (max-width: map_get($grid-breakpoints, lg)) {
+        padding: 20px 15px 30px 15px;
+    }
+
+    &__text {
+        font-size: 24px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 70%;
+            height: 1px;
+            background: #212329;
+        }
+    }
+
+    &__author {
+        color: #212329;
+        font-family: 'FuturaMediumC', sans-serif;
+    }
+
+    &__icon {
+        top: 140px;
+        left: 70px;
+        opacity: .1;
+
+        @media (max-width: map_get($grid-breakpoints, lg)) {
+            top: 0;
+            left: 30px;
+        }
+
+        svg {
+            fill: #1e1e1e;
+        }
+    }
+    
+}

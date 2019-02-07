@@ -1,0 +1,22 @@
+#feedback {
+    padding: 240px 0 225px;
+    background: url('../../../images/bg/feedback-bg.jpg') 50% 50% /cover no-repeat;
+
+    .container {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -120px;
+            right: -120px;
+            bottom: -100px;
+            border: 15px solid rgba($primary , .7);
+
+            @media (max-width: map_get($grid-breakpoints, lg)) {
+                display: none;
+            }
+        }
+    }
+}

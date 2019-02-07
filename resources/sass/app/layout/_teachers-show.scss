@@ -1,0 +1,30 @@
+#teachers-show {
+    padding-bottom: 80px;
+
+    .page-secondary-item {
+        margin: 160px 0 90px;
+    }
+
+    .header-banner-slider-nav {
+        background: transparent;
+    }
+
+    .teachers-show-reviews {
+        position: relative;
+        margin-top: 80px;
+        z-index: 10;
+        width: 100%;
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            right: -1000px;
+            bottom: -80px;
+            background: #e9fcfd;
+            z-index: -10;
+        }
+    }
+}

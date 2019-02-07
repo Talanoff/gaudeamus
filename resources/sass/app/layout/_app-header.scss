@@ -1,0 +1,117 @@
+#app-header {
+    @extend %pos;
+    bottom: auto;
+    border-bottom: 1px solid rgba(#fff, .25);
+    z-index: 999;
+}
+
+.header-item {
+    width: 50%;
+    
+    .logo {
+        width: 145px;
+        height: 100px;
+
+        &-link {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100px;
+                height: 60px;
+            }
+        }
+        &::before {
+            content: '';
+            @extend %pos;
+            bottom: -20px;
+            background-color: #fff;
+        }
+    }
+
+    .login-list {
+        margin: 0;
+        padding: 0;
+        
+        &-item {
+            opacity: .5;
+            transition: .5s;
+
+            &__link {
+                color: #fff;
+                transition: .5s;
+            }
+
+            svg {
+                fill: #fff;
+                transition: .5s;
+            }
+
+            &:hover {
+                opacity: 1;
+
+                .login-list-item__link {
+                    color: $primary;
+                }
+
+                svg {
+                    fill: $primary;
+                }
+            }
+        }
+    }
+
+    .nav-social-list {
+        @extend .login-list;
+
+        &-item {
+            @extend .login-list-item;
+
+            &--facebook {
+
+                svg {
+
+                    &:hover {
+                        opacity: 1;
+                        fill: #4267B2;
+                    }
+                }
+            }
+
+            &--instagram {
+
+                svg {
+
+                    &:hover {
+                        opacity: 1;
+                        fill: #D1289B;
+                    }
+                }
+            }
+
+            &--youtube {
+
+                svg {
+
+                    &:hover {
+                        opacity: 1;
+                        fill: #f00;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-phone {
+        &-link {
+            font-family: 'FuturaMediumC', sans-serif;
+        }
+    }
+
+    .decoration-line {
+        width: 1px;
+        height: 100px;
+        background: rgba(#fff, .25);
+    }
+}
+

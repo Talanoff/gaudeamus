@@ -1,0 +1,28 @@
+.section-description {
+    position: relative;
+    padding-bottom: 35px;
+    border-bottom: 1px solid $primary;
+
+    &-name {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 50px;
+        word-spacing: 3px;
+        letter-spacing: 4px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 1px;
+            background: $primary;
+        }
+    }
+
+    &-title {
+        max-width: 500px;
+    }
+}

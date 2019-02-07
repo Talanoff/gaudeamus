@@ -1,0 +1,125 @@
+.section-page-secondary {
+    padding-top: 180px;
+    z-index: 10;
+
+    &--login {
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            height: 100vh;
+        }
+    }
+
+    &--registration {
+        background: $dark;
+
+        @media(min-width: 1800px) {
+            height: 100vh;
+        }
+    }
+}
+
+.registration-img {
+    @extend %pos;
+    right: 50%;
+    @extend %img;
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        display: none;
+    }
+}
+
+.registration-title {
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        font-size: 24px;
+    }
+}
+
+.social-registration {
+    margin-bottom: 80px;
+}
+
+.registration-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #222832;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.page-secondary-banner {
+    @extend %pos;
+    bottom: auto;
+    padding-top: 700px;
+    @extend %img;
+    z-index: -1000;
+
+    &--big {
+        padding-top: 900px;
+    }
+}
+
+.page-secondary-title {
+    margin-bottom: 115px;
+    text-transform: uppercase;
+
+    &--big-margin {
+        margin-top: 135px;
+        margin-bottom: 210px;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            margin-top: 50px;
+            margin-bottom: 70px;
+        }
+    }
+}
+
+.page-secondary-item {
+    margin-bottom: 40px;
+    padding: 75px 110px 110px 0;
+    z-index: 10;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        background: #fff;
+        padding: 50px 15px 30px 15px;
+        box-shadow: 0px 13px 29px 0px rgba(0, 0, 0, 0.35);
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &__title {
+        border-bottom: 1px solid $primary;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        box-shadow: 0px 13px 29px 0px rgba(0, 0, 0, 0.35);
+        z-index: -5;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: -1000px;
+        right: 0;
+        bottom: 0;
+        height: 10px;
+        background: $primary;
+    }
+}

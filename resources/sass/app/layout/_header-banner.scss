@@ -1,0 +1,78 @@
+#header-banner {
+    height: 100vh;
+    max-height: 1000px;
+
+    @media (max-width: map_get($grid-breakpoints, lg)) {
+        padding-top: 120px;
+        padding-bottom: 170px;
+        height: auto;
+    }
+
+    .header-banner-slider-nav-decoration {
+        width: 80px;
+        height: 1px;
+        background: $dark;
+    }
+}
+
+.header-banner-item {
+
+    &-title {
+        margin-bottom: 2px;
+        border-bottom: 2px solid #fff;
+
+        &__text-big {
+            font-size: 80px;
+            line-height: 1;
+        }
+    }
+
+    &-description {
+        border-top: 1px solid #fff;
+    }
+}
+
+.scroll-down {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    z-index: 10;
+
+    @media (max-width: map_get($grid-breakpoints, lg)) {
+        bottom: 100px;
+    }
+
+    &-icon {
+        width: 25px;
+        height: 40px;
+        border-radius: 7px;
+        border: 2px solid #fff;
+
+        &__line {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 15px;
+            display: block;
+            background: linear-gradient(to top, rgba(#fff, 1) 0%, rgba(#fff, 0) 100%);
+            background-position: 0 -10px;
+            background-size: 100% 200%;
+            animation: scrollDown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+
+            @keyframes scrollDown {
+                0% {
+                    background-position: 0 -10px;
+                }
+
+                75% {
+                    background-position: 0 0;
+                }
+
+                100% {
+                    background-position: 0 10px;
+                }
+            }
+        }
+    }
+}

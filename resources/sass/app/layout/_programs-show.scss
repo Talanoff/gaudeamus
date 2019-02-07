@@ -1,0 +1,64 @@
+#programs-show {
+    padding-bottom: 80px;
+
+    .programs-show-teachers {
+        margin-bottom: 80px;
+
+        .programs-show-description {
+            margin-bottom: -40px;
+        }
+
+        &::before {
+            content: '';
+            @extend %pos;
+            top: -400px;
+            left: -1000px;
+            right: -1000px;
+            background: #edfeff;
+            z-index: -10;
+        }
+    }
+
+    .header-banner-slider-nav {
+        background: transparent;
+    }
+}
+
+.programs-show-description {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 45px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $primary;
+
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        display: block;
+    }
+
+    &__btn {
+        padding: 10px 50px;
+
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.programs-show-item {
+    margin-bottom: 80px;
+    padding: 70px 0 80px;
+    @extend %decor-content-big;
+
+    &__title {
+        width: 90%;
+        border-bottom: 1px solid $primary;
+    }
+
+    &::before {
+        top: 0;
+    }
+}

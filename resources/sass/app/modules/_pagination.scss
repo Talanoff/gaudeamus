@@ -1,0 +1,37 @@
+.pagination {
+
+    &-list {
+        margin: 0;
+        border-radius: 5px;
+        background: #cbeaec;
+        
+        &-item {
+            line-height: 1;
+    
+            &__link {
+                display: block;
+                padding: 15px;
+                padding-top: 17px;
+                font-size: 16px;
+                font-family: 'FuturaMediumC', sans-serif;
+                line-height: 1;
+                border-bottom: 2px solid transparent;
+                transition: .5s;
+    
+                &.is-active {
+                    border-radius: 5px;
+                    background: $dark;
+                    color: #fff;
+                }
+    
+                &:hover {
+                    border-bottom: 2px solid $secondary;
+                }
+            }
+        }
+    }
+
+    &-next {
+        @extend .more-info;
+    }
+}

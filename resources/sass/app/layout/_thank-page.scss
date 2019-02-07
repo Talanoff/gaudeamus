@@ -1,0 +1,26 @@
+#thank-page {
+    min-height: 900px;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        min-height: 600px;
+
+        .page-secondary-banner {
+            padding-top: 600px;
+        }
+    }
+
+    .page-secondary-banner {
+        padding-top: 900px;
+    }
+
+    .thank-page__title {
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            font-size: 30px;
+        }
+    }
+
+    .thank-page__btn {
+        background: #fff;
+    }
+}
