@@ -15,11 +15,8 @@ Route::group([
 });
 
 Route::group([
-<<<<<<< HEAD
+
     'as' => 'app.',
-=======
-    'as' => 'app',
->>>>>>> origin/master
     'namespace' => 'Front',
 ], function () {
     require_once(base_path('routes/web.app.php'));

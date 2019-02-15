@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-<<<<<<< HEAD
-use App\Models\User\User;
 
-=======
-use App\User;
->>>>>>> origin/master
+use App\Models\User\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -33,11 +29,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-<<<<<<< HEAD
+
     protected $redirectTo = '/';
-=======
-    protected $redirectTo = '/home';
->>>>>>> origin/master
 
     /**
      * Create a new controller instance.
@@ -65,15 +58,8 @@ class RegisterController extends Controller
     }
 
     /**
-<<<<<<< HEAD
      * @param array $data
      * @return mixed
-=======
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
->>>>>>> origin/master
      */
     protected function create(array $data)
     {

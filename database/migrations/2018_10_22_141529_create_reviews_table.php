@@ -15,16 +15,11 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-<<<<<<< HEAD
+
             $table->unsignedInteger('user_id')->nullable();
             $table->string('user_name')->nullable();
             $table->text('message');
             $table->enum('status', \App\Models\Article\Review::$STATUSES)->default('processing');
-=======
-            $table->string('slug');
-            $table->string('title');
-            $table->text('body');
->>>>>>> origin/master
             $table->timestamps();
         });
     }

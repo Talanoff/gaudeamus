@@ -1,10 +1,7 @@
 import jquery from 'jquery';
 window.jQuery = window.$ = jquery;
-<<<<<<< HEAD
-require('./common');
 
-=======
->>>>>>> origin/master
+require('./common');
 
 try {
     window.Popper = require('popper.js').default;

@@ -17,7 +17,7 @@ Route::group([
     Route::resource('users', 'UsersController');
     Route::resource('teachers', 'TeachersController');
     Route::resource('students', 'StudentsController');
-<<<<<<< HEAD
+
     Route::resource('slides', 'SlidesController');
 
     Route::group([
@@ -29,6 +29,3 @@ Route::group([
     });
 });
 
-=======
-});
->>>>>>> origin/master

@@ -22,10 +22,6 @@ class Material extends Model
      */
     public function course(): BelongsTo
     {
-<<<<<<< HEAD
         return $this->belongsTo(Course::class);
-=======
-        $this->belongsTo(Course::class);
->>>>>>> origin/master
     }
 }

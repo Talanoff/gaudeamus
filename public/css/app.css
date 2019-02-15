@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @font-face {
   font-family: 'FuturaLightC';
   src: url(/fonts/FuturaLightC.eot?76bbb8d3dc6ddb446fc7b263ec77a443);
@@ -24,8 +23,6 @@
 }
 
 
-=======
->>>>>>> origin/master
 @charset "UTF-8";
 
 /*!
@@ -11421,10 +11418,7 @@ section {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-<<<<<<< HEAD
   margin-bottom: 40px;
-=======
->>>>>>> origin/master
 }
 
 @media (max-width: 768px) {

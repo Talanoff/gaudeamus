@@ -16,11 +16,9 @@ class UsersController extends Controller
     public function index()
     {
         return \view('admin.users.index', [
-<<<<<<< HEAD
+
             'users' => User::orderByRaw("FIELD(is_confirmed , 0) DESC")->paginate(10),
-=======
-            'users' => User::orderByRaw("FIELD(is_confirmed , 0) DESC")->paginate(20),
->>>>>>> origin/master
+
             'title' => 'Студенты',
             'route' => 'students'
         ]);

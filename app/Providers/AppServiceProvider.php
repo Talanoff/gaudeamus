@@ -17,18 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-<<<<<<< HEAD
+
         app()->singleton('settings', function () {
             return Setting::whereNotNull('value')->get()->groupBy('type');
-=======
-        Schema::defaultStringLength(191);
-        setlocale(LC_TIME, 'ru_RU.utf-8');
-        Carbon::setLocale(app()->getLocale());
-
-        View::composer(['app.*', 'auth.*'], function () {
-            $settings = Setting::query()->get()->groupBy('type');
-            View::share('phones', optional(['phones'])->toArray());
->>>>>>> origin/master
         });
     }
 

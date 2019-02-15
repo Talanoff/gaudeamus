@@ -15,10 +15,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             UsersTableSeeder::class,
             CoursesTableSeeder::class,
-<<<<<<< HEAD
             SettingsTableSeeder::class,
-=======
->>>>>>> origin/master
         ]);
     }
 }

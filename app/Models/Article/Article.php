@@ -2,7 +2,7 @@
 
 namespace App\Models\Article;
 
-<<<<<<< HEAD
+
 
 use App\Traits\SlugableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -15,20 +15,12 @@ class Article extends Model implements HasMedia
 {
     use SlugableTrait;
     use HasMediaTrait;
-=======
-use App\Traits\SlugableTrait;
-use Illuminate\Database\Eloquent\Model;
-
-class Article extends Model
-{
-    use SlugableTrait;
->>>>>>> origin/master
 
     protected $fillable = [
         'title',
         'body',
     ];
-<<<<<<< HEAD
+
 
     public function registerMediaCollections()
     {
@@ -63,6 +55,3 @@ class Article extends Model
         return asset($media);
     }
 }
-=======
-}
->>>>>>> origin/master

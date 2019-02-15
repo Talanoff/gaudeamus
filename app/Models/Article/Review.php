@@ -2,7 +2,7 @@
 
 namespace App\Models\Article;
 
-<<<<<<< HEAD
+
 use App\Models\User\User;
 use App\Traits\SlugableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -48,13 +48,4 @@ class Review extends Model
             });
         }
     }
-=======
-use App\Traits\SlugableTrait;
-use Illuminate\Database\Eloquent\Model;
-
-class Review extends Model
-{
-    use SlugableTrait;
-
->>>>>>> origin/master
 }

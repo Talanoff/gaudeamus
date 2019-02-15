@@ -2,12 +2,9 @@
     <div class="container-fluid d-flex justify-content-between align-items-center p-0 pl-lg-4">
         <div class="header-item d-flex align-items-center">
             <div class="logo position-relative">
-                <a href="#" class="logo-link d-flex justify-content-center align-items-center position-absolute"><img
-<<<<<<< HEAD
-                        src="../../../../images/icon/logo/logo.png" alt="logo"></a>
-=======
-                        src="../../images/icon/logo/logo.png" alt="logo"></a>
->>>>>>> origin/master
+                <a href="#" class="logo-link d-flex justify-content-center align-items-center position-absolute">
+                    <img src="../../../../images/icon/logo/logo.png" alt="logo">
+                </a>
             </div>
             <div class="search d-none d-sm-flex align-items-center">
                 <form id="form-search" class="form form--search">

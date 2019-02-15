@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-<<<<<<< HEAD
+
 use App\Models\Education\Course;
 use App\Models\Education\Material;
 use Illuminate\Http\RedirectResponse;
@@ -59,12 +59,4 @@ class MaterialsController extends Controller
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно удалена.');
     }
-=======
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-class MaterialsController extends Controller
-{
-    //
->>>>>>> origin/master
 }
