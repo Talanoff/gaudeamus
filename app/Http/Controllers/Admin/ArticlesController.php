@@ -14,7 +14,11 @@ class ArticlesController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return \view('admin.articles.index', [
+=======
+        return \view('admin.article.create', [
+>>>>>>> origin/master
             'articles' => Article::paginate(20),
         ]);
     }
@@ -24,7 +28,11 @@ class ArticlesController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         return \view('admin.articles.create');
+=======
+        return \view('admin.article.create');
+>>>>>>> origin/master
     }
 
     /**
@@ -33,11 +41,15 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
 
         $article = Article::create($request->only('title', 'body'));
         if ($request->hasFile('article')) {
             $article->addMediaFromRequest('article')
                 ->toMediaCollection('article');}
+=======
+        Article::create($this->handleRequest($request));
+>>>>>>> origin/master
         return \redirect()->route('admin.articles.index')
                           ->with('message', 'Запись успешно сохранена.');
     }
@@ -48,7 +60,11 @@ class ArticlesController extends Controller
      */
     public function edit(Article $article)
     {
+<<<<<<< HEAD
         return \view('admin.articles.edit', compact('article'));
+=======
+        return \view('admin.article.edit', compact('article'));
+>>>>>>> origin/master
     }
 
     /**
@@ -58,11 +74,15 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+<<<<<<< HEAD
         $article->update($request->only('title', 'body'));
         if ($request->hasFile('article')) {
             $article->clearMediaCollection('article');
             $article->addMediaFromRequest('article')
                 ->toMediaCollection('article');}
+=======
+        $article->update($this->handleRequest($request));
+>>>>>>> origin/master
         return \redirect()->route('admin.articles.index')
                           ->with('message', 'Запись успешно сохранена.');
     }
@@ -82,5 +102,21 @@ class ArticlesController extends Controller
                           ->with('message', 'Запись успешно удалена.');
     }
 
+<<<<<<< HEAD
 
+=======
+    /**
+     * @param Request $request
+     * @return array
+     */
+    private function handleRequest(Request $request): array
+    {
+        $data = $request->only('title', 'body');
+
+        if ($request->has('image')) {
+            $data['image'] = $request->file('image')->store('article');
+        }
+        return $data;
+    }
+>>>>>>> origin/master
 }

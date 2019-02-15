@@ -17,7 +17,11 @@ class CreateSettingsTable extends Migration
             $table->increments('id');
             $table->enum('type', array_keys(App\Models\Common\Setting::$TYPES));
             $table->string('name')->nullable();
+<<<<<<< HEAD
             $table->string('value')->nullable();
+=======
+            $table->string('value');
+>>>>>>> origin/master
             $table->timestamps();
         });
     }

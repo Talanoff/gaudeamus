@@ -3,11 +3,7 @@
         <div class="header-item d-flex align-items-center">
             <div class="logo position-relative">
                 <a href="#" class="logo-link d-flex justify-content-center align-items-center position-absolute"><img
-<<<<<<< HEAD
-                        src="../../../../images/icon/logo/logo.png" alt="logo"></a>
-=======
-                        src="../../images/icon/logo/logo.png" alt="logo"></a>
->>>>>>> origin/master
+                        src="images/icon/logo/logo.png" alt="logo"></a>
             </div>
             <div class="search d-none d-sm-flex align-items-center">
                 <form id="form-search" class="form form--search">

@@ -2,9 +2,17 @@
 
 namespace App\Providers;
 
+<<<<<<< HEAD
 use App\Models\User\User;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+=======
+use App\Models\Article\Review;
+use App\Models\User\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+>>>>>>> origin/master
 use Illuminate\Support\Facades\View;
 
 class RouteServiceProvider extends ServiceProvider
@@ -67,7 +75,11 @@ class RouteServiceProvider extends ServiceProvider
                     'unread' => User::whereIsConfirmed(false)->count()
                 ],
                 [
+<<<<<<< HEAD
                     'name' => 'Статьи',
+=======
+                    'name' => 'Записи',
+>>>>>>> origin/master
                     'route' => 'admin.articles.index',
                     'compare' => 'admin.articles.*',
                     'icon' => 'news',
@@ -79,12 +91,15 @@ class RouteServiceProvider extends ServiceProvider
                     'icon' => 'comments',
                 ],
                 [
+<<<<<<< HEAD
                     'name' => 'Слайдер',
                     'route' => 'admin.slides.index',
                     'compare' => 'admin.slides.*',
                     'icon' => 'image',
                 ],
                 [
+=======
+>>>>>>> origin/master
                     'name' => 'Страницы',
                     'route' => 'admin.pages.index',
                     'compare' => 'admin.pages.*',
@@ -107,6 +122,7 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.users.index',
                     'compare' => 'admin.users.*',
                     'icon' => 'users',
+<<<<<<< HEAD
                 ],
                 [
                     'name' => 'Настройки',
@@ -114,6 +130,9 @@ class RouteServiceProvider extends ServiceProvider
                     'compare' => 'admin.settings.*',
                     'icon' => 'settings',
                 ],
+=======
+                ]
+>>>>>>> origin/master
             ]);
         });
     }
@@ -142,8 +161,13 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
+<<<<<<< HEAD
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+=======
+             ->namespace($this->namespace)
+             ->group(base_path('routes/web.php'));
+>>>>>>> origin/master
     }
 
     /**
@@ -156,8 +180,14 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
+<<<<<<< HEAD
             ->middleware('api')
             ->namespace($this->namespace)
             ->group(base_path('routes/api.php'));
+=======
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api.php'));
+>>>>>>> origin/master
     }
 }

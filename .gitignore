@@ -3,11 +3,22 @@
 /public/storage
 /storage/*.key
 /vendor
+<<<<<<< HEAD
 .env
 .phpunit.result.cache
+=======
+/.idea
+/.vscode
+/.vagrant
+>>>>>>> origin/master
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+<<<<<<< HEAD
 
 .idea/
+=======
+.env
+.phpunit.result.cache
+>>>>>>> origin/master

@@ -43,8 +43,11 @@ class TeachersController extends Controller
             $user->addMediaFromRequest('avatar')
                  ->toMediaCollection('avatar');
         }
+<<<<<<< HEAD
         return \redirect()->route('admin.users.index')
             ->with('message', 'Запись успешно сохранена.');
+=======
+>>>>>>> origin/master
     }
 
     public function edit(User $teacher)

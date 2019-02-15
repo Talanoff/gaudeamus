@@ -4,6 +4,7 @@ namespace App\Models\Article;
 
 use App\Traits\SlugableTrait;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -51,4 +52,10 @@ class Faq extends Model implements HasMedia
         return asset($media);
     }
 
+=======
+
+class Faq extends Model
+{
+    use SlugableTrait;
+>>>>>>> origin/master
 }

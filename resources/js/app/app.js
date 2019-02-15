@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+<<<<<<< HEAD
 
 
 new Vue({
@@ -9,4 +10,11 @@ new Vue({
         require('./media-manager/js/media-manager');
 
     }
+=======
+require('./bootstrap');
+require('./media-manager/js/media-manager');
+
+new Vue({
+    el: '#app'
+>>>>>>> origin/master
 });
