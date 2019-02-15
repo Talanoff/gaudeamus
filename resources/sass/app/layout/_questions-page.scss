@@ -1,0 +1,85 @@
+.questions-page-content {
+    position: relative;
+    bottom: -30px;
+    padding-bottom: 110px;
+    @extend %decor-content-big;
+}
+
+.questions-page-item {
+
+    &-title {
+        position: relative;
+        padding: 20px 40px;
+        background: #e1e1e1;
+        color: $dark;
+        opacity: .6;
+        cursor: pointer;
+        transition: .5s;
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            padding: 20px 25px;
+            font-size: 20px;
+        }
+
+        &.is-active {
+            opacity: 1;
+            background: $dark;
+            color: #fff;
+
+            .decoration-block {
+                border-color: #fff;
+
+                &-item {
+                    border-style: solid;
+                    border-width: 0 5px 5px 5px;
+                    border-color: transparent transparent #fff transparent;
+                }
+            }
+        }
+
+        .decoration-block {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            border: 2px solid #bbbbbb;
+            transition: .5s;
+
+            @media (max-width: map_get($grid-breakpoints, md)) {
+                right: 10px;
+            }
+
+            &-item {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 5px 0 5px;
+                border-color: #bbbbbb transparent transparent transparent;
+                transition: .5s;
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &-description {
+        margin: 25px 0 10px;
+        padding-left: 40px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #bbbbbb;
+        display: none;
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            padding-left: 25px;
+            font-size: 18px;
+        }
+    }
+}

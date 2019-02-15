@@ -1,0 +1,140 @@
+.closs-modal {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: .5s;
+    opacity: .35;
+    cursor: pointer;
+    z-index: 99;
+
+    .line {
+        width: 10px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        &--left {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &--right {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+        border-color: $danger;
+    }
+}
+
+.modal-mask {
+    @extend %pos;
+    position: fixed;
+    background: rgba(#000, .5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9998;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.modal-feedback {
+    @extend %pos;
+    top: auto;
+    padding: 80px 95px;
+    border-radius: 10px;
+    background: $dark;
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        padding: 30px 15px;
+    }
+
+    &__title {
+        color: #fff;
+    }
+}
+
+.show-materials-modal {
+    @extend %pos;
+    top: 720px;
+    bottom: auto;
+    padding-bottom: 80px;
+    background: #fff;
+    box-shadow: 0px 24px 39px 15px rgba(0, 0, 0, 0.31);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        padding: 0 15px 80px;
+    }
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .closs-modal {
+        border-color: $dark;
+
+        .line {
+            background: $dark;
+        }
+
+        &:hover {
+            border-color: $danger;
+        }
+    }
+
+    &-img {
+        @extend %pos;
+        left: 15px;
+        right: 15px;
+        @extend %img;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            position: relative;
+            left: 0;
+            right: 0;
+            margin-top: 60px;
+            padding-top: 400px;
+        }
+    }
+
+    &-item {
+
+        &__title {
+            margin-top: 70px;
+            margin-bottom: 0;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                margin-top: 40px;
+            }
+        }
+
+        &__text {
+            margin: 55px 0;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                margin: 25px 0;
+            }
+        }
+    }
+}

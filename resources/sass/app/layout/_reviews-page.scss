@@ -1,0 +1,17 @@
+#reviews-page {
+
+    .page-secondary-title {
+        margin-bottom: 270px;
+    }
+
+    .modal-feedback {
+        top: 600px;
+        bottom: auto;
+    }
+}
+
+.reviews-page-content {
+    position: relative;
+    padding-bottom: 110px;
+    @extend %decor-content-big;
+}

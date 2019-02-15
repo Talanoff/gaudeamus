@@ -1,0 +1,69 @@
+#methods {
+    padding: 130px 0 110px;
+    background: url('../../../images/bg/methods-bg.jpg') 50% 50% /cover no-repeat;
+}
+
+.methods-item {
+    z-index: 11;
+
+    .btn {
+        border: 2px solid #fff;
+        padding: 10px 50px;
+
+        &:hover {
+            color: #fff;
+            background: $dark;
+        }
+    }
+}
+
+.parallax {
+    @extend %pos;
+    z-index: 10;
+
+    &-item {
+
+        @media (max-width: map_get($grid-breakpoints, lg)) {
+            display: none;
+        }
+
+        img {
+            width: auto;
+        }
+
+        &-1 {
+            top: -220px;
+            left: 70px;
+        }
+
+        &-2 {
+            top: -240px;
+            left: 40%;
+        }
+
+        &-3 {
+            top: 60px;
+            right: 50px;
+        }
+
+        &-4 {
+            left: 70px;
+            bottom: -70px;
+        }
+
+        &-5 {
+            right: 40%;
+            bottom: -30px;
+        }
+
+        &-6 {
+            right: -20px;
+            bottom: -20px;
+        }
+
+        &-7 {
+            right: 20px;
+            bottom: 50px;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+#cabinet-page {
+    background: $dark;
+    min-height: 100vh;
+
+    .registration-img {
+        position: fixed;
+    }
+}
+
+.cabinet-access-cod-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(#fff, .25);
+
+    @media (max-width: map_get($grid-breakpoints, xl)) {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-img {
+        position: relative;
+        width: 100%;
+        max-width: 145px;
+        padding-top: 170px;
+        @extend %img;
+
+        @media (max-width: map_get($grid-breakpoints, xl)) {
+            margin: 20px;
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            fill: #fff;
+            opacity: .7;
+            transition: .5s;
+            z-index: 3;
+            cursor: pointer;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &-description {
+        max-width: 230px;
+        color: #fff;
+
+        &__btn {
+            padding: 10px 35px;
+        }
+    }
+}
+
+.cabinet-page-tabs {
+
+    &-header {
+
+        &-list {
+            position: relative;
+            margin: 0;
+            margin-bottom: 40px;
+
+            &-item {
+                position: relative;
+                padding: 30px 0;
+                font-size: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #788294;
+                cursor: pointer;
+                transition: .5s;
+
+                @media (max-width: map_get($grid-breakpoints, md)) {
+                    font-size: 16px;
+                    padding: 20px 0; 
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 100%;
+                    bottom: 0;
+                    height: 2px;
+                    background: #d8eaeb;
+                    transition: .5s;
+                }
+
+                &.active {
+                    color: #d8eaeb;
+
+                    &::before {
+                        right: 0;
+                    }
+                }
+            }
+
+            &::before {
+                content: '';
+                @extend %pos;
+                left: -400px;
+                right: -1000px;
+                background: #222832;
+                z-index: -1;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    left: -15px;
+                    right: -10px;
+                }
+            }
+        }
+    }
+
+    &-body {
+        padding-left: 60px;
+        padding-bottom: 80px;
+
+
+        @media (max-width: map_get($grid-breakpoints, xl)) {
+            padding-left: 0;
+        }
+
+        &-item {
+
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

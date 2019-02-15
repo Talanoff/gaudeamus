@@ -1,0 +1,60 @@
+#programs-page {
+    padding-bottom: 125px;
+}
+
+.programs-page-card {
+    margin: 0 auto;
+    padding: 360px 0 65px 60px;
+    max-width: 520px;
+    border: 12px solid #bde1ee;
+    z-index: 10;
+    transition: .5s;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        padding: 370px 0 35px 15px;
+    }
+
+    &-preview {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        right: 10px;
+        padding-top: 265px;
+        padding-left: 85px;
+        @extend %img;
+        z-index: -10;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            padding-left: 35px;
+        }
+
+        &__title {
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    &-content {
+
+        &-title {
+            color: #878787;
+            margin-bottom: 20px;
+        }
+
+        &-description {
+            margin-left: 25px;
+            font-family: 'FuturaMediumC', sans-serif;
+            color: $primary;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &:hover {
+        border-color: $secondary;
+    }
+}

@@ -1,0 +1,27 @@
+.more-info {
+    position: relative;
+    padding-right: 30px;
+    color: $primary;
+    font-family: 'FuturaMediumC', sans-serif;
+
+    &:hover {
+
+        &::before {
+            right: -20px;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 20px;
+        height: 15px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojMzM2MjY1O308L3N0eWxlPjxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMCw0MDUuNiAwLDExMS43IDIxNCwyNTguNyAiLz48cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjI5OCw0MDMgMjk4LDEwOSA1MTIsMjU2ICIvPjwvc3ZnPg==);
+        transition: .5s;
+    }
+}

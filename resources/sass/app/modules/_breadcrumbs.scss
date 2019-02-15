@@ -1,0 +1,57 @@
+.breadcrumbs-list {
+    margin-bottom: 55px;
+    padding: 0;
+
+    &-item {
+
+        &:first-of-type {
+
+            .breadcrumbs-list-item__link {
+                padding-left: 0;
+                
+                &::before {
+                    content: '';
+                }
+            }
+        }
+
+        &:last-of-type {
+
+            .breadcrumbs-list-item__link {
+                padding-right: 0;
+                color: $primary;
+
+                &:hover {
+                    color: $primary;
+                    border-bottom: 1px solid $primary;
+                }
+            }
+        }
+
+        &__link {
+            position: relative;
+            padding-left: 10px;
+            padding-right: 5px;
+            font-size: 18px;
+            border-bottom: 1px solid transparent;
+            color: #fff;
+            transition: .5s;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                font-size: 16px;
+            }
+
+            &::before {
+                content: '/';
+                position: absolute;
+                top: -4px;
+                left: -2px;
+            }
+
+            &:hover {
+                color: #fff;
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+}

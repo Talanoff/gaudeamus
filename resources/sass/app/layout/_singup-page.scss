@@ -1,0 +1,7 @@
+.singup-page-item {
+    padding-left: 100px;
+
+    @media (max-width: map_get($grid-breakpoints, xl)) {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,49 @@
+@import "config/variables";
+@import "config/placeholder";
+@import "../../fonts/font.css";
+
+@import "~bootstrap/scss/bootstrap";
+@import "~animate.css/animate.min.css";
+
+
+@import "base/body";
+@import "base/btn";
+@import "base/section";
+@import "base/section-description";
+@import "base/page-secondary";
+
+@import "modules/menu";
+@import "modules/forms";
+@import "modules/sliders";
+@import "modules/more-info";
+@import "modules/modal";
+@import "modules/breadcrumbs";
+@import "modules/pagination";
+
+@import "layout/app-header";
+@import "layout/header-banner";
+@import "layout/about";
+@import "layout/methods";
+@import "layout/luck";
+@import "layout/reviews";
+@import "layout/feedback";
+@import "layout/app-footer";
+
+@import "layout/programs-page";
+@import "layout/programs-show";
+@import "layout/materials-page";
+@import "layout/teachers-page";
+@import "layout/teachers-show";
+@import "layout/jobs-page";
+@import "layout/reviews-page";
+@import "layout/questions-page";
+@import "layout/questions-page";
+@import "layout/gallery-page";
+@import "layout/articles-page";
+@import "layout/articles-show";
+@import "layout/contacts-page";
+@import "layout/singup-page";
+@import "layout/login-page";
+@import "layout/cabinet-page";
+@import "layout/thank-page";
+@import "layout/error-page";

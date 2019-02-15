@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'FuturaLightC';
+  src: url('FuturaLightC.eot');
+  src: url('FuturaLightC.woff2') format('woff2'),
+       url('FuturaLightC.woff') format('woff'),
+       url('FuturaLightC.ttf') format('truetype'),
+       url('FuturaLightC.svg#FuturaLightC') format('svg'),
+       url('FuturaLightC.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaMediumC';
+  src: url('FuturaMediumC.eot');
+  src: url('FuturaMediumC.woff2') format('woff2'),
+       url('FuturaMediumC.woff') format('woff'),
+       url('FuturaMediumC.ttf') format('truetype'),
+       url('FuturaMediumC.svg#FuturaMediumC') format('svg'),
+       url('FuturaMediumC.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
