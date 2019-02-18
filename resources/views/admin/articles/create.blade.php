@@ -2,7 +2,7 @@
 
 @section('content')
     <form action="{{ route('admin.articles.store') }}" method="post" enctype="multipart/form-data">
-    @csrf
+        @csrf
 
         <div class="row">
             <div class="col-md-8">
@@ -26,6 +26,30 @@
                         </div>
                     @endif
                 </div>
+                @if ($tags->count())
+                    <hr class="my-5">
+
+                    <h4 class="mb-4">Тэги</h4>
+
+                    <div class="row">
+                        @forelse($tags as $tag)
+                            <div class="col-md-6 mb-3">
+                                <div class="custom-control custom-checkbox item">
+                                    <div class="item-id" style="top: -10px">{{ $tag->id }}</div>
+                                    <input type="checkbox" class="custom-control-input"
+                                           id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}">
+                                    <label class="custom-control-label nowrap"
+                                           for="tag-{{ $tag->id }}">
+                                        {{ $tag->title }}
+                                    </label>
+                                </div>
+                            </div>
+                        @empty
+                            ...
+                        @endforelse
+                    </div>
+
+                 @endif
             </div>
             <div class="col-md-4">
                 <image-uploader name="article"></image-uploader>

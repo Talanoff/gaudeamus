@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article\Article;
+use App\Models\Article\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
@@ -26,7 +28,9 @@ class ArticlesController extends Controller
     public function create()
     {
 
-        return \view('admin.articles.create');
+        return \view('admin.articles.create', [
+        'tags' => Tag::get(),
+    ]);
     }
 
     /**
@@ -37,7 +41,16 @@ class ArticlesController extends Controller
     {
 
 
-        $article = Article::create($request->only('title', 'body'));
+        $article = Article::create([
+            'title' => $request->get('title'),
+            'body' => $request->get('body'),
+            'user_id' => Auth::user()->id,
+
+        ]);
+
+
+
+        $article->tags()->attach($request->input('tags'));
         if ($request->hasFile('article')) {
             $article->addMediaFromRequest('article')
                 ->toMediaCollection('article');
@@ -46,13 +59,11 @@ class ArticlesController extends Controller
             ->with('message', 'Запись успешно сохранена.');
     }
 
-    /**
-     * @param Article $article
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
     public function edit(Article $article)
     {
-        return \view('admin.articles.edit', compact('article'));
+        $tags = Tag::get();
+        return \view('admin.articles.edit', compact('article', 'tags'));
     }
 
     /**

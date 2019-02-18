@@ -34,7 +34,7 @@
                         <a href="#" class="footer-menu-list-item__link">ВОПРОСЫ</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.articles') }}" class="footer-menu-list-item__link">СТАТЬИ</a>
+                        <a href="{{ route('app.articles.index') }}" class="footer-menu-list-item__link">СТАТЬИ</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="#" class="footer-menu-list-item__link">КОНТАКТЫ</a>

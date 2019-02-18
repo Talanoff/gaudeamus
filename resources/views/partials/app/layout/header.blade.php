@@ -117,7 +117,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="{{ route('app.articles') }}" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.articles.index') }}" class="menu-nav-list-item__link">
                             статьи
                         </a>
                     </li>

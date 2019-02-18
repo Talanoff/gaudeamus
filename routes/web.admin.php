@@ -8,6 +8,7 @@ Route::group([
     'as' => '.',
 ], function () {
     Route::resource('articles', 'ArticlesController');
+    Route::resource('tags', 'TagsController');
     Route::resource('faq', 'FaqsController');
     Route::resource('reviews', 'ReviewsController');
     Route::resource('courses', 'CoursesController');

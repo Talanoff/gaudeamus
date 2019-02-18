@@ -32,35 +32,48 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($reviews as $review)
-                        <div class="col-sm-6">
-                            <div class="reviews-slider-item-content">
-                                @if ($review->author)
-                                    <div class="reviews-slider-item-content__img rounded-circle"
-                                         style="background-image: url({{$review->author->avatar}});"></div>
-                                @else
-                                    <div class="reviews-slider-item-content__img rounded-circle"
-                                         style="background-image: url({{asset('images/no-avatar.png')}});"></div>
-                                @endif
+                    @if($reviews->count())
+                        @foreach($reviews as $review)
+                            <div class="col-sm-6">
+                                <div class="reviews-slider-item-content">
+                                    @if ($review->author)
+                                        <div class="reviews-slider-item-content__img rounded-circle"
+                                             style="background-image: url({{$review->author->avatar}});"></div>
+                                    @else
+                                        <div class="reviews-slider-item-content__img rounded-circle"
+                                             style="background-image: url({{asset('images/no-avatar.png')}});"></div>
+                                    @endif
 
-                                <div class="reviews-slider-item-content-main">
-                                    <div class="reviews-slider-item-content-main-info">
-                                        <h3 class="reviews-slider-item-content-main-info__name">
-                                            {{ $review->author_name}}
-                                        </h3>
-                                        <div class="reviews-slider-item-content-main-info__data">
-                                            {{ $review->created_at->formatLocalized('%d %B %Y') }}
+                                    <div class="reviews-slider-item-content-main">
+                                        <div class="reviews-slider-item-content-main-info">
+                                            <h3 class="reviews-slider-item-content-main-info__name">
+                                                {{ $review->author_name}}
+                                            </h3>
+                                            <div class="reviews-slider-item-content-main-info__data">
+                                                {{ $review->created_at->formatLocalized('%d %B %Y') }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="reviews-slider-item-content-main-description">
-                                        <p class="reviews-slider-item-content-main-description__text">
-                                            {{ $review->message }}
-                                        </p>
+                                        <div class="reviews-slider-item-content-main-description">
+                                            <p class="reviews-slider-item-content-main-description__text">
+                                                {{ $review->message }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        @endforeach
+                    @else
+                        <div class="col-12">
+                        <div class="reviews-slider-item-content">
+                            <div class="reviews-slider-item-content-main-description">
+                                <h3 class="reviews-slider-item-content-main-description__text">
+                                    Отзывов пока нет!
+                                    <br><br><br><br>
+                                </h3>
+                            </div>
                         </div>
-                    @endforeach
+                        </div>
+                    @endif
                 </div>
             </div>
 

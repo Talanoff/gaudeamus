@@ -10,6 +10,26 @@
     }
 }
 
+.article-item {
+    padding: 0 30px;
+    
+    .articles-show-img {
+        position: relative;
+        width: 100%;
+        min-height: 300px;
+        margin-bottom: 30px;
+        @extend %img;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            float: left;
+            left: -30px;
+            width: 50%;
+            min-height: 500px;
+            margin-right: 40px;
+        }
+    }
+}
+
 .articles-show-content {
     position: relative;
     margin-bottom: 80px;
@@ -19,12 +39,6 @@
     @extend %decor-content-normal;
 
     .articles-show-img {
-        @extend %pos;
-        left: 15px;
-        right: 80px;
-        bottom: 30px;
-        @extend %img;
-
 
         @media (max-width: map_get($grid-breakpoints, md)) {
             position: relative;

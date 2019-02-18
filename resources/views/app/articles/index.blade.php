@@ -8,10 +8,10 @@
                  style="background-image: url('images/bg/banner/articles-page-banner.jpg');"></div>
             <ul class="breadcrumbs-list list-unstyled d-flex">
                 <li class="breadcrumbs-list-item">
-                    <a href="#" class="breadcrumbs-list-item__link">Главная</a>
+                    <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="#" class="breadcrumbs-list-item__link">Cтатьи</a>
+                    <a href="{{ route('app.articles.index') }}" class="breadcrumbs-list-item__link">Cтатьи</a>
                 </li>
             </ul>
 
@@ -49,22 +49,22 @@
 
                         @if($article->hasMedia('article'))
                             @if($loop->first)
-                            <a href="{{ route('app.articles.show') }}"
+                            <a href="{{ route('app.articles.show', $article) }}"
                             class="articles-page-card articles-page-card--big articles-page-card--img">
                                 <div class="articles-page-card__img"
                                 style="background-image: url({{ $article->getFirstMediaUrl('article') }});"></div>
                                 <h3 class="articles-page-card__title">{{ $article->title }}</h3>
                             </a>
                             @else
-                                    <a href="{{ route('app.articles.show') }}"
-                                       class="articles-page-card articles-page-card--simple articles-page-card--img">
-                                        <div class="articles-page-card__img"
-                                             style="background-image: url({{ $article->getFirstMediaUrl('article') }});"></div>
-                                        <h3 class="articles-page-card__title">{{ $article->title }}</h3>
-                                    </a>
-                                @endif
+                                <a href="{{ route('app.articles.show', $article) }}"
+                                   class="articles-page-card articles-page-card--simple articles-page-card--img">
+                                    <div class="articles-page-card__img"
+                                         style="background-image: url({{ $article->getFirstMediaUrl('article') }});"></div>
+                                    <h3 class="articles-page-card__title">{{ $article->title }}</h3>
+                                </a>
+                            @endif
                         @else
-                            <a href="{{ route('app.articles.show') }}"
+                            <a href="{{ route('app.articles.show', $article) }}"
                             class="articles-page-card articles-page-card--simple">
                                 <h3 class="articles-page-card__title">{{ $article->title }}</h3>
                                 <div class="articles-page-card-description">

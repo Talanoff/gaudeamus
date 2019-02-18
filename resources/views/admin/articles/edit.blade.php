@@ -27,6 +27,29 @@
                         </div>
                     @endif
                 </div>
+
+                <hr class="my-5">
+
+                <h4 class="mb-4">Тэги</h4>
+
+                <div class="row">
+                    @forelse($tags as $tag)
+                        <div class="col-md-6 mb-3">
+                            <div class="custom-control custom-checkbox item">
+                                <div class="item-id" style="top: -10px">{{ $tag->id }}</div>
+                                <input type="checkbox" class="custom-control-input"
+                                       id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}"
+                                        {{ $article->tags->pluck('id')->contains($tag->id) ? 'checked' : '' }}>
+                                <label class="custom-control-label nowrap"
+                                       for="tag-{{ $tag->id }}">
+                                    {{ $tag->title }}
+                                </label>
+                            </div>
+                        </div>
+                    @empty
+                        ...
+                    @endforelse
+                </div>
             </div>
             <div class="col-md-4">
                 <image-uploader name="article" src="{{ $article->getFirstMediaUrl('article') }}"></image-uploader>

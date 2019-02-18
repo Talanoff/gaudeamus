@@ -62,7 +62,6 @@
 .jobs-page-respond-content::before,
 .articles-page-card--img .articles-page-card__img,
 .articles-page-card--big .articles-page-card__img,
-.articles-show-content .articles-show-img,
 .cabinet-page-tabs-header-list::before {
   position: absolute;
   top: 0;
@@ -86,7 +85,7 @@
 .jobs-page-respond-img,
 .articles-page-card--img .articles-page-card__img,
 .articles-page-card--big .articles-page-card__img,
-.articles-show-content .articles-show-img,
+.article-item .articles-show-img,
 .cabinet-access-cod-item-img {
   background-size: cover;
   background-position: 50% 50%;
@@ -13504,6 +13503,27 @@ Media Queries
   border-bottom: 1px solid #336265;
 }
 
+.article-item {
+  padding: 0 30px;
+}
+
+.article-item .articles-show-img {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 576px) {
+  .article-item .articles-show-img {
+    float: left;
+    left: -30px;
+    width: 50%;
+    min-height: 500px;
+    margin-right: 40px;
+  }
+}
+
 .articles-show-content {
   position: relative;
   margin-bottom: 80px;
@@ -13511,12 +13531,6 @@ Media Queries
   background: #fff;
   -webkit-box-shadow: 0px 24px 26px 9px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 24px 26px 9px rgba(0, 0, 0, 0.25);
-}
-
-.articles-show-content .articles-show-img {
-  left: 15px;
-  right: 80px;
-  bottom: 30px;
 }
 
 @media (max-width: 768px) {

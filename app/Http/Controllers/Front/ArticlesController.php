@@ -17,9 +17,10 @@ class ArticlesController extends Controller
 
     public function show(Article $article)
     {
+        $article->handleViewed();
         return \view('app.articles.show', [
-            'article' => $article,
-            'interested' => Article::orderByRaw("RAND()")->take(4)->get(),
+            'article'=> $article,
+            'interested' => Article::orderByRaw("RAND()")->take(3)->get(),
         ]);
     }
 }
