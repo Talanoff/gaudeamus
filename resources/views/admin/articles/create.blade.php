@@ -1,4 +1,4 @@
-@extends('layouts.admin', ['app_title' => 'Навая статья'])
+@extends('layouts.admin', ['app_title' => 'Новая статья'])
 
 @section('content')
     <form action="{{ route('admin.articles.store') }}" method="post" enctype="multipart/form-data">
