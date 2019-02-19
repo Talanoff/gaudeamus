@@ -18,6 +18,7 @@ Route::group([
     Route::resource('users', 'UsersController');
     Route::resource('teachers', 'TeachersController');
     Route::resource('students', 'StudentsController');
+    Route::resource('banners', 'BannersController');
 
     Route::resource('slides', 'SlidesController');
 

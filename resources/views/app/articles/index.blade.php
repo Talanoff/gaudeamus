@@ -5,7 +5,7 @@
     <section id="articles-page" class="section-page-secondary">
         <div class="container">
             <div class="page-secondary-banner"
-                 style="background-image: url('images/bg/banner/articles-page-banner.jpg');"></div>
+                 style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
             <ul class="breadcrumbs-list list-unstyled d-flex">
                 <li class="breadcrumbs-list-item">
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
@@ -16,7 +16,7 @@
             </ul>
 
             <h2 class="page-secondary-title text-white">Cтатьи</h2>
-
+            @if($articles->count())
             <div class="articles-page-content">
 
                 @foreach($articles as $article)
@@ -107,6 +107,19 @@
                      </div>
                 </div>
             </div>
+            @else
+                <div class="reviews-page-content">
+                <div class="col-12">
+                    <div class="reviews-slider-item-content">
+                        <div class="reviews-slider-item-content-main-description">
+                            <h3 class="reviews-slider-item-content-main-description__text">
+                                Нет ни одной статьи!
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            @endif
         </div>
     </section>
 @endsection

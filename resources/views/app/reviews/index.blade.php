@@ -8,7 +8,7 @@
 
         <div class="container">
             <div class="page-secondary-banner"
-                 style="background-image: url('/images/bg/banner/reviews-page-banner.jpg');"></div>
+                 style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
             <ul class="breadcrumbs-list list-unstyled d-flex">
                 <li class="breadcrumbs-list-item">
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>

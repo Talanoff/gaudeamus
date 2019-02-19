@@ -41,6 +41,12 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.index',
                     'compare' => 'admin.index',
                     'icon' => 'dashboard',
+                    'submenu' => [
+                        'banner' => [
+                            'name' => 'Баннеры',
+                            'route' => 'admin.banners.index',
+                        ],
+                    ]
                 ],
                 [
                     'name' => 'Курсы',
@@ -53,19 +59,6 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.materials.index',
                     'compare' => 'admin.materials.*',
                     'icon' => 'pages',
-                ],
-                [
-                    'name' => 'Преподаватели',
-                    'route' => 'admin.teachers.index',
-                    'compare' => 'admin.teachers.*',
-                    'icon' => 'portfolio',
-                ],
-                [
-                    'name' => 'Студенты',
-                    'route' => 'admin.students.index',
-                    'compare' => 'admin.students.*',
-                    'icon' => 'user',
-                    'unread' => User::whereIsConfirmed(false)->count()
                 ],
                 [
 
@@ -118,10 +111,25 @@ class RouteServiceProvider extends ServiceProvider
                     'icon' => 'envelope',
                 ],
                 [
-                    'name' => 'Все пользователи',
+                    'name' => 'Пользователи',
                     'route' => 'admin.users.index',
-                    'compare' => 'admin.users.*',
+                    'compare' => ['users', 'teachers', 'students'],
                     'icon' => 'users',
+                    'submenu' => [
+                        'users' => [
+                            'name' => 'Все пользователи',
+                            'route' => 'admin.users.index',
+                        ],
+                        'teachers' => [
+                            'name' => 'Преподаватели',
+                            'route' => 'admin.teachers.index',
+                        ],
+                        'students' => [
+                            'name' => 'Студенты',
+                            'route' => 'admin.students.index',
+                            'unread' => User::whereIsConfirmed(false)->count(),
+                        ],
+                    ],
 
                 ],
                 [

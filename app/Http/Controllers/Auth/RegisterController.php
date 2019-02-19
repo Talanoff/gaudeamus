@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 
+use App\Models\Common\Banner;
 use App\Models\User\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -68,5 +69,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm()
+    {
+        $banner = Banner::where('title' ,'Регистрация')->first();
+        return view('auth.register', compact('banner'));
     }
 }

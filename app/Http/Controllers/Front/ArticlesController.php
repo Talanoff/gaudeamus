@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article\Article;
+use App\Models\Common\Banner;
 use Illuminate\View\View;
 
 class ArticlesController extends Controller
@@ -11,8 +12,9 @@ class ArticlesController extends Controller
     public function index(): View
     {
         $articles = Article::paginate(12);
+        $banner = Banner::where('title' ,'Статьи')->first();
 
-        return \view('app.articles.index', compact('articles'));
+        return \view('app.articles.index', compact('articles', 'banner'));
     }
 
     public function show(Article $article)
@@ -21,6 +23,7 @@ class ArticlesController extends Controller
         return \view('app.articles.show', [
             'article'=> $article,
             'interested' => Article::orderByRaw("RAND()")->take(3)->get(),
+            'banner' => Banner::where('title' ,'Статьи')->first(),
         ]);
     }
 }

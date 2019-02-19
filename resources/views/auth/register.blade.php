@@ -5,7 +5,7 @@
     <section id="singup-page" class="section-page-secondary section-page-secondary--registration">
         <div class="container h-100">
             <div class="row h-100">
-                <div class="registration-img" style="background-image: url('../../images/bg/singup-bg.jpg');"></div>
+                <div class="registration-img" style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
                 <div class="col-sm-6 h-100 mx-auto ml-lg-auto mr-lg-0 px-lg-5 d-flex align-items-center">
                     <div class="singup-page-item">
                         <h2 class="registration-title text-white">ЗАРЕГЕСТРИРОВАТЬСЯ</h2>
