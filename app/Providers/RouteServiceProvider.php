@@ -111,12 +111,6 @@ class RouteServiceProvider extends ServiceProvider
                     'icon' => 'envelope',
                 ],
                 [
-                    'name' => 'Вопросы',
-                    'route' => 'admin.questions.index',
-                    'compare' => 'admin.questions.*',
-                    'icon' => 'clipboard',
-                ],
-                [
                     'name' => 'Пользователи',
                     'route' => 'admin.users.index',
                     'compare' => ['users', 'teachers', 'students'],

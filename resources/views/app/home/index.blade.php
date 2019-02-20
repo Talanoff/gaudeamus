@@ -3,6 +3,6 @@
 @section('content')
 
     @includeWhen($slides->count(),'partials.app.layout.slider')
-    @includeWhen($reviews->count(), 'partials.app.reviews.reviews')
+    @includeWhen($reviews->count(), 'partials.app.sections.reviews')
 
 @endsection

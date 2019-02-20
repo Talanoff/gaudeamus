@@ -19,7 +19,7 @@ Route::group([
     Route::resource('teachers', 'TeachersController');
     Route::resource('students', 'StudentsController');
     Route::resource('banners', 'BannersController');
-    Route::resource('questions', 'QuestionsController');
+
 
     Route::resource('slides', 'SlidesController');
 

@@ -109,15 +109,15 @@
             </div>
             @else
                 <div class="reviews-page-content">
-                <div class="col-12">
-                    <div class="reviews-slider-item-content">
-                        <div class="reviews-slider-item-content-main-description">
-                            <h3 class="reviews-slider-item-content-main-description__text">
-                                Нет ни одной статьи!
-                            </h3>
+                    <div class="col-12">
+                        <div class="reviews-slider-item-content">
+                            <div class="reviews-slider-item-content-main-description">
+                                <h3 class="reviews-slider-item-content-main-description__text">
+                                    Нет ни одной статьи!
+                                </h3>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             @endif
         </div>

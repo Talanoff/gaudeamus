@@ -92,7 +92,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.teachers.index') }}" class="menu-nav-list-item__link">
                             преподаватели
                         </a>
                     </li>
@@ -107,7 +107,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="{{ route('app.questions') }}" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.faqs') }}" class="menu-nav-list-item__link">
                             вопросы
                         </a>
                     </li>

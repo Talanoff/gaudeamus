@@ -11,7 +11,7 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.questions') }}" class="breadcrumbs-list-item__link">Воспросы</a>
+                    <a href="{{ route('app.faqs') }}" class="breadcrumbs-list-item__link">Воспросы</a>
                 </li>
             </ul>
 
@@ -27,17 +27,17 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        @foreach($questions as $question)
+                        @foreach($faqs as $faq)
                             <div class="questions-page-item">
                                 <h3 class="questions-page-item-title">
-                                    <span class="questions-page-item-title__text">{{ $question->question }}</span>
+                                    <span class="questions-page-item-title__text">{{ $faq->question }}</span>
                                     <div class="decoration-block">
                                         <div class="decoration-block-item"></div>
                                     </div>
                                 </h3>
                                 <div class="questions-page-item-description">
                                     <p class="questions-page-item-description__text">
-                                        {{$question->answer}}
+                                        {{$faq->answer}}
                                     </p>
                                 </div>
                             </div>

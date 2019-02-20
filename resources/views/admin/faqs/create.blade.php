@@ -1,34 +1,31 @@
-@extends('layouts.admin', ['app_title' => 'Навая FAQ'])
+@extends('layouts.admin', ['app_title' => 'Новый вопрос'])
 
 @section('content')
-    <form action="{{ route('admin.faq.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.faq.store') }}" method="post">
         @csrf
 
         <div class="row">
             <div class="col-md-8">
-                <div class="form-group{{ $errors->has('title') ? ' is-invalid' : '' }}">
-                    <label for="title">Название</label>
-                    <input type="text" class="form-control" id="title" name="title"
-                           value="{{ old('title') }}" required>
-                    @if($errors->has('title'))
+                <div class="form-group{{ $errors->has('question') ? ' is-invalid' : '' }}">
+                    <label for="question">Вопрос</label>
+                    <input type="text" class="form-control" id="question" name="question"
+                           value="{{ old('question') }}" required>
+                    @if($errors->has('question'))
                         <div class="mt-1 text-danger">
-                            {{ $errors->first('title') }}
+                            {{ $errors->first('question') }}
                         </div>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('body') ? ' is-invalid' : '' }}">
-                    <label for="body">Описание</label>
-                    <textarea type="text" class="form-control" id="body" name="body"
-                              value="{{ old('body') }}" required></textarea>
-                    @if($errors->has('body'))
+                <div class="form-group{{ $errors->has('answer') ? ' is-invalid' : '' }}">
+                    <label for="answer">Ответ</label>
+                    <textarea type="text" class="form-control" id="answer" name="answer"
+                              value="{{ old('answer') }}" required></textarea>
+                    @if($errors->has('answer'))
                         <div class="mt-1 text-danger">
-                            {{ $errors->first('body') }}
+                            {{ $errors->first('answer') }}
                         </div>
                     @endif
                 </div>
-            </div>
-            <div class="col-md-4">
-                <image-uploader name="faq"></image-uploader>
             </div>
         </div>
         <div class="mt-4">
@@ -39,3 +36,4 @@
     </form>
 
 @endsection
+

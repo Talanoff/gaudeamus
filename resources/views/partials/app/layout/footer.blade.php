@@ -13,7 +13,7 @@
                         <a href="#" class="footer-menu-list-item__link">УЧЕБНЫЕ МАТЕРИАЛЫ</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="#" class="footer-menu-list-item__link">ПРЕПОДАВАТЕЛИ</a>
+                        <a href="{{ route('app.teachers.index') }}" class="footer-menu-list-item__link">ПРЕПОДАВАТЕЛИ</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="#" class="footer-menu-list-item__link">ВАКАНСИИ</a>
@@ -31,7 +31,7 @@
                         <a href="#" class="footer-menu-list-item__link">ФОТОГАЛЕРЕЯ</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.questions') }}" class="footer-menu-list-item__link">ВОПРОСЫ</a>
+                        <a href="{{ route('app.faqs') }}" class="footer-menu-list-item__link">ВОПРОСЫ</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.articles.index') }}" class="footer-menu-list-item__link">СТАТЬИ</a>

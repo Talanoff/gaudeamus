@@ -17,7 +17,7 @@ class BannersTableSeeder extends Seeder
             'Статьи',
             'Контакты',
             'Галерея',
-            'Вопросы',
+            'FAQ',
             'Вакансии',
             'Преподаватели',
             'Учебные материалы',
@@ -25,6 +25,7 @@ class BannersTableSeeder extends Seeder
             'О нас',
             'Войти',
             'Регистрация',
+            'Cпасибо',
         ];
 
         foreach ($banners as $item){

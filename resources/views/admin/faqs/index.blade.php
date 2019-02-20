@@ -1,32 +1,23 @@
-@extends('layouts.admin', ['app_title' => 'FAQ'])
+@extends('layouts.admin', ['app_title' => 'Вопросы'])
 
 @section('content')
+
     <div class="d-flex align-items-center mb-5">
-        <h1 class="mb-0 h2">FAQ</h1>
+        <h1 class="mb-0 h2">Вопросы</h1>
         <div class="ml-3">
             <a href="{{ route('admin.faq.create') }}" class="btn btn-primary">
-                Создать новую FAQ
+                Создать новый вопрос
             </a>
         </div>
     </div>
     @forelse($faqs as $faq)
         <article class="item">
             <div class="item-id">{{ $faq->id }}</div>
-
             <div class="item-body">
-                <div class="col-auto">
-                    @if ($faq->hasMedia('faq'))
-                        <img src="{{ $faq->getFirstMediaUrl('faq', 'thumb') }}" class="rounded-circle"
-                             alt="{{ $faq->name }}" style="width: 100px;">
-                    @else
-                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
-                             alt="{{ $faq->name }}" style="width: 100px;">
-                    @endif
-                </div>
                 <div class="col">
                     <h3>
                         <a href="{{ route('admin.faq.edit', $faq) }}" class="underline">
-                            {{ $faq->title }}
+                            {{ $faq->question }}
                         </a>
                     </h3>
                     <p class="mt-2 mb-0">
@@ -59,7 +50,7 @@
             </div>
         </article>
     @empty
-        FAQ пока нет!
+        Вопросы пока не созданы!
     @endforelse
 
 @endsection
