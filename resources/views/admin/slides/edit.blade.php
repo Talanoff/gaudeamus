@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="form-group{{ $errors->has('title') ? ' is-invalid' : '' }}">
-                    <label for="title">Название материала</label>
+                    <label for="title">Название</label>
                     <input type="text" class="form-control" id="title" name="title"
                            value="{{ old('title') ?? $slide->title }}" required>
                     @if($errors->has('title'))

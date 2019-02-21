@@ -133,6 +133,12 @@ class RouteServiceProvider extends ServiceProvider
 
                 ],
                 [
+                    'name' => 'Фотогалерея',
+                    'route' => 'admin.galleries.index',
+                    'compare' => 'admin.galleries.*',
+                    'icon' => 'monitor',
+                ],
+                [
                     'name' => 'Настройки',
                     'route' => 'admin.settings.index',
                     'compare' => 'admin.settings.*',

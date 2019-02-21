@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('reviews', 'ReviewsController@index')->name('reviews');
     Route::post('reviews', 'ReviewsController@store')->name('reviews.create');
     Route::get('faqs', 'FAQsController@index')->name('faqs');
-
+    Route::get('thanks', 'ThanksController@index')->name('thanks');
+    Route::get('galleries', 'GalleriesController@index')->name('galleries');
 
 Route::group([
     'as' => 'articles.',

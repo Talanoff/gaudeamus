@@ -33,11 +33,4 @@ class PagesController extends Controller
         return \redirect()->route('admin.pages.index')
             ->with('message', 'Запись успешно сохранена.');
     }
-
-    public function destroy(Page $page): RedirectResponse
-    {
-        $page->delete();
-        return \redirect()->route('admin.pages.index')
-            ->with('message', 'Запись успешно удалена.');
-    }
 }

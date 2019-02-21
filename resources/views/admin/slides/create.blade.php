@@ -1,4 +1,4 @@
-@extends('layouts.admin', ['app_title' => 'Нвый слайд'])
+@extends('layouts.admin', ['app_title' => 'Новый слайд'])
 
 @section('content')
     <form action="{{ route('admin.slides.store') }}" method="post" enctype="multipart/form-data">

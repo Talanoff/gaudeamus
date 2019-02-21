@@ -28,7 +28,7 @@
                         <a href="{{ route('app.reviews') }}" class="footer-menu-list-item__link">ОТЗЫВЫ</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="#" class="footer-menu-list-item__link">ФОТОГАЛЕРЕЯ</a>
+                        <a href="{{ route('app.galleries') }}" class="footer-menu-list-item__link">ФОТОГАЛЕРЕЯ</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.faqs') }}" class="footer-menu-list-item__link">ВОПРОСЫ</a>
