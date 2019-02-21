@@ -82,7 +82,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.programs') }}" class="menu-nav-list-item__link">
                             программа и стоимость
                         </a>
                     </li>

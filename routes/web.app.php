@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('faqs', 'FAQsController@index')->name('faqs');
     Route::get('thanks', 'ThanksController@index')->name('thanks');
     Route::get('galleries', 'GalleriesController@index')->name('galleries');
+    Route::get('programs', 'PagesController@programs')->name('programs');
 
 Route::group([
     'as' => 'articles.',

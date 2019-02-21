@@ -7,7 +7,7 @@
                         <a href="#" class="footer-menu-list-item__link">О НАС</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="#" class="footer-menu-list-item__link">ПРОГРАММА И СТОИМОСТЬ</a>
+                        <a href="{{ route('app.programs') }}" class="footer-menu-list-item__link">ПРОГРАММА И СТОИМОСТЬ</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="#" class="footer-menu-list-item__link">УЧЕБНЫЕ МАТЕРИАЛЫ</a>

@@ -28,19 +28,6 @@
                             </svg>
                         </a>
                     </p>
-                    <p class="mb-0">
-                        <a href="{{ route('admin.pages.destroy', $page) }}"
-                           class="btn btn-sm btn-danger" onclick="confirmDelete({{ $page->id }})">
-                            <svg width="16" height="16" style="fill: #fff;">
-                                <use xlink:href="#delete"></use>
-                            </svg>
-                        </a>
-                    </p>
-                    <form action="{{ route('admin.pages.destroy', $page) }}"
-                          id="delete-form-{{ $page->id }}" method="post" style="display: none;">
-                        @csrf
-                        @method('delete')
-                    </form>
                 </div>
             </div>
         </article>
@@ -50,14 +37,3 @@
 
 @endsection
 
-@push('scripts')
-    <script>
-      function confirmDelete(id) {
-        event.preventDefault();
-        const agree = confirm('Уверены?');
-        if (agree) {
-          document.getElementById('delete-form-' + id).submit();
-        }
-      }
-    </script>
-@endpush

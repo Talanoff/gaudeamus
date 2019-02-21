@@ -28,7 +28,8 @@ class PagesController extends Controller
 
     public function update(Request $request, Page $page)
     {
-        $page->update($request->only('title', 'body'));
+
+        $page->update($request->only('description', 'body'));
 
         return \redirect()->route('admin.pages.index')
             ->with('message', 'Запись успешно сохранена.');

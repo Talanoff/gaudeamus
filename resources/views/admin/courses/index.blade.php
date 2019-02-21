@@ -15,6 +15,15 @@
             <div class="item-id">{{ $course->id }}</div>
 
             <div class="item-body">
+                <div class="col-auto">
+                    @if ($course->hasMedia('course'))
+                        <img src="{{ $course->getFirstMediaUrl('course', 'thumb') }}" class="rounded-circle"
+                             alt="{{ $course->name }}" style="width: 100px;">
+                    @else
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                             alt="{{ $course->name }}" style="width: 100px;">
+                    @endif
+                </div>
                 <div class="col">
                     <h3>
                         <a href="{{ route('admin.courses.edit', $course) }}" class="underline">
