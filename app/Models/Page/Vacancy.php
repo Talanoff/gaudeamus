@@ -18,6 +18,13 @@ class Vacancy extends Model implements HasMedia
     protected $fillable = [
         'title',
         'description',
+        'responsibilities',
+        'requirements',
+        'work_day',
+        'part_time',
+        'contact',
+        'phone',
+        'city'
     ];
 
     public function registerMediaCollections()

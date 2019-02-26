@@ -16,7 +16,7 @@
                         <a href="{{ route('app.teachers.index') }}" class="footer-menu-list-item__link">ПРЕПОДАВАТЕЛИ</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="#" class="footer-menu-list-item__link">ВАКАНСИИ</a>
+                        <a href="{{ route('app.vacancies') }}" class="footer-menu-list-item__link">ВАКАНСИИ</a>
                     </li>
                 </ul>
             </div>

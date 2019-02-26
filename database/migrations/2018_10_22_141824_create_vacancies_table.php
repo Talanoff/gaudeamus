@@ -18,6 +18,13 @@ class CreateVacanciesTable extends Migration
             $table->string('slug')->unique();;
             $table->string('title');
             $table->text('description');
+            $table->text('responsibilities');
+            $table->text('requirements');
+            $table->string('work_day')->nullable();
+            $table->string('part_time')->nullable();
+            $table->string('contact');
+            $table->string('phone');
+            $table->string('city')->nullable();;
             $table->timestamps();
         });
     }

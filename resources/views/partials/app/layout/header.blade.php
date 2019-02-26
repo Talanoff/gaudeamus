@@ -97,7 +97,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.vacancies') }}" class="menu-nav-list-item__link">
                             вакансии
                         </a>
                     </li>

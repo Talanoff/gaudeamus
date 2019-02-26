@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('thanks', 'ThanksController@index')->name('thanks');
     Route::get('galleries', 'GalleriesController@index')->name('galleries');
     Route::get('materials', 'MaterialsController@index')->name('materials');
+    Route::get('vacancies', 'VacanciesController@index')->name('vacancies');
 
 Route::group([
     'as' => 'articles.',

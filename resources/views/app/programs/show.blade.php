@@ -31,8 +31,9 @@
                     </div>
                     <div class="col-sm-7">
                         <p class="programs-show-item__text">
-                            {!! $course->description !!}
+                            {!! str_limit($course->description, $limit = 500) !!}
                         </p>
+
                         <div class="text-right">
                             <a href="#" class="more-info">Больше информации</a>
                         </div>

@@ -25,7 +25,8 @@ class VacanciesController extends Controller
     public function store(Request $request)
     {
 
-        $vacancy = Vacancy::create($request->only('title', 'description'));
+        $vacancy = Vacancy::create($request->only('title', 'description','responsibilities',
+            'requirements', 'work_day', 'part_time', 'contact', 'phone', 'city'));
         if ($request->hasFile('vacancy')) {
             $vacancy->addMediaFromRequest('vacancy')
                 ->toMediaCollection('vacancy');
@@ -41,7 +42,8 @@ class VacanciesController extends Controller
 
      public function update(Request $request, Vacancy $vacancy)
 {
-    $vacancy->update($request->only('title', 'body'));
+    $vacancy->update($request->only('title', 'description','responsibilities',
+        'requirements', 'work_day', 'part_time', 'contact', 'phone', 'city'));
     if ($request->hasFile('vacancy')) {
         $vacancy->clearMediaCollection('vacancy');
         $vacancy->addMediaFromRequest('vacancy')
