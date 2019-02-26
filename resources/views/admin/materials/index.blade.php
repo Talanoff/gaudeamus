@@ -15,16 +15,21 @@
             <div class="item-id">{{ $material->id }}</div>
 
             <div class="item-body">
+                <div class="col-auto">
+                    @if ($material->hasMedia('material'))
+                        <img src="{{ $material->getFirstMediaUrl('material') }}" class="rounded-circle"
+                             alt="{{ $material->name }}" style="width: 100px;">
+                    @else
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                             alt="{{ $material->name }}" style="width: 100px;">
+                    @endif
+                </div>
                 <div class="col">
                     <h3>
                         <a href="{{ route('admin.materials.edit', $material) }}" class="underline">
                             {{ $material->title }}
                         </a>
                     </h3>
-                    <p class="mb-1">
-                        Материалы к курсу
-                        <strong>{{ $material->course->title}}</strong>
-                    </p>
                     <p class="mt-2 mb-0">
                         Создан {{ $material->created_at->format('d.m.Y \в H:i') }}
                     </p>

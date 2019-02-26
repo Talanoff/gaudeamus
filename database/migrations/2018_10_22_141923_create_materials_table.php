@@ -17,13 +17,10 @@ class CreateMaterialsTable extends Migration
             $table->increments('id');
             $table->string('slug');
             $table->string('title');
-            $table->text('description')->nullable();
-            $table->unsignedInteger('course_id');
+            $table->string('description')->nullable();
+            $table->text('body')->nullable();
             $table->timestamps();
 
-            $table->foreign('course_id')
-                  ->references('id')->on('courses')
-                  ->onDelete('cascade');
         });
     }
 

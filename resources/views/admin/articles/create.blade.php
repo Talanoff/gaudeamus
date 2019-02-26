@@ -18,8 +18,8 @@
                 </div>
                 <div class="form-group{{ $errors->has('body') ? ' is-invalid' : '' }}">
                     <label for="body">Описание</label>
-                    <textarea type="text" class="form-control" id="body" name="body"
-                              value="{{ old('body') }}" required></textarea>
+                    <wysiwyg name="body" class="mb-3"
+                             content="{{ old('body') }}" required></wysiwyg>
                     @if($errors->has('body'))
                         <div class="mt-1 text-danger">
                             {{ $errors->first('body') }}

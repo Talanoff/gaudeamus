@@ -11,7 +11,7 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.programs') }}" class="breadcrumbs-list-item__link">Программы</a>
+                    <a href="{{ route('app.programs.index') }}" class="breadcrumbs-list-item__link">Программы</a>
                 </li>
             </ul>
 
@@ -22,7 +22,7 @@
                     <div class="page-secondary-item position-relative">
                         <h2 class="page-secondary-item__title position-relative pb-3">{{ $page->description }}</h2>
                         <p class="page-secondary-item__text pt-3 mb-4">
-                            {{ $page->body }}
+                            {!! $page->body !!}
                         </p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="programs-page-card-content-title">Стоимость <span class="programs-page-card-content-description">
                                     {{ $course->price }} грн / месяц</span></div>
-                            <a href="#" class="more-info">Подробнее</a>
+                            <a href="{{ route('app.programs.show', $course) }}" class="more-info">Подробнее</a>
                             <div class="text-center mt-4">
                                 <a href="#" class="btn btn-dark mr-lg-4">Выбрать</a>
                             </div>

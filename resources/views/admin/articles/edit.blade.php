@@ -19,8 +19,7 @@
                 </div>
                 <div class="form-group{{ $errors->has('body') ? ' is-invalid' : '' }}">
                     <label for="body">Описание</label>
-                    <textarea type="text" class="form-control" id="body"
-                              name="body" required>{{ old('body') ?? $article->body }}</textarea>
+                    <wysiwyg name="body" class="mb-3" content="{{ old('body') ?? $article->body }}" required></wysiwyg>
                     @if($errors->has('body'))
                         <div class="mt-1 text-danger">
                             {{ $errors->first('body') }}

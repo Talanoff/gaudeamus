@@ -37,7 +37,7 @@
                                 </h3>
                                 <div class="questions-page-item-description">
                                     <p class="questions-page-item-description__text">
-                                        {{$faq->answer}}
+                                        {!! $faq->answer !!}
                                     </p>
                                 </div>
                             </div>

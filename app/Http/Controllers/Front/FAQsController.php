@@ -13,7 +13,7 @@ class FAQsController extends Controller
     public function index(): View
     {
         $faqs =Faq::latest()->get();
-        $banner = Banner::where('title' ,'FAQ')->first();
+        $banner = Banner::where('id' , 5)->first();
 
         return \view('app.faqs.index', compact('faqs', 'banner'));
     }

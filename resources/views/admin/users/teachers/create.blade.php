@@ -84,7 +84,7 @@
 
                 <div class="form-group">
                     <label for="description">Описание</label>
-                    <textarea type="text" class="form-control" id="description" rows="5" name="description">{{ old('description') }}</textarea>
+                    <wysiwyg name="description" class="mb-3" content="{{ old('description') }}" required></wysiwyg>
                 </div>
             </div>
         </div>

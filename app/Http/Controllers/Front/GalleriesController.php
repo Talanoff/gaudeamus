@@ -13,7 +13,7 @@ class GalleriesController extends Controller
     public function index(): View
     {
         $galleries = Gallery::latest('id')->get();
-        $banner = Banner::where('title' ,'Галерея')->first();
+        $banner = Banner::where('id', 4)->first();
 
         return \view('app.galleries.index', compact('galleries', 'banner'));
     }

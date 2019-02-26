@@ -50,7 +50,7 @@ class ArticlesController extends Controller
 
 
 
-        $article->tags()->attach($request->input('tags'));
+        $article->tags()->sync($request->input('tags'));
         if ($request->hasFile('article')) {
             $article->addMediaFromRequest('article')
                 ->toMediaCollection('article');
@@ -75,6 +75,7 @@ class ArticlesController extends Controller
     {
 
         $article->update($request->only('title', 'body'));
+        $article->tags()->sync($request->input('tags'));
         if ($request->hasFile('article')) {
             $article->clearMediaCollection('article');
             $article->addMediaFromRequest('article')

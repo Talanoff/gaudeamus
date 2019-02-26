@@ -8,6 +8,7 @@ use App\Models\Education\Material;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class MaterialsController extends Controller
@@ -32,8 +33,14 @@ class MaterialsController extends Controller
         $material = Material::create([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'course_id' => $request->get('course_id')
+            'body' => $request->get('body'),
+
         ]);
+        $material->course()->sync($request->input('courses'));
+        if ($request->hasFile('material')) {
+            $material->addMediaFromRequest('material')
+                ->toMediaCollection('material');
+        }
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно сохранена.');
     }
@@ -48,13 +55,23 @@ class MaterialsController extends Controller
 
     public function update(Request $request, Material $material)
     {
-        $material->update($request->only('title', 'description', 'course_id')) ;
+        $material->update($request->only('title', 'description', 'body')) ;
+        $material->course()->sync($request->input('courses'));
+
+        if ($request->hasFile('material')) {
+            $material->clearMediaCollection('material');
+            $material->addMediaFromRequest('material')
+                ->toMediaCollection('material');
+        }
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
     public function destroy(Material $material): RedirectResponse
     {
+        if ($material->image) {
+            Storage::delete($material->image);
+        }
         $material->delete();
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно удалена.');

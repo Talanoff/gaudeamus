@@ -43,6 +43,9 @@ class StudentsController extends Controller
             $user->addMediaFromRequest('avatar')
                  ->toMediaCollection('avatar');
         }
+        return \redirect()->route('admin.users.index')
+            ->with('message', 'Запись успешно сохранена.');
+
     }
 
     public function edit(User $student)
@@ -64,7 +67,8 @@ class StudentsController extends Controller
                     ->toMediaCollection('avatar');
         }
 
-        return \back();
+        return \redirect()->route('admin.users.index')
+            ->with('message', 'Запись успешно сохранена.');
     }
 
     public function destroy(User $student)
@@ -72,6 +76,7 @@ class StudentsController extends Controller
         $student->clearMediaCollection('avatar');
         $student->delete();
 
-        return \redirect()->route('admin.students.index');
+        return \redirect()->route('admin.students.index')
+            ->with('message', 'Запись успешно удалена.');
     }
 }

@@ -15,7 +15,7 @@ class TeachersController extends Controller
     {
         return \view ('app.teachers.index', [
             'teachers' => User::where('role_id', 3)->paginate(6),
-            'banner' => Banner::where('title', 'Преподаватели')->first(),
+            'banner' => Banner::where('id', 7)->first(),
         ]);
     }
 
@@ -23,7 +23,7 @@ class TeachersController extends Controller
     {
         return \view('app.teachers.show', [
             'teacher' => $teacher,
-            'banner' => Banner::where('title' ,'Преподаватели')->first(),
+            'banner' => Banner::where('id', 7)->first(),
             'reviews' => Review::latest()->take(12)->get(),
             ]);
     }

@@ -13,7 +13,7 @@ class ReviewsController extends Controller
     public function index()
     {
         $reviews = Review::latest()->paginate(6);
-        $banner = Banner::where('title' ,'Отзывы')->first();
+        $banner = Banner::where('id' ,1)->first();
 
         return \view('app.reviews.index', compact('reviews', 'banner'));
     }

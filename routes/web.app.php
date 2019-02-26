@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('faqs', 'FAQsController@index')->name('faqs');
     Route::get('thanks', 'ThanksController@index')->name('thanks');
     Route::get('galleries', 'GalleriesController@index')->name('galleries');
-    Route::get('programs', 'PagesController@programs')->name('programs');
+    Route::get('materials', 'MaterialsController@index')->name('materials');
 
 Route::group([
     'as' => 'articles.',
@@ -26,6 +26,15 @@ Route::group([
 ], function () {
     Route::get('/', 'TeachersController@index')->name('index');
     Route::get('{teacher}', 'TeachersController@show')->name('show');
+});
+
+Route::group([
+    'as' => 'programs.',
+    'prefix' => 'programs',
+    ], function () {
+   Route::get('/', 'CoursesController@index')->name('index');
+   Route::get('{course}', 'CoursesController@show')->name('show');
+
 });
 
 

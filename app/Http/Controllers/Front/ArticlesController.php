@@ -12,7 +12,7 @@ class ArticlesController extends Controller
     public function index(): View
     {
         $articles = Article::paginate(12);
-        $banner = Banner::where('title' ,'Статьи')->first();
+        $banner = Banner::where('id' , 2)->first();
 
         return \view('app.articles.index', compact('articles', 'banner'));
     }
@@ -23,7 +23,7 @@ class ArticlesController extends Controller
         return \view('app.articles.show', [
             'article'=> $article,
             'interested' => Article::orderByRaw("RAND()")->take(3)->get(),
-            'banner' => Banner::where('title' ,'Статьи')->first(),
+            'banner' => Banner::where('id' , 2)->first(),
         ]);
     }
 }

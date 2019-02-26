@@ -12,7 +12,7 @@ class ThanksController extends Controller
     public function index(): View
     {
         return \view('app.thanks.index', [
-            'banner' => Banner::where('title', 'Спасибо')->first(),
+            'banner' => Banner::where('id', 13)->first(),
         ]);
     }
 }

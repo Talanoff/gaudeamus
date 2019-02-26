@@ -18,8 +18,8 @@
                 </div>
                 <div class="form-group{{ $errors->has('answer') ? ' is-invalid' : '' }}">
                     <label for="answer">Ответ</label>
-                    <textarea type="text" class="form-control" id="answer" name="answer"
-                              value="{{ old('answer') }}" required></textarea>
+                    <wysiwyg name="answer" class="mb-3"
+                             content="{{ old('answer') }}" required></wysiwyg>
                     @if($errors->has('answer'))
                         <div class="mt-1 text-danger">
                             {{ $errors->first('answer') }}

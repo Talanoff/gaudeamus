@@ -13,7 +13,7 @@
                 <p class="about-item-description mt-4">
                    {!! $methods->body !!}
                 </p>
-                <a href="{{ route('app.programs') }}" class="btn btn-outline-white">Программа обучения</a>
+                <a href="{{ route('app.programs.index') }}" class="btn btn-outline-white">Программа обучения</a>
             </div>
         </div>
     </div>

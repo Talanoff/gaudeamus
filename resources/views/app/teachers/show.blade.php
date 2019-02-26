@@ -19,8 +19,13 @@
                 </li>
             </ul>
             <div class="row">
+                <div class="col-sm-3">
+                    <div class="teachers-card-img">
+                        <img src="{{ $teacher->avatar }}" alt=""></div>
+                    <div class="decoration-block"></div>
+                </div>
                 <div class="col-sm-9">
-                    <div class="page-secondary-item position-relative">
+                    <div class="reviews-page-content position-relative">
                         <h2 class="page-secondary-item__title position-relative text-uppercase pb-3">
                             {{ $teacher->name }}
                         </h2>
@@ -28,7 +33,7 @@
                             {{ optional($teacher->profile)->position }}
                         </p>
                         <p class="page-secondary-item__text">
-                            {{ optional($teacher->profile)->description }}
+                            {!! optional($teacher->profile)->description !!}
                         </p>
                         <div class="text-right">
                             <a href="{{ route('app.teachers.index') }}" class="more-info">Другие преподаватели</a>

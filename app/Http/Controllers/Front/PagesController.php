@@ -10,11 +10,5 @@ use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
-    public function programs()
-    {
-        $banner = Banner::where('title' ,'Программа и стоимость')->first();
-        $page = Page::where('title' ,'Программы и стоимость обучения')->first();
-        $courses = Course::latest('id')->get();
-        return \view('app.programs.index', compact('page', 'banner', 'courses'));
-    }
+
 }

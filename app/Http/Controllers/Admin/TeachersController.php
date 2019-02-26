@@ -44,7 +44,7 @@ class TeachersController extends Controller
                  ->toMediaCollection('avatar');
         }
 
-        return \redirect()->route('admin.users.index')
+        return \redirect()->route('admin.teachers.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
@@ -70,7 +70,8 @@ class TeachersController extends Controller
                     ->toMediaCollection('avatar');
         }
 
-        return \back();
+        return \redirect()->route('admin.teachers.index')
+            ->with('message', 'Запись успешно сохранена.');
     }
 
     public function destroy(User $teacher)
@@ -78,6 +79,7 @@ class TeachersController extends Controller
         $teacher->clearMediaCollection('avatar');
         $teacher->delete();
 
-        return \redirect()->route('admin.teachers.index');
+        return \redirect()->route('admin.teachers.index')
+            ->with('message', 'Запись успешно удалена.');
     }
 }

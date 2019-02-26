@@ -64,14 +64,16 @@
                         @endforeach
                     @else
                         <div class="col-12">
-                        <div class="reviews-slider-item-content">
-                            <div class="reviews-slider-item-content-main-description">
-                                <h3 class="reviews-slider-item-content-main-description__text">
-                                    Отзывов пока нет!
-                                    <br><br><br><br>
-                                </h3>
+                            <div class="reviews-slider-item-content">
+                                <div class="reviews-slider-item-content-main-description">
+                                    <h3 class="reviews-slider-item-content-main-description__text">
+                                        Отзывов пока нет!
+                                        <br><br><br><br>
+                                        <br><br><br><br>
+                                        <br><br><br><br>
+                                    </h3>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     @endif
                 </div>

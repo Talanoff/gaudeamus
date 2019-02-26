@@ -38,11 +38,11 @@ class Course extends Model implements HasMedia
     ];
 
     /**
-     * @return HasMany
+     * @return BelongsToMany
      */
-    public function materials(): HasMany
+    public function materials(): belongsToMany
     {
-        return $this->hasMany(Material::class);
+        return $this->belongsToMany(Material::class, 'course_material', 'course_id', 'material_id');
     }
 
     /**
@@ -59,6 +59,17 @@ class Course extends Model implements HasMedia
     public function teachers(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'courses_teachers', 'course_id', 'teacher_id');
+    }
+
+    public function getFirstMaterials()
+    {
+        return $this->materials()->take(4)->get();
+    }
+
+    public function getHiddenMaterials()
+    {
+        $ids = $this->getFirstMaterials()->pluck('id')->all();
+        return $this->materials()->whereNotIn('material_id', $ids)->get();
     }
 
     /**

@@ -25,6 +25,7 @@ class SettingsController extends Controller
             ]);
         }
 
-        return \back();
+        return \redirect()->route('admin.settings.index')
+            ->with('message', 'Запись успешно сохранена.');
     }
 }
