@@ -87,7 +87,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="{{ route('app.materials ') }}" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.materials') }}" class="menu-nav-list-item__link">
                             учебные материалы
                         </a>
                     </li>
