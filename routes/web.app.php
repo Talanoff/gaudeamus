@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('galleries', 'GalleriesController@index')->name('galleries');
     Route::get('materials', 'MaterialsController@index')->name('materials');
     Route::get('vacancies', 'VacanciesController@index')->name('vacancies');
+    Route::post('vacancies', 'VacanciesController@store')->name('vacancies.create');
+    Route::post('/', 'FeedbackController@store')->name('feedback.create');
 
 Route::group([
     'as' => 'articles.',

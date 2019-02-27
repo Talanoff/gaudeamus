@@ -15,6 +15,7 @@ Route::group([
     Route::resource('materials', 'MaterialsController');
     Route::resource('pages', 'PagesController');
     Route::resource('vacancies', 'VacanciesController');
+    Route::resource('responds', 'RespondsController');
     Route::resource('users', 'UsersController');
     Route::resource('teachers', 'TeachersController');
     Route::resource('students', 'StudentsController');

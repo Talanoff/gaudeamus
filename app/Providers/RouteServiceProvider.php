@@ -107,8 +107,18 @@ class RouteServiceProvider extends ServiceProvider
                 [
                     'name' => 'Вакансии',
                     'route' => 'admin.vacancies.index',
-                    'compare' => 'admin.vacancies.*',
+                    'compare' => ['vacancy', 'responds'],
                     'icon' => 'envelope',
+                    'submenu' => [
+                        'vacancy' => [
+                            'name' => 'Все вакансии',
+                            'route' => 'admin.vacancies.index',
+                        ],
+                        'responds' => [
+                            'name' => 'Отклики на вакансии',
+                            'route' => 'admin.responds.index',
+                        ],
+                    ],
                 ],
                 [
                     'name' => 'Пользователи',

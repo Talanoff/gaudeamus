@@ -7,5 +7,6 @@
         @include('partials.app.sections.methods')
     @endif
     @includeWhen($reviews->count(), 'partials.app.sections.reviews')
+    @includeWhen($courses->count(), 'partials.app.sections.feedback')
 
 @endsection
