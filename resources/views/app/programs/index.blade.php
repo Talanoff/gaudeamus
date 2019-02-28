@@ -37,7 +37,7 @@
                         </div>
                         <div class="programs-page-card-content">
                             <div class="programs-page-card-content-title">Основной курс</div>
-                            <div class="programs-page-card-content-title">{{ $course->lessons }} занятия в месяц</div>
+                            <div class="programs-page-card-content-title">{{ $course->lessons }} занятий в месяц</div>
                             <div class="programs-page-card-content-title">Срок обучения
                                 <span class="programs-page-card-content-description">
                                     {{ $course->starts_at->format('d.m.Y') }}-{{ $course->ends_at->format('d.m.Y')  }}
@@ -56,5 +56,5 @@
             </div>
         </div>
     </section>
-
+    @includeWhen($courses->count(), 'partials.app.sections.feedback')
 @endsection

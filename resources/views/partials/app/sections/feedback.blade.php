@@ -26,14 +26,14 @@
                         </div>
                     </div>
 
-                    <div class="form-group-item d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-end">
-                        <div class="form-group position-relativemb-3 mb-lg-0 mr-lg-4">
+                    <div class="form-group-item mb-2 mb-lg-4 d-flex flex-column flex-lg-row justify-content-lg-start align-items-center align-items-lg-end">
+                        <div class="form-group position-relative mb-3 mb-lg-0 mr-lg-5">
                             <label for="user-phone--feedback" class="label-placeholder">Ваш номер телефона</label>
                             <input type="text" class="form-control position-relative" id="user-phone--feedback"
                                    name="phone" placeholder="Введите номер" required>
                         </div>
 
-                        <div class="form-group position-relative mb-5 mb-lg-0 mr-lg-4">
+                        <div class="form-group position-relative mb-5 mb-lg-0 mr-lg-5">
                             <label class="label-placeholder">Выберите курс</label>
                             <select class="form-control position-relative" name="course_id" id="course_id" required>
                                 <option value="" disabled selected style='display:none;'>Курс английского языка</option>
@@ -44,7 +44,7 @@
                         </div>
 
 
-                        <button id="feedback-btn" class="btn btn-dark text-white">Записаться</button>
+                        <button id="feedback-btn" class="btn btn-dark text-white d-inline-flex">Записаться</button>
                     </div>
 
                 </form>

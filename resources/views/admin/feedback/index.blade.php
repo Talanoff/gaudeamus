@@ -1,27 +1,27 @@
-@extends('layouts.admin', ['app_title' => 'Отклики на вакансии'])
+@extends('layouts.admin', ['app_title' => 'Записи на курсы'])
 
 @section('content')
     <div class="d-flex align-items-center mb-5">
-        <h1 class="mb-0 h2">Отклики на вакансии</h1>
+        <h1 class="mb-0 h2">Записи на курсы</h1>
     </div>
-    @forelse($responds as $respond)
+    @forelse($feedbacks as $feedback)
         <article class="item">
-            <div class="item-id">{{ $respond->id }}</div>
+            <div class="item-id">{{ $feedback->id }}</div>
 
             <div class="item-body">
                 <div class="col">
                     <h3>
-                        <a href="{{ route('admin.responds.edit', $respond) }}" class="underline">
-                            {{ $respond->name  }}
+                        <a href="{{ route('admin.feedback.edit', $feedback) }}" class="underline">
+                            {{ $feedback->name  }}
                         </a>
                     </h3>
                     <p class="mt-2 mb-0">
-                        Создан {{ $respond->created_at->format('d.m.Y \в H:i') }}
+                        Создан {{ $feedback->created_at->format('d.m.Y \в H:i') }}
                     </p>
                 </div>
                 <div class="col-auto align-self-center">
                     <p class="mb-1">
-                        <a href="{{ route('admin.responds.edit', $respond) }}"
+                        <a href="{{ route('admin.feedback.edit', $feedback) }}"
                            class="btn btn-sm btn-dark">
                             <svg width="16" height="16" style="fill: #fff;">
                                 <use xlink:href="#pen"></use>
@@ -29,15 +29,15 @@
                         </a>
                     </p>
                     <p class="mb-0">
-                        <a href="{{ route('admin.responds.destroy', $respond) }}"
-                           class="btn btn-sm btn-danger" onclick="confirmDelete({{ $respond->id }})">
+                        <a href="{{ route('admin.feedback.destroy', $feedback) }}"
+                           class="btn btn-sm btn-danger" onclick="confirmDelete({{ $feedback->id }})">
                             <svg width="16" height="16" style="fill: #fff;">
                                 <use xlink:href="#delete"></use>
                             </svg>
                         </a>
                     </p>
-                    <form action="{{ route('admin.responds.destroy', $respond) }}"
-                          id="delete-form-{{ $respond->id }}" method="post" style="display: none;">
+                    <form action="{{ route('admin.feedback.destroy', $feedback) }}"
+                          id="delete-form-{{ $feedback->id }}" method="post" style="display: none;">
                         @csrf
                         @method('delete')
                     </form>
@@ -45,7 +45,7 @@
             </div>
         </article>
     @empty
-        Откликов на вакансии пока нет!
+        Записей на курсы пока нет!
     @endforelse
 
 @endsection

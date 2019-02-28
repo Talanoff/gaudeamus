@@ -21,13 +21,11 @@
                 <div class="col-sm-6 mt-4 mt-sm-0 ml-auto mr-0">
                     <div class="teachers-quote text-white">
                         <div class="teachers-quote-text">
-                            Личность, сливаясь с коллективом, не теряет себя. Напротив, она достигает в коллективе
-                            высшей
-                            ступени сознания и совершенствования.
+                            {{ $quote->quote }}
                         </div>
                         <div class="teachers-quote-name position-relative d-flex align-items-center">
                             <div class="teachers-quote-name-decoration mr-3"></div>
-                            Барбюс
+                            {{ $quote->author }}
                         </div>
                     </div>
                 </div>

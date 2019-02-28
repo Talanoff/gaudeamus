@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('vacancies', 'VacanciesController@index')->name('vacancies');
     Route::post('vacancies', 'VacanciesController@store')->name('vacancies.create');
     Route::post('/', 'FeedbackController@store')->name('feedback.create');
+    Route::get('about', 'PagesController@about')->name('about');
 
 Route::group([
     'as' => 'articles.',
@@ -39,5 +40,7 @@ Route::group([
    Route::get('{course}', 'CoursesController@show')->name('show');
 
 });
+
+
 
 

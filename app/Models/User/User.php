@@ -2,6 +2,7 @@
 
 namespace App\Models\User;
 
+use App\Http\Resources\ImageResource;
 use App\Models\Education\Course;
 use App\Traits\SlugableTrait;
 use Illuminate\Database\Eloquent\Builder;
@@ -119,6 +120,16 @@ class User extends Authenticatable implements HasMedia
                     ->sharpen(10)
                     ->nonOptimized();
             });
+    }
+
+
+
+    /**
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function getImagesListAttribute()
+    {
+        return ImageResource::collection($this->getMedia('certificates'));
     }
 
     public static function boot()

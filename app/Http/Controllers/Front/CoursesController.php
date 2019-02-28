@@ -13,7 +13,7 @@ class CoursesController extends Controller
     {
         $banner = Banner::where('id', 9)->first();
         $page = Page::where('id', 1)->first();
-        $courses = Course::latest('id')->get();
+        $courses = Course::latest()->get();
         return \view('app.programs.index', compact('page', 'banner', 'courses'));
     }
 
@@ -21,11 +21,13 @@ class CoursesController extends Controller
     {
         $teachers = $course->teachers()->where('course_id', $course->id)->get();
         $materials = $course->materials()->where('course_id', $course->id)->orderByRaw("RAND()")->take(4)->get();
+        $courses = Course::latest()->get();
 
         return \view('app.programs.show', [
             'course' => $course,
             'teachers' => $teachers,
             'materials' => $materials,
+            'courses' => $courses,
         ]);
     }
 }

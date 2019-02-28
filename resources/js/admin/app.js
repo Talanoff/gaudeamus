@@ -3,6 +3,7 @@ require('./bootstrap');
 new Vue({
     el: '#app',
     components: {
+        MultiImageUploader: require('./components/MultiImageUploader'),
         ImageUploader: require('./components/SingleImageUploader'),
         Wysiwyg: require('./components/Wysiwyg'),
     },

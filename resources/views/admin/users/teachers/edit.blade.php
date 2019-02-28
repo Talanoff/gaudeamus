@@ -49,6 +49,14 @@
 
                 <hr class="my-5">
 
+                <h4 class="mb-4">Сертификаты</h4>
+
+                <multi-image-uploader
+                        class="mt-4"
+                        :src="{{ json_encode($user->images_list) }}"></multi-image-uploader>
+
+                <hr class="my-5">
+
                 <h4 class="mb-4">Курсы</h4>
 
                 <div class="row">

@@ -23,12 +23,14 @@ class Banner extends Model implements HasMedia
             ->registerMediaConversions(function (Media $media = null) {
                 $this
                     ->addMediaConversion('thumb')
+                    ->keepOriginalImageFormat()
                     ->crop(Manipulations::CROP_CENTER, 100, 100)
                     ->width(100)
                     ->height(100);
 
                 $this
                     ->addMediaConversion('preview')
+                    ->keepOriginalImageFormat()
                     ->crop(Manipulations::CROP_CENTER, 385, 193)
                     ->width(385)
                     ->height(193);

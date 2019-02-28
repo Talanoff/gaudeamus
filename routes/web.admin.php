@@ -21,7 +21,9 @@ Route::group([
     Route::resource('students', 'StudentsController');
     Route::resource('banners', 'BannersController');
     Route::resource('galleries','GalleriesController');
-
+    Route::resource('feedback','FeedbackController');
+    Route::resource('quotes', 'QuotesController');
+    Route::delete('media/{media}', 'MediaController@destroy')->name('media.delete');
 
     Route::resource('slides', 'SlidesController');
 
@@ -32,5 +34,6 @@ Route::group([
         Route::get('/', 'SettingsController@index')->name('index');
         Route::patch('/', 'SettingsController@update')->name('update');
     });
+
 });
 

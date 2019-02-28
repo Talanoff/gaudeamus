@@ -21,7 +21,7 @@ class RespondsController extends Controller
     {
         return \view('admin.responds.edit', [
             'respond' => $respond,
-            'vacancy' => Vacancy::where('id', $respond->vacancy_id)
+            'vacancy' => Vacancy::where('id', $respond->vacancy_id)->first(),
         ]);
     }
 

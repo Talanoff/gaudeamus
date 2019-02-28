@@ -112,5 +112,5 @@
         </div>
 
     </section>
-
+    @includeWhen($courses->count(), 'partials.app.sections.feedback')
 @endsection

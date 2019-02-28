@@ -45,6 +45,11 @@
                     <input type="date" class="form-control" id="birthday" name="birthday"
                            value="{{ old('birthday') }}">
                 </div>
+                <hr class="my-5">
+
+                <h4 class="mb-4">Сертификаты</h4>
+
+                <multi-image-uploader class="mt-4"></multi-image-uploader>
 
                 <hr class="my-5">
 

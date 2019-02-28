@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 
+use App\Models\Article\Review;
+use App\Models\Page\Feedback;
+use App\Models\Page\Respond;
 use App\Models\User\User;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -84,6 +87,7 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.reviews.index',
                     'compare' => 'admin.reviews.*',
                     'icon' => 'comments',
+                    'unread' => Review::where('status', 'processing')->count(),
                 ],
                 [
 
@@ -95,8 +99,18 @@ class RouteServiceProvider extends ServiceProvider
                 [
                     'name' => 'Страницы',
                     'route' => 'admin.pages.index',
-                    'compare' => 'admin.pages.*',
+                    'compare' => ['page', 'quotes',],
                     'icon' => 'products',
+                    'submenu' => [
+                        'page' => [
+                            'name' => 'Все страницы',
+                            'route' => 'admin.pages.index',
+                        ],
+                        'quotes' => [
+                            'name' => 'Цитаты для страниц',
+                            'route' => 'admin.quotes.index',
+                        ],
+                    ],
                 ],
                 [
                     'name' => 'FAQ',
@@ -109,6 +123,7 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.vacancies.index',
                     'compare' => ['vacancy', 'responds'],
                     'icon' => 'envelope',
+                    'unread' => Respond::where('status', 'processing')->count(),
                     'submenu' => [
                         'vacancy' => [
                             'name' => 'Все вакансии',
@@ -153,6 +168,13 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.settings.index',
                     'compare' => 'admin.settings.*',
                     'icon' => 'settings',
+                ],
+                [
+                    'name' => 'Записи на курс',
+                    'route' => 'admin.feedback.index',
+                    'compare' => 'admin.feedback.*',
+                    'icon' => 'orders',
+                    'unread' => Feedback::where('status', 'processing')->count(),
                 ],
             ]);
         });

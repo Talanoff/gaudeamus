@@ -44,6 +44,12 @@ class TeachersController extends Controller
                  ->toMediaCollection('avatar');
         }
 
+        if ($request->has('files')) {
+            foreach ($request->input('files') as $file) {
+                $user->addMediaFromBase64($file)->toMediaCollection('certificates');
+            }
+        }
+
         return \redirect()->route('admin.teachers.index')
             ->with('message', 'Запись успешно сохранена.');
     }
@@ -69,6 +75,12 @@ class TeachersController extends Controller
             $teacher->addMediaFromRequest('avatar')
                     ->toMediaCollection('avatar');
         }
+        if ($request->has('files')) {
+            foreach ($request->input('files') as $file) {
+                $teacher->addMediaFromBase64($file)->toMediaCollection('certificates');
+            }
+        }
+
 
         return \redirect()->route('admin.teachers.index')
             ->with('message', 'Запись успешно сохранена.');

@@ -12,7 +12,7 @@ class MaterialsController extends Controller
     public function index()
     {
         $banner = Banner::where('id', 8)->first();
-        $courses = Course::with('materials')->latest('id')->get();
+        $courses = Course::with('materials')->latest()->get();
 
         return \view('app.materials.index', compact('banner', 'courses'));
 
