@@ -23,6 +23,7 @@ Route::group([
     Route::resource('galleries','GalleriesController');
     Route::resource('feedback','FeedbackController');
     Route::resource('quotes', 'QuotesController');
+    Route::resource('aspects', 'AspectsController');
     Route::delete('media/{media}', 'MediaController@destroy')->name('media.delete');
 
     Route::resource('slides', 'SlidesController');

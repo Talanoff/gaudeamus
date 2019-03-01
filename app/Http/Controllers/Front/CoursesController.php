@@ -22,12 +22,10 @@ class CoursesController extends Controller
         $teachers = $course->teachers()->where('course_id', $course->id)->get();
         $materials = $course->materials()->where('course_id', $course->id)->orderByRaw("RAND()")->take(4)->get();
         $courses = Course::latest()->get();
+        $description = explode('</p>', $course->description, '3' );
 
-        return \view('app.programs.show', [
-            'course' => $course,
-            'teachers' => $teachers,
-            'materials' => $materials,
-            'courses' => $courses,
-        ]);
+
+
+        return \view('app.programs.show', compact('course','teachers', 'materials', 'courses', 'description'));
     }
 }

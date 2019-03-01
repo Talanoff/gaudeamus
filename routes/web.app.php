@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('vacancies', 'VacanciesController@store')->name('vacancies.create');
     Route::post('/', 'FeedbackController@store')->name('feedback.create');
     Route::get('about', 'PagesController@about')->name('about');
+    Route::get('contacts', 'PagesController@contacts')->name('contacts');
 
 Route::group([
     'as' => 'articles.',

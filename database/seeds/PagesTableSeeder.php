@@ -14,7 +14,8 @@ class PagesTableSeeder extends Seeder
         $pages = [
             'Программы и стоимость обучения',
             'Новая методика',
-            'O нас'
+            'O нас',
+            'Контакты'
         ];
         foreach ($pages as $item) {
             $page = \App\Models\Page\Page::create([

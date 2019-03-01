@@ -55,7 +55,6 @@
 .parallax,
 #luck::before,
 #reviews::before,
-#programs-show .programs-show-teachers::before,
 .materials-page-item-content-img-hover,
 .jobs-page-item-img,
 .jobs-page-respond-img,
@@ -12717,7 +12716,8 @@ Media Queries
 }
 
 #programs-show {
-  padding-bottom: 80px;
+  margin-bottom: 80px;
+  background: #edfeff;
 }
 
 #programs-show .programs-show-teachers {
@@ -12726,15 +12726,6 @@ Media Queries
 
 #programs-show .programs-show-teachers .programs-show-description {
   margin-bottom: -40px;
-}
-
-#programs-show .programs-show-teachers::before {
-  content: '';
-  top: -400px;
-  left: -1000px;
-  right: -1000px;
-  background: #edfeff;
-  z-index: -10;
 }
 
 #programs-show .header-banner-slider-nav {
@@ -12783,6 +12774,10 @@ Media Queries
 
 .programs-show-item::before {
   top: 0;
+}
+
+#pr-materials {
+  padding-bottom: 80px;
 }
 
 #materials-page .page-secondary-title {

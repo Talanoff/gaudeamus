@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 
 use App\Models\Article\Review;
+use App\Models\Common\Aspect;
 use App\Models\Common\Quote;
 use App\Models\Common\Slides;
 use App\Models\Education\Course;
@@ -22,6 +23,7 @@ class HomeController extends Controller
             'courses' => Course::latest()->get(),
             'quote' => Quote::where('id', 3)->first(),
             'about' => Page::where('id', 3)->first(),
+            'aspects' => Aspect::latest()->take(3)->get(),
         ]);
     }
 }

@@ -77,7 +77,7 @@
             <div class="menu position-absolute d-flex align-items-center">
                 <ul class="menu-nav-list list-unstyled">
                     <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.about') }}" class="menu-nav-list-item__link">
                             о нас
                         </a>
                     </li>
@@ -122,7 +122,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.contacts') }}" class="menu-nav-list-item__link">
                             контакты
                         </a>
                     </li>

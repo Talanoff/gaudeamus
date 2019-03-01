@@ -31,11 +31,15 @@
                     </div>
                     <div class="col-sm-7">
                         <p class="programs-show-item__text">
-                            {!! str_limit($course->description, $limit = 500) !!}
+                        {!! $description[0] !!}
+                        {!! $description[1] !!}
+                        <div class="jobs-page-item">
+                            {!! $description[2] !!}
+                        </div>
                         </p>
 
                         <div class="text-right">
-                            <a href="#" class="more-info">Больше информации</a>
+                            <a href="#" id="open-jobs-page-all" class="more-info">Больше информации</a>
                         </div>
                     </div>
                 </div>
@@ -81,36 +85,43 @@
                 </div>
 
             </div>
-            @if($materials->count())
-            <div class="programs-show-materials position-relative">
-                <div class="programs-show-description">
-                    <h2 class="programs-show-description__title">Учебные материалы курса {{ $course->title }}</h2>
-                    <a href="{{ route('app.materials') }}" class="btn btn-outline-primary programs-show-description__btn">Еще</a>
-                </div>
-
-                <div class="row">
-                    @foreach($materials as $material)
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="materials-page-item-content-img materials-page-item-content-img--englishland">
-                            <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
-                            <div class="materials-page-item-content-img-hover">
-                                <h3 class="materials-page-item-content-img-hover__title">
-                                    {{ $material->title }}
-                                </h3>
-                                <p class="materials-page-item-content-img-hover__description">
-                                    {{ $material->description }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-
-                </div>
-            </div>
-                @endif
 
         </div>
 
+    </section>
+
+
+    <section id="pr-materials">
+        <div class="container">
+            @if($materials->count())
+                <div class="programs-show-materials position-relative">
+                    <div class="programs-show-description">
+                        <h2 class="programs-show-description__title">Учебные материалы курса {{ $course->title }}</h2>
+                        <a href="{{ route('app.materials') }}"
+                           class="btn btn-outline-primary programs-show-description__btn">Еще</a>
+                    </div>
+
+                    <div class="row">
+                        @foreach($materials as $material)
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="materials-page-item-content-img materials-page-item-content-img--englishland">
+                                    <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
+                                    <div class="materials-page-item-content-img-hover">
+                                        <h3 class="materials-page-item-content-img-hover__title">
+                                            {{ $material->title }}
+                                        </h3>
+                                        <p class="materials-page-item-content-img-hover__description">
+                                            {{ $material->description }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            @endif
+        </div>
     </section>
     @includeWhen($courses->count(), 'partials.app.sections.feedback')
 @endsection

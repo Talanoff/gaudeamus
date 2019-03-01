@@ -90,11 +90,16 @@ class RouteServiceProvider extends ServiceProvider
                     'unread' => Review::where('status', 'processing')->count(),
                 ],
                 [
-
                     'name' => 'Слайдер',
                     'route' => 'admin.slides.index',
                     'compare' => 'admin.slides.*',
                     'icon' => 'image',
+                ],
+                [
+                    'name' => 'Аспекты',
+                    'route' => 'admin.aspects.index',
+                    'compare' => 'admin.aspects.*',
+                    'icon' => 'refresh',
                 ],
                 [
                     'name' => 'Страницы',

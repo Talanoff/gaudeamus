@@ -4,7 +4,7 @@
             <div class="col-sm-12 col-lg-10">
                 <ul class="footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <li class="footer-menu-list-item">
-                        <a href="#" class="footer-menu-list-item__link">О НАС</a>
+                        <a href="{{ route('app.about') }}" class="footer-menu-list-item__link">О НАС</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.programs.index') }}" class="footer-menu-list-item__link">ПРОГРАММА И СТОИМОСТЬ</a>
@@ -37,7 +37,7 @@
                         <a href="{{ route('app.articles.index') }}" class="footer-menu-list-item__link">СТАТЬИ</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="#" class="footer-menu-list-item__link">КОНТАКТЫ</a>
+                        <a href="{{ route('app.contacts') }}" class="footer-menu-list-item__link">КОНТАКТЫ</a>
                     </li>
                 </ul>
             </div>

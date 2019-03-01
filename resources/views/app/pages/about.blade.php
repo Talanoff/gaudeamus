@@ -21,8 +21,8 @@
                 <div class="programs-show-description">
                     <h2 class="programs-show-description__title">{{ $about->description }}</h2>
                 </div>
-                <div class="section-description">
-                    <p class="about-item-description mt-4">
+                <div class="section">
+                    <p class="about-item-description">
                         {!! $about->body !!}
                     </p>
                 </div>

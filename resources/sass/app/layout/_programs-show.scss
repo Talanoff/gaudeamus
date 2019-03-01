@@ -1,5 +1,8 @@
 #programs-show {
-    padding-bottom: 80px;
+    margin-bottom: 80px;
+    background: #edfeff;
+
+
 
     .programs-show-teachers {
         margin-bottom: 80px;
@@ -7,16 +10,15 @@
         .programs-show-description {
             margin-bottom: -40px;
         }
-
-        &::before {
-            content: '';
-            @extend %pos;
-            top: -400px;
-            left: -1000px;
-            right: -1000px;
-            background: #edfeff;
-            z-index: -10;
-        }
+        //
+        //&::before {
+        //    content: '';
+        //    @extend %pos;
+        //    top: -400px;
+        //    left: -1000px;
+        //    right: -1000px;
+        //    z-index: -10;
+        //}
     }
 
     .header-banner-slider-nav {
@@ -61,4 +63,8 @@
     &::before {
         top: 0;
     }
+}
+
+#pr-materials {
+    padding-bottom: 80px;
 }
