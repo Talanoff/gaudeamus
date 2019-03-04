@@ -4,13 +4,16 @@ namespace App\Models\Article;
 
 
 use App\Models\User\User;
-use App\Traits\SlugableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
-class Review extends Model
+class Review extends Model implements HasMedia
 {
+    use HasMediaTrait;
+
     public static $STATUSES = [
         'processing',
         'confirmed',
@@ -22,11 +25,14 @@ class Review extends Model
         'user_name',
         'message',
         'status',
+        'video_id'
     ];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
     public function getAuthorNameAttribute()
     {
         return $this->author ? $this->author->name : $this->user_name;

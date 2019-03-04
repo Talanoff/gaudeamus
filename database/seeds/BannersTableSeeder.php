@@ -26,9 +26,8 @@ class BannersTableSeeder extends Seeder
             'Войти',
             'Регистрация',
             'Спасибо',
-            '404',
             'Откликнуться на вакансию',
-            'Запись на курс'
+            'Правила пользования сайтом'
         ];
 
         foreach ($banners as $item){

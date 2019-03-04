@@ -14,7 +14,7 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.reviews') }}" class="breadcrumbs-list-item__link">Отзывы</a>
+                    <a href="{{ route('app.reviews.index') }}" class="breadcrumbs-list-item__link">Отзывы</a>
                 </li>
             </ul>
 
@@ -58,6 +58,13 @@
                                                 {{ $review->message }}
                                             </p>
                                         </div>
+                                        @if($review->video_id )
+
+                                            <div class="reviews-slider-item-content-main-description">
+                                                <a href="https://www.youtube.com/embed/{{ $review->video_id }}"
+                                                   class="btn btn-outline-secondary text-primary">Видео отзыв</a>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -68,9 +75,6 @@
                                 <div class="reviews-slider-item-content-main-description">
                                     <h3 class="reviews-slider-item-content-main-description__text">
                                         Отзывов пока нет!
-                                        <br><br><br><br>
-                                        <br><br><br><br>
-                                        <br><br><br><br>
                                     </h3>
                                 </div>
                             </div>

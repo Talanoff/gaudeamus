@@ -14,7 +14,7 @@
                                 {{ $slide->body }}
                             </div>
                             <div class="text-right mt-4">
-                                <a href="#" class="btn btn-dark">Записаться</a>
+                                <a href="#feedback" class="btn btn-dark">Записаться</a>
                             </div>
                         </div>
                     </div>

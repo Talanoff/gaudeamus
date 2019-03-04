@@ -27,7 +27,7 @@
                         <h2 class="programs-show-item__title pb-3 mb-5">
                             {{ $course->title }}
                         </h2>
-                        <a href="#" class="btn btn-dark programs-show-item__btn mb-5 mb-sm-0">Записаться</a>
+                        <a href="#feedback" class="btn btn-dark programs-show-item__btn mb-5 mb-sm-0">Записаться</a>
                     </div>
                     <div class="col-sm-7">
                         <p class="programs-show-item__text">
@@ -52,7 +52,7 @@
                     <a href="{{ route('app.teachers.index') }}"
                        class="btn btn-outline-primary programs-show-description__btn">Все преподаватели</a>
                 </div>
-
+                @if($teachers->count())
                 <div class="programs-show-teachers-slider">
                     @foreach($teachers as $teacher)
                         <div class="programs-show-teachers-slider-item">
@@ -72,6 +72,7 @@
                         </div>
                     @endforeach
                 </div>
+                @endif
 
                 <div class="row">
                     <div class="col-sm-6 mx-auto">

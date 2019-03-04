@@ -25,7 +25,7 @@
             <div class="col-sm-12 col-lg-10">
                 <ul class="footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.reviews') }}" class="footer-menu-list-item__link">ОТЗЫВЫ</a>
+                        <a href="{{ route('app.reviews.index') }}" class="footer-menu-list-item__link">ОТЗЫВЫ</a>
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.galleries') }}" class="footer-menu-list-item__link">ФОТОГАЛЕРЕЯ</a>

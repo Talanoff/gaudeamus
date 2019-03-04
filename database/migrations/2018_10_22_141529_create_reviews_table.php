@@ -19,6 +19,7 @@ class CreateReviewsTable extends Migration
             $table->unsignedInteger('user_id')->nullable();
             $table->string('user_name')->nullable();
             $table->text('message');
+            $table->string('video_id')->nullable();
             $table->enum('status', \App\Models\Article\Review::$STATUSES)->default('processing');
             $table->timestamps();
         });

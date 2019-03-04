@@ -29,4 +29,12 @@ class PagesController extends Controller
         return\view('app.pages.contacts', compact('contacts', 'banner', 'quote'));
 
     }
+
+    public function rules()
+    {
+        $banner = Banner::where('id', 15)->first();
+        $rules = Page::where('id', 5)->first();
+
+        return \view ('app.pages/rules', compact('rules', 'banner'));
+    }
 }

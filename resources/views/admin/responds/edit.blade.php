@@ -21,6 +21,11 @@
                 <p class="mb-1">{{ $vacancy->title }}</p>
                 <p class="font-weight-bold mb-2">Заявка отправлена</p>
                 <p class="mb-1">{{ $respond->created_at->format(('d.m.Y \в H:i')) }}</p>
+                @if($respond->hasMedia('resume'))
+                <p class="font-weight-bold mb-2">Резюме</p>
+                    <a href="{{ $respond->getFirstMedia('resume')->getPath() }}">Файл</a>
+                    @dd($respond->getFirstMedia('resume'))
+                @endif
             </div>
 
             <div class="col-md">

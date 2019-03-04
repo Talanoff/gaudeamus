@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li class="menu-nav-list-item">
-                        <a href="{{ route('app.reviews') }}" class="menu-nav-list-item__link">
+                        <a href="{{ route('app.reviews.index') }}" class="menu-nav-list-item__link">
                             отзывы
                         </a>
                     </li>

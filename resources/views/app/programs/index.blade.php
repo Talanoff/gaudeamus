@@ -47,7 +47,7 @@
                                     {{ $course->price }} грн / месяц</span></div>
                             <a href="{{ route('app.programs.show', $course) }}" class="more-info">Подробнее</a>
                             <div class="text-center mt-4">
-                                <a href="#" class="btn btn-dark mr-lg-4">Выбрать</a>
+                                <a href="#feedback" class="btn btn-dark mr-lg-4">Выбрать</a>
                             </div>
                         </div>
                     </div>

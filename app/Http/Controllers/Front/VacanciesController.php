@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Requests\RespondStoreRequest;
 use App\Models\Common\Banner;
 use App\Models\Page\Respond;
 use App\Models\Page\Vacancy;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class VacanciesController extends Controller
@@ -13,13 +13,13 @@ class VacanciesController extends Controller
     public function index()
     {
         $banner = Banner::where('id' , 6)->first();
-        $bannerRespond = Banner::where('id' , 15)->first();
+        $bannerRespond = Banner::where('id' , 14)->first();
         $vacancies = Vacancy::latest('id')->get();
 
         return \view('app.vacancies.index', compact('banner', 'vacancies', 'bannerRespond'));
     }
 
-    public function store(Request $request)
+    public function store(RespondStoreRequest $request)
     {
 
         $respond = Respond::create([
@@ -28,6 +28,12 @@ class VacanciesController extends Controller
             'phone' => $request->input('phone'),
             'vacancy_id' => $request->input('vacancy_id'),
         ]);
+
+        if ($request->hasFile('resume')) {
+            $respond->addMediaFromRequest('resume')->toMediaCollection('resume');
+
+        }
+
         return \redirect()->route('app.thanks');
 
     }

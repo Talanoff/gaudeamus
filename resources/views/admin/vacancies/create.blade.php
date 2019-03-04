@@ -16,16 +16,6 @@
                         </div>
                     @endif
                 </div>
-                <div class="form-group{{ $errors->has('description') ? ' is-invalid' : '' }}">
-                    <label for="description">Описание</label>
-                    <wysiwyg name="description" class="mb-3"
-                             content="{{ old('description') }}" required></wysiwyg>
-                    @if($errors->has('description'))
-                        <div class="mt-1 text-danger">
-                            {{ $errors->first('description') }}
-                        </div>
-                    @endif
-                </div>
                 <div class="form-group{{ $errors->has('city') ? ' is-invalid' : '' }}">
                     <label for="city">Город</label>
                     <input type="text" class="form-control" id="city" name="city"
@@ -33,6 +23,16 @@
                     @if($errors->has('city'))
                         <div class="mt-1 text-danger">
                             {{ $errors->first('city') }}
+                        </div>
+                    @endif
+                </div>
+                <div class="form-group{{ $errors->has('description') ? ' is-invalid' : '' }}">
+                    <label for="description">Описание</label>
+                    <wysiwyg name="description" class="mb-3"
+                             content="{{ old('description') }}" required></wysiwyg>
+                    @if($errors->has('description'))
+                        <div class="mt-1 text-danger">
+                            {{ $errors->first('description') }}
                         </div>
                     @endif
                 </div>

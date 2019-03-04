@@ -7,7 +7,8 @@
                     <h2 class="section-description-title">Откликнуться на вакансию</h2>
                 </div>
 
-                <form action="{{ route('app.vacancies.create') }}" id="form-respond" method="post">
+                <form action="{{ route('app.vacancies.create') }}" id="form-respond" method="post"
+                      enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group-item d-flex flex-column justify-content-lg-start align-items-center">
@@ -36,7 +37,8 @@
                             <label for="file" class="form-control-label text-primary">Прикрепить
                                 <span class="label-placeholder__link text-primary">файл</span>
                                 с резюме (doc, txt)</label>
-                            <input type="file" class="form-control-file d-none" id="file">
+                            <input type="file" class="form-control-file d-none"
+                                   id="file" name="resume" accept=".doc, .docx, .txt, .pdf">
                         </div>
                         <div class="text-right w-100">
                             <button id="respond-btn" class="btn btn-dark text-white">Отправить</button>
@@ -48,7 +50,8 @@
         </div>
 
         <div class="col-sm-6">
-            <div class="jobs-page-respond-img" style="background-image: url({{ $bannerRespond->getFirstMediaUrl('banner') }});"></div>
+            <div class="jobs-page-respond-img"
+                 style="background-image: url({{ $bannerRespond->getFirstMediaUrl('banner') }});"></div>
         </div>
 
     </div>

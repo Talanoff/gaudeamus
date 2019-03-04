@@ -2,11 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('reviews', 'ReviewsController@index')->name('reviews');
-    Route::post('reviews', 'ReviewsController@store')->name('reviews.create');
     Route::get('faqs', 'FAQsController@index')->name('faqs');
     Route::get('thanks', 'ThanksController@index')->name('thanks');
     Route::get('galleries', 'GalleriesController@index')->name('galleries');
@@ -16,6 +12,7 @@ use Illuminate\Support\Facades\Route;
     Route::post('/', 'FeedbackController@store')->name('feedback.create');
     Route::get('about', 'PagesController@about')->name('about');
     Route::get('contacts', 'PagesController@contacts')->name('contacts');
+    Route::get('rules', 'PagesController@rules')->name('rules');
 
 Route::group([
     'as' => 'articles.',
@@ -39,9 +36,16 @@ Route::group([
     ], function () {
    Route::get('/', 'CoursesController@index')->name('index');
    Route::get('{course}', 'CoursesController@show')->name('show');
-
 });
 
+Route::group([
+    'as' => 'reviews.',
+    'prefix'=> 'reviews'
+], function (){
+    Route::get('/', 'ReviewsController@index')->name('index');
+    Route::post('/', 'ReviewsController@store')->name('create');
+});
 
+Route::get('test', 'ReviewsController@test');
 
 
