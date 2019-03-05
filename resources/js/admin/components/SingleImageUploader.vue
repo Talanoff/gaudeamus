@@ -1,8 +1,8 @@
 <template>
     <div class="form-group">
         <label class="position-relative image-uploader d-block p-4"
-               :class="{'bg-light': image === ''}">
-            <div class="text-center" v-if="image === ''">
+               :class="{'bg-light': !image}">
+            <div class="text-center" v-if="!image">
                 Загрузить изображение
             </div>
 
@@ -10,7 +10,7 @@
 
             <input type="file" :name="name ? name : 'image'" id="image" @change="handleImage">
 
-            <a @click.prevent="removeImage" v-if="image !== '' && image !== this.src"
+            <a @click.prevent="removeImage" v-if="!!image"
                class="btn btn-danger btn-delete d-flex justify-content-center align-items-center">
                 <svg width="16" height="16">
                     <use xlink:href="#delete"></use>

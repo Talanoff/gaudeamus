@@ -11,7 +11,7 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.materials') }}" class="breadcrumbs-list-item__link">Учебные материалы</a>
+                    <a href="{{ route('app.materials.index') }}" class="breadcrumbs-list-item__link">Учебные материалы</a>
                 </li>
             </ul>
 
@@ -42,7 +42,9 @@
                         <div class="row">
                             @foreach($course->getFirstMaterials() as $material)
                                 <div class="col-sm-6 col-lg-3">
-                                    <div class="materials-page-item-content-img materials-page-item-content-img--englishland">
+                                    <a href="{{ route('app.materials.modal', $material) }}"
+                                       class="materials-page-item-content-img materials-page-item-content-img--englishland"
+                                       @click.prevent="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
                                         <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
                                         <div class="materials-page-item-content-img-hover">
                                             <h3 class="materials-page-item-content-img-hover__title">
@@ -52,7 +54,7 @@
                                                 {{ $material->description }}
                                             </p>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -61,7 +63,9 @@
                             <div class="row collapse" id="show-more">
                                 @foreach($course->getHiddenMaterials() as $material)
                                     <div class="col-sm-6 col-lg-3">
-                                        <div class="materials-page-item-content-img materials-page-item-content-img--englishland">
+                                        <a href="{{ route('app.materials.modal', $material) }}"
+                                           class="materials-page-item-content-img materials-page-item-content-img--englishland"
+                                           @click="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
                                             <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
                                             <div class="materials-page-item-content-img-hover">
                                                 <h3 class="materials-page-item-content-img-hover__title">
@@ -71,7 +75,7 @@
                                                     {{ $material->description }}
                                                 </p>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 @endforeach
                             </div>
@@ -91,7 +95,9 @@
             </div>
 
         </div>
-        <div class="modal-mask"></div>
+
+        <materials-modal></materials-modal>
+
     </section>
     @includeWhen($courses->count(), 'partials.app.sections.feedback')
 @endsection

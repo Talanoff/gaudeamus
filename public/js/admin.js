@@ -30852,8 +30852,9 @@ module.exports = __webpack_require__(69);
 
 /***/ }),
 /* 69 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__(70);
 
 new Vue({
@@ -48563,10 +48564,10 @@ var render = function() {
       "label",
       {
         staticClass: "position-relative image-uploader d-block p-4",
-        class: { "bg-light": _vm.image === "" }
+        class: { "bg-light": !_vm.image }
       },
       [
-        _vm.image === ""
+        !_vm.image
           ? _c("div", { staticClass: "text-center" }, [
               _vm._v("\n            Загрузить изображение\n        ")
             ])
@@ -48581,7 +48582,7 @@ var render = function() {
           on: { change: _vm.handleImage }
         }),
         _vm._v(" "),
-        _vm.image !== "" && _vm.image !== this.src
+        !!_vm.image
           ? _c(
               "a",
               {

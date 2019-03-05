@@ -42,8 +42,8 @@
     }
 
     &-content {
-
         &-img {
+            display: block;
             position: relative;
             overflow: hidden;
             cursor: pointer;

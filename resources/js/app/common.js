@@ -59,18 +59,18 @@ import 'flickity/dist/flickity.css';
     }, 400);
   });
 
-  $('.materials-page-item-content-img').on('click', function (e) {
-    e.preventDefault();
-    $('.show-materials-modal').addClass('is-active animated bounceInUp');
-    $('.modal-mask').addClass('is-active');
-  });
-
-  $('#close-modal-materials').on('click', function () {
-    setTimeout(function () {
-      $('.show-materials-modal').removeClass('is-active bounceInUp');
-      $('.modal-mask').removeClass('is-active');
-    }, 400);
-  });
+  // $('.materials-page-item-content-img').on('click', function (e) {
+  //   e.preventDefault();
+  //   $('.show-materials-modal').addClass('is-active animated bounceInUp');
+  //   $('.modal-mask').addClass('is-active');
+  // });
+  //
+  // $('#close-modal-materials').on('click', function () {
+  //   setTimeout(function () {
+  //     $('.show-materials-modal').removeClass('is-active bounceInUp');
+  //     $('.modal-mask').removeClass('is-active');
+  //   }, 400);
+  // });
 
   $('#close-text-show-modal-materials').on('click', function (e) {
     e.preventDefault();

@@ -48,7 +48,6 @@
 .header-banner-slider-item,
 .modal-mask,
 .modal-feedback,
-.show-materials-modal,
 .show-materials-modal-img,
 #app-header,
 .header-item .logo::before,
@@ -11774,15 +11773,31 @@ section {
 }
 
 .show-materials-modal {
-  top: 720px;
-  bottom: auto;
+  position: fixed;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 680px;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+.show-materials-modal .modal-entry {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   padding-bottom: 80px;
   background: #fff;
   -webkit-box-shadow: 0px 24px 39px 15px rgba(0, 0, 0, 0.31);
           box-shadow: 0px 24px 39px 15px rgba(0, 0, 0, 0.31);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 9999;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (max-width: 576px) {
@@ -12818,6 +12833,7 @@ Media Queries
 }
 
 .materials-page-item-content-img {
+  display: block;
   position: relative;
   overflow: hidden;
   cursor: pointer;

@@ -10,7 +10,7 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.vacancies') }}" class="breadcrumbs-list-item__link">Вакансии</a>
+                    <a href="{{ route('app.vacancies.index') }}" class="breadcrumbs-list-item__link">Вакансии</a>
                 </li>
             </ul>
 

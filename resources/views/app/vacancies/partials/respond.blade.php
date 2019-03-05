@@ -7,7 +7,7 @@
                     <h2 class="section-description-title">Откликнуться на вакансию</h2>
                 </div>
 
-                <form action="{{ route('app.vacancies.create') }}" id="form-respond" method="post"
+                <form action="{{ route('app.vacancies.store') }}" id="form-respond" method="post"
                       enctype="multipart/form-data">
                     @csrf
 

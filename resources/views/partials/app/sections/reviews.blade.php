@@ -40,6 +40,12 @@
                                                       {{ $review->message }}
                                                   </p>
                                               </div>
+                                              @if($review->video_id )
+                                                  <div class="reviews-slider-item-content-main-description">
+                                                      <a href="https://www.youtube.com/embed/{{ $review->video_id }}"
+                                                         class="btn btn-outline-secondary text-primary">Видео отзыв</a>
+                                                  </div>
+                                              @endif
                                           </div>
                                       </div>
                                   </div>

@@ -2,8 +2,8 @@
 
 @section('content')
     <form action="{{ route('admin.materials.update', $material) }}" method="post" enctype="multipart/form-data">
-    @csrf
-    @method('patch')
+        @csrf
+        @method('patch')
 
         <div class="row">
             <div class="col-md-8">
@@ -36,6 +36,20 @@
                         </div>
                     @endif
                 </div>
+                <hr class="my-5">
+
+                <h4 class="mb-4">Книга</h4>
+                @if($material->hasMedia('book'))
+                    <p> Загруженый файл:
+                        <a href="{{ $material->getFirstMediaUrl('book') }}"
+                       download>{{ $material->getFirstMedia('book')->file_name }}</a></p>
+                    <label for="file" class="form-control-label">Заменить файл с материалом (pdf)</label>
+                @else
+                    <label for="file" class="form-control-label">Прикрепить файл с материалом (pdf)</label>
+                @endif
+                <input type="file" class="form-control-file"
+                       id="file" name="book" accept=".pdf">
+
                 <hr class="my-5">
 
                 <h4 class="mb-4">Курсы</h4>

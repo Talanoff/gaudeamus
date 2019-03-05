@@ -36,6 +36,14 @@
                 </div>
                 <hr class="my-5">
 
+                <h4 class="mb-4">Книга</h4>
+                <div class="form-group w-100">
+                    <label for="file" class="form-control-label">Прикрепить файл с материалом (pdf)</label>
+                    <input type="file" class="form-control-file"
+                           id="file" name="book" accept=".pdf">
+                </div>
+                <hr class="my-5">
+
                 <h4 class="mb-4">Курсы</h4>
 
                 <div class="row">

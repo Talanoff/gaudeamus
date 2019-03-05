@@ -98,14 +98,15 @@
                 <div class="programs-show-materials position-relative">
                     <div class="programs-show-description">
                         <h2 class="programs-show-description__title">Учебные материалы курса {{ $course->title }}</h2>
-                        <a href="{{ route('app.materials') }}"
+                        <a href="{{ route('app.materials.index') }}"
                            class="btn btn-outline-primary programs-show-description__btn">Еще</a>
                     </div>
 
                     <div class="row">
                         @foreach($materials as $material)
                             <div class="col-sm-6 col-lg-3">
-                                <div class="materials-page-item-content-img materials-page-item-content-img--englishland">
+                                <div class="materials-page-item-content-img materials-page-item-content-img--englishland"
+                                     @click="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
                                     <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
                                     <div class="materials-page-item-content-img-hover">
                                         <h3 class="materials-page-item-content-img-hover__title">
@@ -118,6 +119,7 @@
                                 </div>
                             </div>
                         @endforeach
+                            <materials-modal></materials-modal>
 
                     </div>
                 </div>

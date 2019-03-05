@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MaterialResource;
 use App\Models\Common\Banner;
 use App\Models\Education\Course;
+use App\Models\Education\Material;
 use App\Models\Page\Page;
 
 class CoursesController extends Controller
@@ -27,5 +29,9 @@ class CoursesController extends Controller
 
 
         return \view('app.programs.show', compact('course','teachers', 'materials', 'courses', 'description'));
+    }
+    public function getModalData(Material $material)
+    {
+        return response()->json(new MaterialResource($material));
     }
 }

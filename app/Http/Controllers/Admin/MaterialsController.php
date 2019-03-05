@@ -41,12 +41,17 @@ class MaterialsController extends Controller
             $material->addMediaFromRequest('material')
                 ->toMediaCollection('material');
         }
+        if ($request->hasFile('book')) {
+            $material->addMediaFromRequest('book')->toMediaCollection('book');
+
+        }
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
     public function edit(Material $material): View
     {
+
         return \view('admin.materials.edit', [
             'material' => $material,
             'courses' => Course::get(),
@@ -62,6 +67,11 @@ class MaterialsController extends Controller
             $material->clearMediaCollection('material');
             $material->addMediaFromRequest('material')
                 ->toMediaCollection('material');
+        }
+        if ($request->hasFile('book')) {
+            $material->clearMediaCollection('book');
+            $material->addMediaFromRequest('book')->toMediaCollection('book');
+
         }
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно сохранена.');
