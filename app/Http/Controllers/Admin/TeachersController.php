@@ -34,6 +34,7 @@ class TeachersController extends Controller
             'password' => bcrypt($request->get('email')),
             'phone' => $request->get('phone'),
             'birthday' => $request->get('birthday'),
+            'role_id' => '3',
         ]);
 
         $user->courses()->sync($request->get('courses'));

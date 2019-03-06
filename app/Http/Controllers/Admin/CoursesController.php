@@ -76,9 +76,7 @@ class CoursesController extends Controller
 
     public function destroy(Course $course)
     {
-        if ($course->image) {
-            Storage::delete($course->image);
-        }
+        $course->clearMediaCollection('course');
         $course->delete();
         return \redirect()->route('admin.courses.index')
             ->with('message', 'Запись успешно удалена.');

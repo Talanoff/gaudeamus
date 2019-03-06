@@ -1,7 +1,7 @@
 <footer id="app-footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-lg-10">
+            <div class="col-sm-12 col-lg-10 mx-auto">
                 <ul class="footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.about') }}" class="footer-menu-list-item__link">О НАС</a>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="row mt-3 mt-sm-5 mb-4">
-            <div class="col-sm-12 col-lg-10">
+            <div class="col-sm-12 col-lg-10 mx-auto">
                 <ul class="footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.reviews.index') }}" class="footer-menu-list-item__link">ОТЗЫВЫ</a>
@@ -43,24 +43,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 col-xl-2 ml-auto mr-0 d-flex align-items-center flex-column">
-                <div class="footer-list-title">Мы в соц.сетях</div>
-                <ul class="nav-social-list list-unstyled d-flex">
-                    @foreach(app('settings')['social'] as $social)
-                        <li class="nav-social-list-item mr-4">
-                            <a href="{{ $social->value }}" class="nav-social-list-item__link">
-                                <svg width="25" height="25">
-                                    <use xlink:href="#{{ $social->name }}-icon"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-sm-4 mx-auto">
                 <div class="footer-copyr text-center py-4">
+                    <div class="d-flex align-items-center mb-3">
+                    <div class="footer-list-title mr-3">Мы в соц.сетях</div>
+                    <ul class="nav-social-list list-unstyled d-flex mb-0">
+                        @foreach(app('settings')['social'] as $social)
+                            <li class="nav-social-list-item mr-4">
+                                <a href="{{ $social->value }}" class="nav-social-list-item__link">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#{{ $social->name }}-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                    </div>
                     <div class="footer-copyr__text">&copy; 2017 &ndash; {{ date('Y') }} Все права защищены.</div>
                     <div class="footer-copyr__text footer-copyr__text--big">Дизайн и разработка
                         <a href="https://impressionbureau.pro/" target="_blank">

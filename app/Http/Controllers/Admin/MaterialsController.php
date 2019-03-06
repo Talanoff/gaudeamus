@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Http\Controllers\Controller;
 use App\Models\Education\Course;
 use App\Models\Education\Material;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class MaterialsController extends Controller
@@ -60,7 +59,7 @@ class MaterialsController extends Controller
 
     public function update(Request $request, Material $material)
     {
-        $material->update($request->only('title', 'description', 'body')) ;
+        $material->update($request->only('title', 'description', 'body'));
         $material->course()->sync($request->input('courses'));
 
         if ($request->hasFile('material')) {
@@ -79,9 +78,8 @@ class MaterialsController extends Controller
 
     public function destroy(Material $material): RedirectResponse
     {
-        if ($material->image) {
-            Storage::delete($material->image);
-        }
+        $material->clearMediaCollection('material');
+        $material->clearMediaCollection('book');
         $material->delete();
         return \redirect()->route('admin.materials.index')
             ->with('message', 'Запись успешно удалена.');

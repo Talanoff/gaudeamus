@@ -1,11 +1,9 @@
 <!-- Feedback -->
 <section id="feedback">
     <div class="container">
-        <div class="col-sm-7">
-            <div class="section-description pb-2 mb-5">
-                <div class="section-description-name">Запишите Вашего ребенка на курс</div>
-                <h2 class="section-description-title">Записаться на курс английского языка</h2>
-            </div>
+        <div class="section-description pb-2 mb-5">
+            <div class="section-description-name">Запишите Вашего ребенка на курс</div>
+            <h2 class="section-description-title">Записаться на курс английского языка</h2>
         </div>
         <div class="row">
             <div class="col-12">

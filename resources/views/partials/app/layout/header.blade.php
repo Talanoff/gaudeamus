@@ -21,20 +21,20 @@
                 <li class="login-list-item">
                     @guest
                         <a href="{{ route('login') }}" class="login-list-item__link">
-                            <svg width="25" height="25">
+                            Войти
+                            <svg width="20" height="20">
                                 <use xlink:href="#user-icon"></use>
                             </svg>
-                            Войти
                         </a>
                     @endguest
                     @auth
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                            class="login-list-item__link">
-                            <svg width="25" height="25">
+                            Выйти
+                            <svg width="20" height="20">
                                 <use xlink:href="#user-icon"></use>
                             </svg>
-                            Выйти
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                   style="display: none;">
                                 @csrf
@@ -46,7 +46,7 @@
             <div class="decoration-line d-none d-lg-block"></div>
             <ul class="nav-social-list list-unstyled d-none d-lg-flex">
                 @foreach(app('settings')['social'] as $social)
-                    <li class="nav-social-list-item nav-social-list-ite--{{ $social->name }} mr-3">
+                    <li class="nav-social-list-item nav-social-list-item--{{ $social->name }} mr-3">
                         <a href="{{ $social->value }}" class="nav-social-list-item__link">
                             <svg width="25" height="25">
                                 <use xlink:href="#{{ $social->name }}-icon"></use>
@@ -126,6 +126,13 @@
                             контакты
                         </a>
                     </li>
+                    @auth
+                        <li class="menu-nav-list-item">
+                            <a href="{{ route('app.cabinet.index') }}" class="menu-nav-list-item__link">
+                                Личный кабинет
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Http\Controllers\Controller;
 use App\Models\Page\Vacancy;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
 class VacanciesController extends Controller
@@ -25,7 +25,7 @@ class VacanciesController extends Controller
     public function store(Request $request)
     {
 
-        $vacancy = Vacancy::create($request->only('title', 'description','responsibilities',
+        $vacancy = Vacancy::create($request->only('title', 'description', 'responsibilities',
             'requirements', 'work_day', 'part_time', 'contact', 'phone', 'city'));
         if ($request->hasFile('vacancy')) {
             $vacancy->addMediaFromRequest('vacancy')
@@ -40,24 +40,22 @@ class VacanciesController extends Controller
         return \view('admin.vacancies.edit', compact('vacancy'));
     }
 
-     public function update(Request $request, Vacancy $vacancy)
-{
-    $vacancy->update($request->only('title', 'description','responsibilities',
-        'requirements', 'work_day', 'part_time', 'contact', 'phone', 'city'));
-    if ($request->hasFile('vacancy')) {
-        $vacancy->clearMediaCollection('vacancy');
-        $vacancy->addMediaFromRequest('vacancy')
-            ->toMediaCollection('vacancy');
+    public function update(Request $request, Vacancy $vacancy)
+    {
+        $vacancy->update($request->only('title', 'description', 'responsibilities',
+            'requirements', 'work_day', 'part_time', 'contact', 'phone', 'city'));
+        if ($request->hasFile('vacancy')) {
+            $vacancy->clearMediaCollection('vacancy');
+            $vacancy->addMediaFromRequest('vacancy')
+                ->toMediaCollection('vacancy');
+        }
+        return \redirect()->route('admin.vacancies.index')
+            ->with('message', 'Запись успешно сохранена.');
     }
-    return \redirect()->route('admin.vacancies.index')
-        ->with('message', 'Запись успешно сохранена.');
-}
 
     public function destroy(Vacancy $vacancy)
     {
-        if ($vacancy->image) {
-            Storage::delete($vacancy->image);
-        }
+        $vacancy->clearMediaCollection('vacancy');
         $vacancy->delete();
         return \redirect()->route('admin.vacancies.index')
             ->with('message', 'Запись успешно удалена.');

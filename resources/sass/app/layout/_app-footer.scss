@@ -1,6 +1,6 @@
 #app-footer {
     position: relative;
-    padding-top: 70px;
+    padding-top: 40px;
     background: $dark;
     z-index: 99;
 
@@ -40,16 +40,16 @@
     font-size: 14px;
     color: #fff;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        width: 35px;
-        height: 1px;
-        background: $secondary;
-    }
+    //&::before {
+    //    content: '';
+    //    position: absolute;
+    //    top: 50%;
+    //    left: 0;
+    //    transform: translateY(-50%);
+    //    width: 35px;
+    //    height: 1px;
+    //    background: $secondary;
+    //}
 }
 
 .nav-social-list {

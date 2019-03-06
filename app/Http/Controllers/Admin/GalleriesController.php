@@ -54,9 +54,7 @@ class GalleriesController extends Controller
 
     public function destroy(Gallery $gallery)
     {
-        if ($gallery->image) {
-            Storage::delete($gallery->image);
-        }
+        $gallery->clearMediaCollection('gallery');
         $gallery->delete();
         return \redirect()->route('admin.galleries.index')
             ->with('message', 'Запись успешно удалена.');

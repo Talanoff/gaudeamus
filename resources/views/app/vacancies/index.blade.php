@@ -4,7 +4,7 @@
 
     <section id="jobs-page" class="section-page-secondary">
         <div class="container">
-            <div class="page-secondary-banner" style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
+            <div class="page-secondary-banner bg-gradient" style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
             <ul class="breadcrumbs-list list-unstyled d-flex">
                 <li class="breadcrumbs-list-item">
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>

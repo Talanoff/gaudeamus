@@ -2,6 +2,13 @@
     padding: 240px 0 225px;
     background: url('../../../images/bg/feedback-bg.jpg') 50% 50% /cover no-repeat;
 
+    .section-description {
+
+        &-title {
+            max-width: 100%;
+        }
+    }
+
     .container {
         position: relative;
 

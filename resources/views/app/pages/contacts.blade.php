@@ -3,7 +3,7 @@
 @section('content')
     <section id="contacts-page" class="section-page-secondary">
         <div class="container">
-            <div class="page-secondary-banner"
+            <div class="page-secondary-banner bg-gradient"
                  style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
             <ul class="breadcrumbs-list list-unstyled d-flex">
                 <li class="breadcrumbs-list-item">

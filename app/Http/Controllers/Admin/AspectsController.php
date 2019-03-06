@@ -66,9 +66,8 @@ class AspectsController extends Controller
 
     public function destroy(Aspect $aspect)
     {
-        if ($aspect->image) {
-            Storage::delete($aspect->image);
-        }
+        $aspect->clearMediaCollection('aspects_body');
+        $aspect->clearMediaCollection('aspects_header');
         $aspect->delete();
         return \redirect()->route('admin.aspects.index')
             ->with('message', 'Запись успешно удалена.');

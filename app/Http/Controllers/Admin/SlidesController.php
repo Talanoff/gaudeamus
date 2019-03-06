@@ -64,9 +64,7 @@ class SlidesController extends Controller
 
     public function destroy(Slides $slide)
     {
-        if ($slide->image) {
-            Storage::delete($slide->image);
-        }
+        $slide->clearMediaCollection('slides');
         $slide->delete();
         return \redirect()->route('admin.slides.index')
             ->with('message', 'Запись успешно удалена.');

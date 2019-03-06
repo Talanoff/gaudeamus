@@ -81,9 +81,13 @@
     @empty
         ...
     @endforelse
-
-    {{ $users->links() }}
-
+    <div class="row my-5">
+        <div class="col-sm-4">
+            <div class="pagination d-flex align-items-center">
+                {{ $users->links() }}
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('scripts')

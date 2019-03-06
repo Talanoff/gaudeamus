@@ -1,3 +1,12 @@
 section {
-    position: relative;
+	position: relative;
+}
+
+.bg-gradient {
+
+	&::before {
+		content: '';
+		@extend %pos;
+		background: linear-gradient(top, rgba(51,51,51,0.6) 0%,rgba(255,255,255,0) 100%);
+	}
 }

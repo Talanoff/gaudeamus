@@ -10,12 +10,13 @@
                     <div class="line line--left"></div>
                     <div class="line line--right"></div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6">
+                <div class="show-materials-modal-body">
+                    <div class="show-materials-modal-body-prev">
                         <div class="show-materials-modal-img"
-                             :style="{backgroundImage: `url(${material.image})`}"></div>
+                             :style="{backgroundImage: `url(${material.image})`}">
+                        </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="show-materials-modal-body-prev-main">
                         <div class="show-materials-modal-item">
                             <h2 class="show-materials-modal-item__title">{{ material.title }}</h2>
                             <p class="show-materials-modal-item__text">
@@ -23,13 +24,12 @@
                             </p>
                             <div class="show-materials-modal-item__text" v-html="material.body"></div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="show-materials-modal-item">
-                    <div class="text-right">
-                        <a href="#" class="more-info" @click.prevent="visible = false">
-                            Другие учебные материалы</a>
+                        <div class="show-materials-modal-item">
+                            <div class="text-right">
+                                <a href="#" class="more-info" @click.prevent="visible = false">
+                                    Другие учебные материалы</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,3 +62,27 @@
     }
   }
 </script>
+
+
+<!--<div class="row">-->
+<!--<div class="col-sm-6">-->
+<!--<div class="show-materials-modal-img"-->
+<!--:style="{backgroundImage: `url(${material.image})`}"></div>-->
+<!--</div>-->
+<!--<div class="col-sm-6">-->
+<!--<div class="show-materials-modal-item">-->
+<!--<h2 class="show-materials-modal-item__title">{{ material.title }}</h2>-->
+<!--<p class="show-materials-modal-item__text">-->
+<!--{{ material.description }}-->
+<!--</p>-->
+<!--<div class="show-materials-modal-item__text" v-html="material.body"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="show-materials-modal-item">-->
+<!--<div class="text-right">-->
+<!--<a href="#" class="more-info" @click.prevent="visible = false">-->
+<!--Другие учебные материалы</a>-->
+<!--</div>-->
+<!--</div>-->

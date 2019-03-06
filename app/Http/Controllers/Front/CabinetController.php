@@ -15,9 +15,8 @@ class CabinetController extends Controller
     {
         $banner = Banner::where('id', 16)->first();
         $user = Auth::user();
-        $materials = Material::latest()->get();
 
-        return \view('app.cabinet.index', compact('banner', 'user', 'materials'));
+        return \view('app.cabinet.index', compact('banner', 'user'));
     }
 
     public function update(Request $request)

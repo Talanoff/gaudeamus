@@ -13,7 +13,7 @@ class RespondsController extends Controller
     public function index()
     {
         return \view('admin.responds.index', [
-            'responds' => Respond::latest('id')->paginate(20),
+            'responds' => Respond::latest()->paginate(20),
         ]);
     }
 
@@ -35,6 +35,7 @@ class RespondsController extends Controller
 
     public function destroy(Respond $respond): RedirectResponse
     {
+        $respond->clearMediaCollection('resume');
         $respond->delete();
         return \redirect()->route('admin.responds.index')
             ->with('message', 'Запись успешно удалена.');

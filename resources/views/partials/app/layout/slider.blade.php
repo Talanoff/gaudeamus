@@ -2,7 +2,7 @@
 <section id="header-banner">
     <div class="header-banner-slider">
         @foreach ($slides as $slide)
-            <div class="header-banner-slider-item" style="background-image: url('{{ $slide->banner }}');">
+            <div class="header-banner-slider-item bg-gradient" style="background-image: url('{{ $slide->banner }}');">
                 <div class="container h-100 d-flex align-items-center">
                     <div class="col-sm-5 mx-auto">
                         <div class="header-banner-item text-white">

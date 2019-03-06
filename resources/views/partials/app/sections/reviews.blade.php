@@ -60,7 +60,7 @@
 
         <div class="row">
             <div class="col-sm-6 mx-auto">
-                <div class="header-banner-slider-nav d-flex align-items-center pl-5">
+                <div class="header-banner-slider-nav header-banner-slider-nav--reviews d-flex align-items-center pl-5">
                     <div class="header-banner-slider-nav-arrow mx-auto d-flex justify-content-between align-items-center">
                         <div class="header-banner-slider-nav-arrow-prev header-banner-slider-nav-arrow-prev--reviews"></div>
                         <div class="header-banner-slider-nav-arrow-next header-banner-slider-nav-arrow-next--reviews"></div>
@@ -70,7 +70,7 @@
         </div>
         <div class="row">
             <div class="col-sm-7 mx-auto d-flex flex-column flex-lg-row justify-content-between">
-                <a href="#" id="add-reviews-btn" class="btn btn-outline-light mb-4 mb-lg-0">Оставить отзыв</a>
+                <a href="#" id="add-reviews-btn" class="btn btn-outline-light text-primary mb-4 mb-lg-0">Оставить отзыв</a>
                 <a href="#" class="btn btn-dark">Записаться</a>
             </div>
         </div>

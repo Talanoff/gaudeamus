@@ -92,9 +92,7 @@ class ArticlesController extends Controller
      */
     public function destroy(Article $article)
     {
-        if ($article->image) {
-            Storage::delete($article->image);
-        }
+        $article->clearMediaCollection('article');
         $article->delete();
         return \redirect()->route('admin.articles.index')
             ->with('message', 'Запись успешно удалена.');
