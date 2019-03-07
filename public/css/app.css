@@ -10650,8 +10650,8 @@ section {
 
 .bg-gradient::before {
   content: '';
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(51, 51, 51, 0.6)), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(top, rgba(51, 51, 51, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(51, 51, 51, 0.6)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to top, rgba(51, 51, 51, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .section-description {
@@ -13666,9 +13666,6 @@ Media Queries
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -13676,7 +13673,7 @@ Media Queries
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 576px) {
   .cabinet-access-cod-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -13691,11 +13688,12 @@ Media Queries
 .cabinet-access-cod-item-img {
   position: relative;
   width: 100%;
+  margin-right: 120px;
   max-width: 145px;
   padding-top: 170px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 576px) {
   .cabinet-access-cod-item-img {
     margin: 20px;
   }
@@ -13720,7 +13718,7 @@ Media Queries
 }
 
 .cabinet-access-cod-item-description {
-  max-width: 230px;
+  max-width: 450px;
   color: #fff;
 }
 

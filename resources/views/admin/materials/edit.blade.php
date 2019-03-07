@@ -43,12 +43,12 @@
                     <p> Загруженый файл:
                         <a href="{{ $material->getFirstMediaUrl('book') }}"
                        download>{{ $material->getFirstMedia('book')->file_name }}</a></p>
-                    <label for="file" class="form-control-label">Заменить файл с материалом (pdf, mp4)</label>
+                    <label for="file" class="form-control-label">Заменить файл с материалом </label>
                 @else
-                    <label for="file" class="form-control-label">Прикрепить файл с материалом (pdf, mp4)</label>
+                    <label for="file" class="form-control-label">Прикрепить файл с материалом </label>
                 @endif
                 <input type="file" class="form-control-file"
-                       id="file" name="book" accept=".pdf, .mp4">
+                       id="file" name="book">
 
                 <hr class="my-5">
 

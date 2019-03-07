@@ -69,7 +69,7 @@
                                 <h3 class="articles-page-card__title">{{ $article->title }}</h3>
                                 <div class="articles-page-card-description">
                                     <p class="articles-page-card-description__text">
-                                        {{ str_limit($article->body, $limit = 100, $end = '...') }}
+                                        {!!  str_limit($article->body, $limit = 150, $end = '...') !!}
                                     </p>
                                 </div>
                             </a>

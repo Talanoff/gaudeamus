@@ -38,9 +38,9 @@
 
                 <h4 class="mb-4">Книга</h4>
                 <div class="form-group w-100">
-                    <label for="file" class="form-control-label">Прикрепить файл с материалом (pdf, mp4)</label>
+                    <label for="file" class="form-control-label">Прикрепить файл с материалом</label>
                     <input type="file" class="form-control-file"
-                           id="file" name="book" accept=".pdf, .mp4">
+                           id="file" name="book">
                 </div>
                 <hr class="my-5">
 

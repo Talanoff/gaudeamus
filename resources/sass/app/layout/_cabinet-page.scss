@@ -9,12 +9,11 @@
 
 .cabinet-access-cod-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 30px 0;
     border-bottom: 1px solid rgba(#fff, .25);
 
-    @media (max-width: map_get($grid-breakpoints, xl)) {
+    @media (max-width: map_get($grid-breakpoints, sm)) {
         flex-direction: column;
         justify-content: center;
     }
@@ -22,11 +21,12 @@
     &-img {
         position: relative;
         width: 100%;
+        margin-right: 120px;
         max-width: 145px;
         padding-top: 170px;
         @extend %img;
 
-        @media (max-width: map_get($grid-breakpoints, xl)) {
+        @media (max-width: map_get($grid-breakpoints, sm)) {
             margin: 20px;
         }
 
@@ -48,7 +48,7 @@
     }
 
     &-description {
-        max-width: 230px;
+        max-width: 450px;
         color: #fff;
 
         &__btn {

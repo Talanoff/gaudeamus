@@ -112,12 +112,11 @@
                             </form>
                         </div>
                         <div class="cabinet-page-tabs-body-item">
-
-                            @if($user->courses)
+                            @if($user->courses->count())
                                 <div class="cabinet-access-cod-content">
                                     @foreach($user->courses as $course)
                                         <div class="cabinet-access-cod-item-description">
-                                            <p class="cabinet-access-cod-item-description__text">
+                                            <p class="cabinet-access-cod-item-description__text mt-2">
                                                 Курс {{ $course->title }}
                                             </p>
                                             @foreach($course->materials as $material)
@@ -126,6 +125,9 @@
                                                         <div class="cabinet-access-cod-item-img"
                                                              style="background-image: url({{$material->getFirstMediaUrl('material') }});"></div>
                                                         <div class="cabinet-access-cod-item-description">
+                                                            <p class="cabinet-access-cod-item-description__text">
+                                                                {{ $material->title }}
+                                                            </p>
                                                             <a href="{{ $material->getFirstMediaUrl('book') }}" download
                                                                class="btn btn-outline-secondary cabinet-access-cod-item-description__btn text-white">Cкачать</a>
                                                         </div>
@@ -133,9 +135,12 @@
                                                 @endif
                                             @endforeach
                                         </div>
-
                                     @endforeach
                                 </div>
+                            @else
+                                <p class="cabinet-access-cod-item-description__text text-white">
+                                    У вас пока нет записей на курсы!
+                                </p>
                             @endif
                         </div>
                     </div>
