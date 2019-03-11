@@ -52,7 +52,7 @@
     @empty
         Аспекты пока не созданы!
     @endforelse
-
+    {{ $aspects->links() }}
 @endsection
 
 @push('scripts')

@@ -47,7 +47,7 @@
     @empty
         Записей на курсы пока нет!
     @endforelse
-
+    {{ $feedbacks->links() }}
 @endsection
 
 @push('scripts')

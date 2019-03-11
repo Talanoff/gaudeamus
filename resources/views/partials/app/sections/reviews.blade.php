@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-sm-7 mx-auto d-flex flex-column flex-lg-row justify-content-between">
                 <a href="#" id="add-reviews-btn" class="btn btn-outline-light text-primary mb-4 mb-lg-0">Оставить отзыв</a>
-                <a href="#" class="btn btn-dark">Записаться</a>
+                <a href="#feedback" class="btn btn-dark">Записаться</a>
             </div>
         </div>
         @include('app.reviews.partials.review')

@@ -14,7 +14,7 @@ class ReviewsController extends Controller
     public function index(): View
     {
         return \view('admin.reviews.index', [
-            'reviews' => Review::latest('id')->get(),
+            'reviews' => Review::latest('id')->paginate(20),
         ]);
     }
 

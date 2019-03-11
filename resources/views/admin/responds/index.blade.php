@@ -47,7 +47,7 @@
     @empty
         Откликов на вакансии пока нет!
     @endforelse
-
+    {{ $responds->links() }}
 @endsection
 
 @push('scripts')

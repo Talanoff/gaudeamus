@@ -15,7 +15,7 @@ class MaterialsController extends Controller
     public function index(): View
     {
         return \view('admin.materials.index', [
-            'materials' => Material::latest('id')->get()
+            'materials' => Material::paginate(20)
         ]);
     }
 

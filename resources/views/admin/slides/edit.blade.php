@@ -18,7 +18,7 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('description') ? ' is-invalid' : '' }}">
-                    <label for="description">Описание</label>
+                    <label for="description">Заголовок</label>
                     <textarea type="text" class="form-control" id="description"
                               name="description" required>{{ old('body') ?? $slide->description }}</textarea>
                     @if($errors->has('description'))

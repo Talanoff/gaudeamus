@@ -57,7 +57,7 @@
     @empty
         Фото пока не созданы!
     @endforelse
-
+    {{ $galleries->links() }}
 @endsection
 
 @push('scripts')

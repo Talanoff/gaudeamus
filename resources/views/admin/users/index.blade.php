@@ -63,14 +63,14 @@
                         </a>
                     </p>
                     <p class="mb-0">
-                        <a href="{{ route('admin.users.destroy', $user) }}"
+                        <a href="{{ route('admin.'. $route .'.destroy', $user) }}"
                            class="btn btn-sm btn-danger" onclick="confirmDelete({{ $user->id }})">
                             <svg width="16" height="16" style="fill: #fff;">
                                 <use xlink:href="#delete"></use>
                             </svg>
                         </a>
                     </p>
-                    <form action="{{ route('admin.users.destroy', $user) }}"
+                    <form action="{{ route('admin.'. $route .'.destroy', $user) }}"
                           id="delete-form-{{ $user->id }}" method="post" style="display: none;">
                         @csrf
                         @method('delete')
@@ -81,13 +81,9 @@
     @empty
         ...
     @endforelse
-    <div class="row my-5">
-        <div class="col-sm-4">
-            <div class="pagination d-flex align-items-center">
+
                 {{ $users->links() }}
-            </div>
-        </div>
-    </div>
+
 @endsection
 
 @push('scripts')

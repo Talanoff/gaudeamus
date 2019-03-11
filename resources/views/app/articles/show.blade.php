@@ -18,59 +18,55 @@
                 <h2 class="page-secondary-title text-white">Cтатьи</h2>
 
                 <div class="articles-show-content">
-                    <div class="row">
-                        <div class="col-sm-10 mx-auto px-5 px-sm-0">
-                            <h2 class="articles-show-title py-3 mb-3">
-                                {{ $article->title }}
-                            </h2>
-                        </div>
+                    <div class="articles-show-content-row">
+                        <h2 class="articles-show-title py-3 mb-3">
+                            {{ $article->title }}
+                        </h2>
                     </div>
-                    <div class="row">
-                            <div class="col-12">
-                                <div class="article-item">
-                                    @if($article->hasMedia('article'))
-                                    <div class="articles-show-img"
-                                         style="background-image: url({{ $article->getFirstMediaUrl('article') }});"></div>
-                                    @endif
-                                    <div class="content">
-                                        <div class="articles-show-item">
-                                            <div class="articles-show-item-info">
-                                                <div class="articles-show-item-info-row mb-3 d-flex justify-content-between align-items-center">
-                                                    <div class="articles-show-item-info__text">
-                                                        {{ $article->created_at }}
-                                                    </div>
-                                                    <div class="articles-show-item-info-views d-flex justify-content-center align-items-center">
-                                                        <svg width="20" height="15">
-                                                            <use xlink:href="#views-icon"></use>
-                                                        </svg>
-                                                        <div class="articles-show-item-info__text ml-2">
-                                                            {{ $article->views_count }}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="articles-show-item-info-row">
-                                                    <div class="articles-show-item-info__text mb-3">
-                                                        {{ $article->author_name }}
-                                                    </div>
-                                                    @if($article->tags->count())
-                                                        @foreach($article->tags as $tag)
-                                                            <div class="articles-show-item-info__whom">
-                                                                {{ $tag->title }}
-                                                            </div>
-                                                        @endforeach
-                                                    @endif
+                    <div class="articles-show-content-row">
+                        <div class="article-item">
+                            @if($article->hasMedia('article'))
+                                <div class="articles-show-img"
+                                     style="background-image: url({{ $article->getFirstMediaUrl('article') }});"></div>
+                            @endif
+
+                            <div class="content">
+                                <div class="articles-show-item">
+                                    <div class="articles-show-item-info">
+                                        <div class="articles-show-item-info-row mb-3 d-flex justify-content-between align-items-center">
+                                            <div class="articles-show-item-info__text">
+                                                {{ $article->created_at }}
+                                            </div>
+                                            <div class="articles-show-item-info-views d-flex justify-content-center align-items-center">
+                                                <svg width="20" height="15">
+                                                    <use xlink:href="#views-icon"></use>
+                                                </svg>
+                                                <div class="articles-show-item-info__text ml-2">
+                                                    {{ $article->views_count }}
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="articles-show-item__text">
-                                            {!! $article->body  !!}
-                                        </p>
+                                        <div class="articles-show-item-info-row">
+                                            <div class="articles-show-item-info__text mb-3">
+                                                {{ $article->author_name }}
+                                            </div>
+                                            @if($article->tags->count())
+                                                @foreach($article->tags as $tag)
+                                                    <div class="articles-show-item-info__whom">
+                                                        {{ $tag->title }}
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
+                                <p class="articles-show-item__text">
+                                    {!! $article->body  !!}
+                                </p>
                             </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -92,7 +88,7 @@
                     @foreach($interested as $item)
                         @if($item->hasMedia('article'))
                             <div class="col-sm-5 col-lg-4 px-2 mb-3 mb-lg-0 mx-auto mx-lg-0">
-                                <a href="{{ route('app.articles.show', $article) }}"
+                                <a href="{{ route('app.articles.show', $item) }}"
                                    class="articles-page-card articles-page-card--simple articles-page-card--img">
                                     <div class="articles-page-card__img"
                                          style="background-image: url({{ $item->getFirstMediaUrl('article') }});"></div>
@@ -102,14 +98,14 @@
                         @else
 
                             <div class="col-sm-5 col-lg-4 px-2 mx-auto mx-lg-0">
-                                <a href="{{ route('app.articles.show', $article) }}"
+                                <a href="{{ route('app.articles.show', $item) }}"
                                    class="articles-page-card articles-page-card--simple">
                                     <h3 class="articles-page-card__title">
                                         {{ $item->title }}
                                     </h3>
                                     <div class="articles-page-card-description">
                                         <p class="articles-page-card-description__text">
-                                            {{ str_limit($item->body, $limit = 100, $end = '...') }}
+                                            {!! str_limit($item->body, $limit = 100, $end = '...') !!}
                                         </p>
                                     </div>
                                 </a>

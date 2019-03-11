@@ -63,7 +63,7 @@
     @empty
        Материалы пока не созданы!
     @endforelse
-
+    {{ $materials->links() }}
 @endsection
 
 @push('scripts')

@@ -56,7 +56,7 @@
     @empty
         Отзывов пока нет!
     @endforelse
-
+    {{ $reviews->links() }}
 @endsection
 
 @push('scripts')

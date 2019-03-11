@@ -62,7 +62,7 @@
     @empty
         Статьи пока не созданы!
     @endforelse
-
+    {{ $articles->links() }}
 @endsection
 
 @push('scripts')

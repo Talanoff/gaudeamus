@@ -53,7 +53,7 @@
     @empty
         Тэги пока не созданы!
     @endforelse
-
+    {{ $tags->links() }}
 @endsection
 
 @push('scripts')

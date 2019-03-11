@@ -13,10 +13,9 @@ class CabinetController extends Controller
 {
     public function index()
     {
-        $banner = Banner::where('id', 16)->first();
         $user = Auth::user();
 
-        return \view('app.cabinet.index', compact('banner', 'user'));
+        return \view('app.cabinet.index', compact('user'));
     }
 
     public function update(Request $request)
@@ -32,7 +31,7 @@ class CabinetController extends Controller
             Auth::user()->update(['password' => $password]);
         }
 
-        return \redirect()->route('app.cabinet.index') ->with('message', 'Изменения успешно сохранены.');
+        return \redirect()->route('app.cabinet.index')->with('message', 'Изменения успешно сохранены.');
     }
 
 }
