@@ -53,7 +53,7 @@
             },
             removeImage(e) {
                 if (this.imageId) {
-                    axios.delete(`/admin/product/media/${this.imageId}/delete`)
+                    axios.delete(`/admin/media/${this.imageId}`)
                         .then(() => this.image = '');
                 } else {
                     this.image = '';

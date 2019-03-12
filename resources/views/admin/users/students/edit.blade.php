@@ -74,7 +74,7 @@
             </div>
 
             <div class="col-md-4">
-                <image-uploader name="avatar" src="{{ $user->avatar }}"></image-uploader>
+                <image-uploader name="avatar" image-id="{{ optional($user->getFirstMedia('avatar'))->id }}" src="{{ $user->avatar }}"></image-uploader>
             </div>
         </div>
 

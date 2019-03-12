@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <image-uploader name="gallery" src="{{ $gallery->getFirstMediaUrl('gallery') }}"></image-uploader>
+                <image-uploader name="gallery" image-id="{{ optional($gallery->getFirstMedia('gallery'))->id }}" src="{{ $gallery->getFirstMediaUrl('gallery') }}"></image-uploader>
             </div>
         </div>
         <div class="mt-4">

@@ -48541,7 +48541,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             if (this.imageId) {
-                axios.delete('/admin/product/media/' + this.imageId + '/delete').then(function () {
+                axios.delete('/admin/media/' + this.imageId).then(function () {
                     return _this.image = '';
                 });
             } else {

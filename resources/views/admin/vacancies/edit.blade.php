@@ -101,7 +101,8 @@
 
             </div>
             <div class="col-md-4">
-                <image-uploader name="vacancy" src="{{ $vacancy->getFirstMediaUrl('vacancy') }}"></image-uploader>
+                <image-uploader name="vacancy" image-id="{{ optional($vacancy->getFirstMedia('vacancy'))->id }}"
+                                src="{{ $vacancy->getFirstMediaUrl('vacancy') }}"></image-uploader>
             </div>
         </div>
         <div class="mt-4">

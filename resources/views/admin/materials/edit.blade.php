@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <image-uploader name="material" src="{{ $material->getFirstMediaUrl('material') }}"></image-uploader>
+                <image-uploader name="material" image-id="{{ optional($material->getFirstMedia('material'))->id }}" src="{{ $material->getFirstMediaUrl('material') }}"></image-uploader>
             </div>
         </div>
         <div class="mt-4">

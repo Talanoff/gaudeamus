@@ -29,11 +29,13 @@
                 </div>
                 <hr class="my-5">
                 <label>Картинка к тексту</label>
-                <image-uploader name="aspects_body" src="{{ $aspect->getFirstMediaUrl('aspects_body') }}"></image-uploader>
+                <image-uploader name="aspects_body" image-id="{{ optional($aspect->getFirstMedia('aspects_body'))->id }}"
+                                src="{{ $aspect->getFirstMediaUrl('aspects_body') }}"></image-uploader>
             </div>
             <div class="col-md-4">
                 <label>Заглавная картинка</label>
-                <image-uploader name="aspects_header" src="{{ $aspect->getFirstMediaUrl('aspects_header') }}"></image-uploader>
+                <image-uploader name="aspects_header" image-id="{{ optional($aspect->getFirstMedia('aspects_header'))->id }}"
+                                src="{{ $aspect->getFirstMediaUrl('aspects_header') }}"></image-uploader>
                 
             </div>
         </div>

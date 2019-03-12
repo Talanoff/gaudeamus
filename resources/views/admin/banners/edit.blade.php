@@ -13,7 +13,8 @@
                 <h4> {{ $banner->title }} </h4>
             </div>
             <div class="col-md-4">
-                <image-uploader name="banner" src="{{ $banner->getFirstMediaUrl('banner') }}"></image-uploader>
+                <image-uploader name="banner" image-id="{{ optional($banner->getFirstMedia('banner'))->id }}"
+                                src="{{ $banner->getFirstMediaUrl('banner') }}"></image-uploader>
             </div>
         </div>
         <div class="mt-4">

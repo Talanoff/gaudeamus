@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <image-uploader name="slides" src="{{ $slide->getFirstMediaUrl('slides') }}"></image-uploader>
+                <image-uploader name="slides" image-id="{{ optional($slide->getFirstMedia('slides'))->id }}" src="{{ $slide->getFirstMediaUrl('slides') }}"></image-uploader>
             </div>
         </div>
         <div class="mt-4">
