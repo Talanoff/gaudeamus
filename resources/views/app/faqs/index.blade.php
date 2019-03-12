@@ -11,11 +11,11 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.faqs') }}" class="breadcrumbs-list-item__link">Воспросы</a>
+                    <a href="{{ route('app.faqs') }}" class="breadcrumbs-list-item__link">Вопросы</a>
                 </li>
             </ul>
 
-            <h2 class="page-secondary-title page-secondary-title--big-margin text-white">Воспросы</h2>
+            <h2 class="page-secondary-title page-secondary-title--big-margin text-white">Вопросы</h2>
 
             <div class="questions-page-content">
                 <div class="row">

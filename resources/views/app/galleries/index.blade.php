@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <!-- @TODO fullscreen slider -->
+             
 
                 <div class="gallery-page-slider-num">
                     <div class="gallery-page-slider-num-item gallery-page-slider-num-item-index"></div>
