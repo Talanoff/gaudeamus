@@ -6,8 +6,8 @@
                             src="../../../../images/icon/logo/logo.png" alt="logo"></a>
             </div>
             <div class="search d-none d-sm-flex align-items-center">
-                <form id="form-search" class="form form--search">
-                    <input class="form-control" type="search" placeholder="Поиск...">
+                <form id="form-search" class="form form--search" action="{{ route('app.search') }}" method="get">
+                    <input class="form-control" type="search" name="search" placeholder="Поиск...">
                     <div class="search-btn position-absolute">
                         <svg width="25" height="25">
                             <use xlink:href="#search-icon"></use>

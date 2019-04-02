@@ -8,7 +8,7 @@ Route::group([
     'as' => 'admin',
     'prefix' => 'admin',
     'namespace' => 'Admin',
-    'middleware' => ['auth'],
+    'middleware' => ['auth', 'user.admin'],
 ], function () {
     require_once(base_path('routes/web.admin.php'));
     MediaRoutes::get();

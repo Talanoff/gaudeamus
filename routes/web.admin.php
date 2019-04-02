@@ -2,31 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'DashboardController@index')->name('.index');
+Route::get('/', 'BannersController@index')->name('.index');
 
 Route::group([
     'as' => '.',
 ], function () {
-    Route::resource('articles', 'ArticlesController');
-    Route::resource('tags', 'TagsController');
-    Route::resource('faq', 'FaqsController');
-    Route::resource('reviews', 'ReviewsController');
-    Route::resource('courses', 'CoursesController');
-    Route::resource('materials', 'MaterialsController');
-    Route::resource('pages', 'PagesController');
-    Route::resource('vacancies', 'VacanciesController');
-    Route::resource('responds', 'RespondsController');
-    Route::resource('users', 'UsersController');
-    Route::resource('teachers', 'TeachersController');
-    Route::resource('students', 'StudentsController');
-    Route::resource('banners', 'BannersController');
-    Route::resource('galleries','GalleriesController');
-    Route::resource('feedback','FeedbackController');
-    Route::resource('quotes', 'QuotesController');
-    Route::resource('aspects', 'AspectsController');
+    Route::resource('articles', 'ArticlesController')->except('show');
+    Route::resource('tags', 'TagsController')->except('show');
+    Route::resource('faq', 'FaqsController')->except('show');
+    Route::resource('reviews', 'ReviewsController')->except('create', 'store', 'show');
+    Route::resource('courses', 'CoursesController')->except('show');
+    Route::resource('materials', 'MaterialsController')->except('show');
+    Route::resource('pages', 'PagesController')->except('show', 'create', 'store', 'destroy');
+    Route::resource('vacancies', 'VacanciesController')->except('show');
+    Route::resource('responds', 'RespondsController')->except('create', 'store', 'show');
+    Route::resource('users', 'UsersController')->except('show');
+    Route::resource('teachers', 'TeachersController')->except('show');
+    Route::resource('students', 'StudentsController')->except('show');
+    Route::resource('banners', 'BannersController')->except('show', 'create', 'store', 'destroy');
+    Route::resource('galleries', 'GalleriesController')->except('show');
+    Route::resource('feedback', 'FeedbackController')->except('create', 'store', 'show');
+    Route::resource('quotes', 'QuotesController')->except('show', 'create', 'store', 'destroy');
+    Route::resource('aspects', 'AspectsController')->except('show');
     Route::delete('media/{media}', 'MediaController@destroy')->name('media.delete');
 
-    Route::resource('slides', 'SlidesController');
+    Route::resource('slides', 'SlidesController')->except('show');
 
     Route::group([
         'as' => 'settings.',

@@ -8,6 +8,7 @@ Route::post('/', 'FeedbackController@store')->name('feedback.create');
 Route::get('faqs', 'FAQsController@index')->name('faqs');
 Route::get('thanks', 'ThanksController@index')->name('thanks');
 Route::get('galleries', 'GalleriesController@index')->name('galleries');
+Route::get('search', 'SearchController@index')->name('search');
 
 Route::get('about', 'PagesController@about')->name('about');
 Route::get('contacts', 'PagesController@contacts')->name('contacts');

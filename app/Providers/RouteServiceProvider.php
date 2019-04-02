@@ -40,16 +40,10 @@ class RouteServiceProvider extends ServiceProvider
         View::composer(['admin.*'], function () {
             View::share('nav', [
                 [
-                    'name' => 'Панель управления',
-                    'route' => 'admin.index',
-                    'compare' => 'admin.index',
+                    'name' => 'Баннеры',
+                    'route' => 'admin.banners.index',
+                    'compare' => 'admin.banners.*',
                     'icon' => 'dashboard',
-                    'submenu' => [
-                        'banner' => [
-                            'name' => 'Баннеры',
-                            'route' => 'admin.banners.index',
-                        ],
-                    ]
                 ],
                 [
                     'name' => 'Курсы',
