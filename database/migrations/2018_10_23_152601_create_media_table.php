@@ -23,7 +23,7 @@ class CreateMediaTable extends Migration
             $table->json('manipulations')->nullable();
             $table->json('custom_properties')->nullable();
             $table->json('responsive_images')->nullable();
-            $table->integer('order_column')->nullable();
+            $table->unsignedInteger('order_column')->nullable();
             $table->nullableTimestamps();
         });
     }
