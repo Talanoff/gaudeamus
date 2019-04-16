@@ -20,9 +20,9 @@ class CreateMediaTable extends Migration
             $table->string('mime_type')->nullable();
             $table->string('disk');
             $table->unsignedInteger('size');
-            $table->json('manipulations')->nullable();
-            $table->json('custom_properties')->nullable();
-            $table->json('responsive_images')->nullable();
+            $table->text('manipulations')->nullable();
+            $table->text('custom_properties')->nullable();
+            $table->text('responsive_images')->nullable();
             $table->unsignedInteger('order_column')->nullable();
             $table->nullableTimestamps();
         });
