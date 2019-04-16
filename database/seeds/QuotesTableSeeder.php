@@ -16,6 +16,7 @@ class QuotesTableSeeder extends Seeder
             'Контакты',
             'O нас'
         ];
+
         foreach ($quotes as $quote) {
             $quote = \App\Models\Common\Quote::create([
                 'title' => $quote,
