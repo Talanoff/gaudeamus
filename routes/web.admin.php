@@ -9,7 +9,7 @@ Route::group([
 ], function () {
     Route::resource('articles', 'ArticlesController')->except('show');
     Route::resource('tags', 'TagsController')->except('show');
-    Route::resource('faq', 'FaqsController')->except('show');
+    Route::resource('faq', 'FAQsController')->except('show');
     Route::resource('reviews', 'ReviewsController')->except('create', 'store', 'show');
     Route::resource('courses', 'CoursesController')->except('show');
     Route::resource('materials', 'MaterialsController')->except('show');
