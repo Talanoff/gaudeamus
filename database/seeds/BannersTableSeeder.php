@@ -33,7 +33,7 @@ class BannersTableSeeder extends Seeder
         foreach ($banners as $item){
             $banner = \App\Models\Common\Banner::create([
                 'title' => $item,
-            ])->addMediaFromUrl($faker->imageUrl(1920, 900))
+            ])->addMediaFromUrl('https://picsum.photos/800/600')
                 ->toMediaCollection('banner');
         }
 
