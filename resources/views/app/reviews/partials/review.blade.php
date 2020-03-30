@@ -40,13 +40,13 @@
 
                         <div class="form-group-footer d-flex flex-column flex-lg-row justify-content-between align-items-center">
                             <div class="form-group-footer-item">
-                                <div class="form-group">
+                                {{--<div class="form-group">
                                     <label for="file--modal-feedback" class="form-control-label">Загрузить
                                         <span class="label-placeholder__link">файл</span>
                                         с видеоотзывом (mp4, avi)</label>
                                     <input type="file" name="video" accept="video/*" class="form-control-file d-none"
                                            id="file--modal-feedback">
-                                </div>
+                                </div>--}}
 
                                 <div class="form-group form-check">
                                     <input type="checkbox" name="confirm"
