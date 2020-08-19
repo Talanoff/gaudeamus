@@ -12,7 +12,7 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($banner->hasMedia('banner'))
-                        <img src="{{ $banner->getFirstMediaUrl('banner', 'thumb') }}" class="rounded-circle"
+                        <img src="{{ $banner->preview_image }}" class="rounded-circle"
                              alt="{{ $banner->title }}" style="width: 100px;">
                     @else
                         <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
