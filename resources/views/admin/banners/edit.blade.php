@@ -2,21 +2,13 @@
 
 @section('content')
     <form action="{{ route('admin.banners.update', $banner) }}" method="post" enctype="multipart/form-data">
-    @csrf
-    @method('patch')
+        @csrf
+        @method('patch')
 
-        <div class="row">
-            <div class="col-md-8">
-                <h2> Баннер </h2>
-                <h3> для страницы </h3>
-            <br>
-                <h4> {{ $banner->title }} </h4>
-            </div>
-            <div class="col-md-4">
-                <image-uploader name="banner" image-id="{{ optional($banner->getFirstMedia('banner'))->id }}"
-                                src="{{ $banner->getFirstMediaUrl('banner') }}"></image-uploader>
-            </div>
-        </div>
+        <h1 class="h3">Баннер для страницы {{ $banner->title }}</h1>
+        <image-uploader name="banner" image-id="{{ optional($banner->getFirstMedia('banner'))->id }}"
+                        src="{{ $banner->getFirstMediaUrl('banner') }}"></image-uploader>
+
         <div class="mt-4">
             <button class="btn btn-primary">
                 Обновить
