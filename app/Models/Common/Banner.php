@@ -42,12 +42,12 @@ class Banner extends Model implements HasMedia
      */
     public function getPreviewImageAttribute()
     {
-        $media = 'images/no-image.png';
+        $media = asset('images/no-image.png');
 
-        if ($this->hasMedia('banner')) {
-            $media = substr($this->getFirstMediaUrl('banner', 'preview'), 1);
+        if ($this->hasMedia('banners')) {
+            $media = $this->getFirstMedia('banner')->getFullUrl('thumb');
         }
 
-        return asset($media);
+        return $media;
     }
 }
