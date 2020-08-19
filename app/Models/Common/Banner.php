@@ -19,7 +19,7 @@ class Banner extends Model implements HasMedia
     public function registerMediaCollections()
     {
         $this
-            ->addMediaCollection('banners')
+            ->addMediaCollection('banner')
             ->registerMediaConversions(function (Media $media = null) {
                 $this
                     ->addMediaConversion('thumb')
@@ -44,8 +44,8 @@ class Banner extends Model implements HasMedia
     {
         $media = asset('images/no-image.png');
 
-        if ($this->hasMedia('banners')) {
-            $media = $this->getFirstMedia('banners')->getFullUrl('thumb');
+        if ($this->hasMedia('banner')) {
+            $media = $this->getFirstMedia('banner')->getFullUrl('thumb');
         }
 
         return $media;

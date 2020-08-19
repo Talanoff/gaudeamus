@@ -29,8 +29,7 @@ class BannersController extends Controller
 
         if ($request->hasFile('banner')) {
             $banner->clearMediaCollection('banner');
-            $banner->addMediaFromRequest('banner')
-                ->toMediaCollection('banner');
+            $banner->addMediaFromRequest('banner')->toMediaCollection('banner');
         }
 
         return \redirect()->route('admin.banners.index')
