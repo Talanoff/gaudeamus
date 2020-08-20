@@ -58,6 +58,7 @@ class User extends Authenticatable implements HasMedia
         $tables = $this->hasRole('teacher')
             ? ['courses_teachers', 'teacher_id']
             : ['courses_students', 'student_id'];
+
         return $this->belongsToMany(Course::class, $tables[0], $tables[1], 'course_id');
     }
 

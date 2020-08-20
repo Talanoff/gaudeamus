@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label for="birthday">День рождения</label>
                     <input type="date" class="form-control" id="birthday" name="birthday"
-                           value="{{ old('birthday') ?? $user->birthday->format('Y-m-d') }}">
+                           value="{{ old('birthday') ?? optional($user->birthday)->format('Y-m-d') }}">
                 </div>
 
                 <hr class="my-5">

@@ -6,8 +6,11 @@
         @method('patch')
 
         <h1 class="h3">Баннер для страницы {{ $banner->title }}</h1>
-        <image-uploader name="banner" image-id="{{ optional($banner->getFirstMedia('banner'))->id }}"
-                        src="{{ $banner->getFirstMediaUrl('banner') }}"></image-uploader>
+        <image-uploader
+            name="banner"
+            image-id="{{ optional($banner->getFirstMedia('banner'))->id }}"
+            src="{{ $banner->getFirstMediaUrl('banner') }}"
+        ></image-uploader>
 
         <div class="mt-4">
             <button class="btn btn-primary">
@@ -15,5 +18,4 @@
             </button>
         </div>
     </form>
-
 @endsection

@@ -44,16 +44,14 @@
                 <div class="form-group">
                     <label for="birthday">День рождения</label>
                     <input type="date" class="form-control" id="birthday" name="birthday"
-                           value="{{ old('birthday') ?? $user->birthday->format('Y-m-d') }}">
+                           value="{{ old('birthday') ?? optional($user->birthday)->format('Y-m-d') }}">
                 </div>
 
                 <hr class="my-5">
 
                 <h4 class="mb-4">Сертификаты</h4>
 
-                <multi-image-uploader
-                        class="mt-4"
-                        :src="{{ json_encode($user->images_list) }}"></multi-image-uploader>
+                <multi-image-uploader :src="{{ json_encode($user->images_list) }}"></multi-image-uploader>
 
                 <hr class="my-5">
 
@@ -76,7 +74,9 @@
                             </div>
                         </div>
                     @empty
-                        ...
+                        <div class="col-12 text-center">
+                            Нет курсов для отображения
+                        </div>
                     @endforelse
                 </div>
             </div>
