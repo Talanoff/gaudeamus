@@ -38,7 +38,7 @@ class StudentsController extends Controller
             'password' => bcrypt($request->get('email')),
             'phone' => $request->get('phone'),
             'birthday' => $request->get('birthday'),
-            'role_id' => Role::whereName(Role::$ROLES['student'])->first()->id,
+            'role_id' => Role::whereName('student')->first()->id,
             'is_confirmed' => 1
         ]);
 

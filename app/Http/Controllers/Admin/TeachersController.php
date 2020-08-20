@@ -35,7 +35,7 @@ class TeachersController extends Controller
             'password' => bcrypt($request->get('email')),
             'phone' => $request->get('phone'),
             'birthday' => $request->get('birthday'),
-            'role_id' => Role::whereName(Role::$ROLES['teacher'])->first()->id,
+            'role_id' => Role::whereName('teacher')->first()->id,
             'is_confirmed' => 1
         ]);
 
