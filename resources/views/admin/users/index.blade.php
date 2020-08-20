@@ -35,14 +35,13 @@
 
                     @if ($user->hasRole(['student', 'teacher']))
                         <p class="mb-1">
-                            Курсов:
-                            <strong>{{ $user->courses()->count() }}</strong>
+                            Курсов: <strong>{{ $user->courses()->count() }}</strong>
                         </p>
                     @endif
 
                     @if (!$user->is_confirmed)
                         <p>
-                            <span class="bg-danger px-2 py-1 text-white rounded">
+                            <span class="text-danger">
                                 Не подтвержден
                             </span>
                         </p>
