@@ -47,6 +47,13 @@
                            value="{{ old('birthday') ?? optional($user->birthday)->format('Y-m-d') }}">
                 </div>
 
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" name="is_confirmed" class="custom-control-input" id="is_confirmed">
+                        <label class="custom-control-label" for="is_confirmed">Это подтвержденный студент</label>
+                    </div>
+                </div>
+
                 <hr class="my-5">
 
                 <h4 class="mb-4">Курсы</h4>
