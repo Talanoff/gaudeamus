@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Education\Course;
+use App\Models\User\Role;
 use App\Models\User\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,7 +35,8 @@ class TeachersController extends Controller
             'password' => bcrypt($request->get('email')),
             'phone' => $request->get('phone'),
             'birthday' => $request->get('birthday'),
-            'role_id' => '3',
+            'role_id' => Role::whereName(Role::$ROLES['teacher'])->first()->id,
+            'is_confirmed' => 1
         ]);
 
         $user->courses()->sync($request->get('courses'));
