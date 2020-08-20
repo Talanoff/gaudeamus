@@ -49,7 +49,7 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" name="is_confirmed" class="custom-control-input" id="is_confirmed">
+                        <input type="checkbox" name="is_confirmed" class="custom-control-input" id="is_confirmed" {{ $user->is_confirmed ? 'checked' : '' }}>
                         <label class="custom-control-label" for="is_confirmed">Это подтвержденный студент</label>
                     </div>
                 </div>
