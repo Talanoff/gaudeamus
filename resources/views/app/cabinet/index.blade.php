@@ -63,7 +63,7 @@
                                             Вашего рождения</label>
                                         <input type="date" class="form-control position-relative"
                                                id="birthday" name="birthday"
-                                               value="{{ old('birthday') ?? $user->birthday->format('Y-m-d') }}">
+                                               value="{{ old('birthday') ?? optional($user->birthday)->format('Y-m-d') }}">
                                     </div>
 
                                     <button id="cabinet-login-btn"

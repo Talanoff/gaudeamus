@@ -74,6 +74,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $banner = Banner::where('title' ,'Регистрация')->first();
+
         return view('auth.register', compact('banner'));
     }
 }
