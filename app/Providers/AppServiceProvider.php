@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Common\Setting;
+use App\Services\Navigation;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -21,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
 
         app()->singleton('settings', function () {
             return Setting::whereNotNull('value')->get()->groupBy('type');
+        });
+
+        app()->singleton('nav', function() {
+            return new Navigation();
         });
     }
 

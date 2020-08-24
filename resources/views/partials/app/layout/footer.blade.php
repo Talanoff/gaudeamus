@@ -2,21 +2,31 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-10 mx-auto">
-                <ul class="footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                <ul class="text-uppercase footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.about') }}" class="footer-menu-list-item__link">О НАС</a>
+                        <a href="{{ route('app.about') }}" class="footer-menu-list-item__link">
+                            {{ __('About us') }}
+                        </a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.programs.index') }}" class="footer-menu-list-item__link">ПРОГРАММА И СТОИМОСТЬ</a>
+                        <a href="{{ route('app.programs.index') }}" class="footer-menu-list-item__link">
+                            {{ __('Programme and prices') }}
+                        </a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.materials.index') }}" class="footer-menu-list-item__link">УЧЕБНЫЕ МАТЕРИАЛЫ</a>
+                        <a href="{{ route('app.materials.index') }}" class="footer-menu-list-item__link">
+                            {{ __('Educational materials') }}
+                        </a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.teachers.index') }}" class="footer-menu-list-item__link">ПРЕПОДАВАТЕЛИ</a>
+                        <a href="{{ route('app.teachers.index') }}" class="footer-menu-list-item__link">
+                            {{ __('Our team') }}
+                        </a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.vacancies.index') }}" class="footer-menu-list-item__link">ВАКАНСИИ</a>
+                        <a href="{{ route('app.vacancies.index') }}" class="footer-menu-list-item__link">
+                            {{ __('Vacancies') }}
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -42,9 +52,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row">
 
-        </div>
         <div class="row">
             <div class="col-sm-4 mx-auto">
                 <div class="footer-copyr text-center py-4">

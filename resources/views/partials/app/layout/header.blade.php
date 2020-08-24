@@ -57,7 +57,6 @@
                 @endforeach
             </ul>
 
-
             @foreach(app('settings')['phones'] as $phone)
                 <div class="contact-phone d-none d-lg-block">
                     <a href="tel:{{ str_replace(['(', ')', '-', ' '], '', $phone->value) }}"
@@ -67,7 +66,6 @@
                 </div>
             @endforeach
 
-
             <div class="burger-menu d-flex flex-column justify-content-center align-items-center position-relative">
                 <div class="line line--top"></div>
                 <div class="line line--middle"></div>
@@ -75,65 +73,16 @@
                 <div class="line line-close line--left"></div>
                 <div class="line line-close line--right"></div>
             </div>
+
             <div class="menu position-absolute d-flex align-items-center">
                 <ul class="menu-nav-list list-unstyled">
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.about') }}" class="menu-nav-list-item__link">
-                            о нас
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.programs.index') }}" class="menu-nav-list-item__link">
-                            программа и стоимость
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.materials.index') }}" class="menu-nav-list-item__link">
-                            учебные материалы
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.teachers.index') }}" class="menu-nav-list-item__link">
-                            преподаватели
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.vacancies.index') }}" class="menu-nav-list-item__link">
-                            вакансии
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.reviews.index') }}" class="menu-nav-list-item__link">
-                            отзывы
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.faqs') }}" class="menu-nav-list-item__link">
-                            вопросы
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.galleries') }}" class="menu-nav-list-item__link">
-                            фотогалерея
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.articles.index') }}" class="menu-nav-list-item__link">
-                            статьи
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="{{ route('app.contacts') }}" class="menu-nav-list-item__link">
-                            контакты
-                        </a>
-                    </li>
-                    @auth
+                    @foreach(app('nav')->main() as $nav)
                         <li class="menu-nav-list-item">
-                            <a href="{{ route('app.cabinet.index') }}" class="menu-nav-list-item__link">
-                                Личный кабинет
+                            <a href="{{ $nav['route'] }}" class="menu-nav-list-item__link">
+                                {{ $nav['name'] }}
                             </a>
                         </li>
-                    @endauth
+                    @endforeach
                 </ul>
             </div>
         </div>
