@@ -53,7 +53,7 @@
                     <ul class="nav-social-list list-unstyled d-flex mb-0">
                         @foreach(app('settings')['social'] as $social)
                             <li class="nav-social-list-item mr-4">
-                                <a href="{{ $social->value }}" class="nav-social-list-item__link">
+                                <a href="{{ $social->value }}" class="nav-social-list-item__link" target="_blank">
                                     <svg width="25" height="25">
                                         <use xlink:href="#{{ $social->name }}-icon"></use>
                                     </svg>

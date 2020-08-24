@@ -2,8 +2,9 @@
     <div class="container-fluid d-flex justify-content-between align-items-center p-0 pl-lg-4">
         <div class="header-item d-flex align-items-center">
             <div class="logo position-relative">
-                <a href="/" class="logo-link d-flex justify-content-center align-items-center position-absolute"><img
-                            src="../../../../images/icon/logo/logo.png" alt="logo"></a>
+                <a href="/" class="logo-link d-flex justify-content-center align-items-center position-absolute">
+                    <img src="{{ asset('images/logo.svg') }}" alt="logo">
+                </a>
             </div>
             <div class="search d-none d-sm-flex align-items-center">
                 <form id="form-search" class="form form--search" action="{{ route('app.search') }}" method="get">
@@ -21,7 +22,7 @@
                 <li class="login-list-item">
                     @guest
                         <a href="{{ route('login') }}" class="login-list-item__link">
-                            Войти
+                            Вход/Регистрация
                             <svg width="20" height="20">
                                 <use xlink:href="#user-icon"></use>
                             </svg>
