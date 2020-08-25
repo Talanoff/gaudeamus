@@ -10,7 +10,7 @@
                     </li>
                     <li class="footer-menu-list-item">
                         <a href="{{ route('app.programs.index') }}" class="footer-menu-list-item__link">
-                            {{ __('Programme and prices') }}
+                            {{ __('Program and cost') }}
                         </a>
                     </li>
                     <li class="footer-menu-list-item">
@@ -35,19 +35,19 @@
             <div class="col-sm-12 col-lg-10 mx-auto">
                 <ul class="footer-menu-list list-unstyled d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.reviews.index') }}" class="footer-menu-list-item__link">ОТЗЫВЫ</a>
+                        <a href="{{ route('app.reviews.index') }}" class="footer-menu-list-item__link">{{ __('Reviews') }}</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.galleries') }}" class="footer-menu-list-item__link">ФОТОГАЛЕРЕЯ</a>
+                        <a href="{{ route('app.galleries') }}" class="footer-menu-list-item__link">{{ __('Gallery') }}</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.faqs') }}" class="footer-menu-list-item__link">ВОПРОСЫ</a>
+                        <a href="{{ route('app.faqs') }}" class="footer-menu-list-item__link">{{ __('FAQ') }}</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.articles.index') }}" class="footer-menu-list-item__link">СТАТЬИ</a>
+                        <a href="{{ route('app.articles.index') }}" class="footer-menu-list-item__link">{{ __('Articles') }}</a>
                     </li>
                     <li class="footer-menu-list-item">
-                        <a href="{{ route('app.contacts') }}" class="footer-menu-list-item__link">КОНТАКТЫ</a>
+                        <a href="{{ route('app.contacts') }}" class="footer-menu-list-item__link">{{ __('Contacts') }}</a>
                     </li>
                 </ul>
             </div>
