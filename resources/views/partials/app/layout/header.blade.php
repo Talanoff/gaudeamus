@@ -1,8 +1,8 @@
 <header id="app-header">
     <div class="container-fluid d-flex justify-content-between align-items-center p-0 pl-lg-4">
         <div class="header-item d-flex align-items-center">
-            <div class="logo position-relative">
-                <a href="/" class="logo-link d-flex justify-content-center align-items-center position-absolute">
+            <div class="logo">
+                <a href="{{ url('/') }}" class="">
                     <img src="{{ asset('images/logo.svg') }}" alt="logo">
                 </a>
             </div>
@@ -27,8 +27,7 @@
                                 <use xlink:href="#user-icon"></use>
                             </svg>
                         </a>
-                    @endguest
-                    @auth
+                    @else
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                            class="login-list-item__link">

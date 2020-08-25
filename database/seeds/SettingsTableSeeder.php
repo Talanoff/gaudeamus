@@ -19,7 +19,8 @@ class SettingsTableSeeder extends Seeder
             ],
 
             'phones' => [
-                'phone' => '+380 061 277 0 772',
+                'phone1' => '+380 061 277 0 772',
+                'phone2' => '+380 061 277 0 772',
             ],
 
             'email' => [
