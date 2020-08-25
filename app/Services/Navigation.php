@@ -15,7 +15,7 @@ class Navigation
             ],
             [
                 'route' => route('app.programs.index'),
-                'name' => __('Programme and prices')
+                'name' => __('Program and cost')
             ],
             [
                 'route' => route('app.materials.index'),
