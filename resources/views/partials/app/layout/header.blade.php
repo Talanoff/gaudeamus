@@ -56,14 +56,16 @@
                 @endforeach
             </ul>
 
-            @foreach(app('settings')['phones'] as $phone)
-                <div class="contact-phone d-none d-lg-block">
-                    <a href="tel:{{ str_replace(['(', ')', '-', ' '], '', $phone->value) }}"
-                       class="contact-phone-link text-white">
-                        {{ $phone->value }}
-                    </a>
-                </div>
-            @endforeach
+            <div class="contact-phone d-none d-lg-block">
+                @foreach(app('settings')['phones'] as $phone)
+                    <div>
+                        <a href="tel:{{ str_replace(['(', ')', '-', ' '], '', $phone->value) }}"
+                           class="contact-phone-link text-white">
+                            {{ $phone->value }}
+                        </a>
+                    </div>
+                @endforeach
+            </div>
 
             <div class="burger-menu d-flex flex-column justify-content-center align-items-center position-relative">
                 <div class="line line--top"></div>
