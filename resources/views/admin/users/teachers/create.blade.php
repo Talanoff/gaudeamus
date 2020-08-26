@@ -41,10 +41,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="birthday">День рождения</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday"
-                           value="{{ old('birthday') }}">
+                    <label for="description">Описание</label>
+                    <wysiwyg name="description" class="mb-3" content="{{ old('description') }}" required></wysiwyg>
                 </div>
+
                 <hr class="my-5">
 
                 <h4 class="mb-4">Сертификаты</h4>
@@ -90,8 +90,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Описание</label>
-                    <wysiwyg name="description" class="mb-3" content="{{ old('description') }}" required></wysiwyg>
+                    <label for="birthday">День рождения</label>
+                    <input type="date" class="form-control" id="birthday" name="birthday"
+                           value="{{ old('birthday') }}">
                 </div>
             </div>
         </div>

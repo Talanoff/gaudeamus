@@ -42,9 +42,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="birthday">День рождения</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday"
-                           value="{{ old('birthday') ?? optional($user->birthday)->format('Y-m-d') }}">
+                    <label for="description">Описание</label>
+                    <wysiwyg name="description" class="mb-3" rows="5"
+                             content="{{ old('description') ?? optional($user->profile)->description }}" required></wysiwyg>
                 </div>
 
                 <hr class="my-5">
@@ -93,9 +93,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Описание</label>
-                    <wysiwyg name="description" class="mb-3" rows="5"
-                             content="{{ old('description') ?? optional($user->profile)->description }}" required></wysiwyg>
+                    <label for="birthday">День рождения</label>
+                    <input type="date" class="form-control" id="birthday" name="birthday"
+                           value="{{ old('birthday') ?? optional($user->birthday)->format('Y-m-d') }}">
                 </div>
             </div>
         </div>
