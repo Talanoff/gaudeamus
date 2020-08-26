@@ -18,7 +18,7 @@ class Navigation
                 'name' => __('Program and cost')
             ],
             [
-                'route' => route('app.materials.index'),
+                'route' => route('app.teachers.index'),
                 'name' => __('Our team')
             ],
             [
