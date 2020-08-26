@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
 
         \App\Models\User\User::create([
             'name' => 'Администратор',
-            'email' => 'admin@app.com',
-            'password' => bcrypt('password'),
+            'email' => 'olexiikoval@gaudeamus.ua',
+            'password' => bcrypt('RomTele12_'),
             'remember_token' => str_random(10),
             'phone' => $faker->e164PhoneNumber,
             'birthday' => $faker->date('Y-m-d'),

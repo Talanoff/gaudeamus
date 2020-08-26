@@ -40,16 +40,6 @@
 
     &__text {
         font-size: 24px;
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -15px;
-            width: 70%;
-            height: 1px;
-            background: #212329;
-        }
     }
 
     &__author {
@@ -71,5 +61,5 @@
             fill: #1e1e1e;
         }
     }
-    
+
 }
