@@ -1,11 +1,16 @@
 require('./bootstrap');
 
+import Vue from 'vue';
+import MultiImageUploader from "./components/MultiImageUploader";
+import ImageUploader from "./components/SingleImageUploader";
+import Wysiwyg from "./components/Wysiwyg";
+
 new Vue({
     el: '#app',
     components: {
-        MultiImageUploader: require('./components/MultiImageUploader'),
-        ImageUploader: require('./components/SingleImageUploader'),
-        Wysiwyg: require('./components/Wysiwyg'),
+        MultiImageUploader,
+        ImageUploader,
+        Wysiwyg,
     },
     mounted() {
         const notification = document.querySelectorAll('.notification');

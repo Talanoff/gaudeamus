@@ -71,7 +71,9 @@
                             </div>
                         </div>
                     @empty
-                        ...
+                        <div class="col-12 text-center">
+                            Нет курсов для отображения
+                        </div>
                     @endforelse
                 </div>
             </div>
