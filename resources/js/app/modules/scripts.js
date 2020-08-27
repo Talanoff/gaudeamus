@@ -163,8 +163,9 @@ if ($('.header-banner-slider')) {
         const flkty1 = new Flickity(elem1, {
             prevNextButtons: false,
             contain: true,
-            draggable: false,
-            groupCells: 1
+            draggable: true,
+            // groupCells: 1,
+            adaptiveHeight: true
         });
 
 

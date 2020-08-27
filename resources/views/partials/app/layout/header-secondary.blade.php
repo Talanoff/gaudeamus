@@ -54,13 +54,13 @@
             </ul>
 
             @if ($phones)
-                @foreach($phones as $phone)
-                    <div class="contact-phone d-none d-lg-block">
-                        <a href="tel:{{ phone_format($phone) }}" class="contact-phone-link text-white">
-                            {{ $phone }}
-                        </a>
-                    </div>
-                @endforeach
+            @foreach($phones as $phone)
+            <div class="contact-phone d-none d-lg-block">
+                <a href="tel:{{ phone_format($phone) }}" class="contact-phone-link text-white">
+                    {{ $phone }}
+                </a>
+            </div>
+            @endforeach
             @endif
 
             <div class="burger-menu d-flex flex-column justify-content-center align-items-center position-relative">
@@ -70,58 +70,58 @@
                 <div class="line line-close line--left"></div>
                 <div class="line line-close line--right"></div>
             </div>
-            <div class="menu position-absolute d-flex align-items-center">
-                <ul class="menu-nav-list list-unstyled">
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            о нас
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            программа и стоимость
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            учебные материалы
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            преподаватели
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            вакансии
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            отзывы
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            вопросы
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            фотогалерея
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            статьи
-                        </a>
-                    </li>
-                    <li class="menu-nav-list-item">
-                        <a href="#" class="menu-nav-list-item__link">
-                            контакты
-                        </a>
-                    </li>
+            <div class="menu>
+                <ul class=" menu-nav-list list-unstyled">
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        о нас
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        программа и стоимость
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        учебные материалы
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        преподаватели
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        вакансии
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        отзывы
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        вопросы
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        фотогалерея
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        статьи
+                    </a>
+                </li>
+                <li class="menu-nav-list-item">
+                    <a href="#" class="menu-nav-list-item__link">
+                        контакты
+                    </a>
+                </li>
                 </ul>
             </div>
         </div>

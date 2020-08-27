@@ -1,8 +1,11 @@
 #app-header {
-    @extend %pos;
-    bottom: auto;
-    border-bottom: 1px solid rgba(#fff, .25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(#fff, 0.25);
     z-index: 999;
+    // overflow-x: hidden;
 }
 
 .header-item {
@@ -18,23 +21,23 @@
 
         &-item {
             opacity: 1;
-            transition: .5s;
+            transition: 0.5s;
 
             &__link {
                 display: inline-flex;
                 align-items: center;
                 color: #fff;
-                transition: .5s;
+                transition: 0.5s;
             }
 
             svg {
                 margin-left: 5px;
                 fill: #fff;
-                transition: .5s;
+                transition: 0.5s;
             }
 
             &:hover {
-                opacity: .5;
+                opacity: 0.5;
             }
         }
     }
@@ -46,31 +49,25 @@
             @extend .login-list-item;
 
             &--facebook {
-
                 svg {
-
                     &:hover {
                         opacity: 1;
-                        fill: #4267B2;
+                        fill: #4267b2;
                     }
                 }
             }
 
             &--instagram {
-
                 svg {
-
                     &:hover {
                         opacity: 1;
-                        fill: #D1289B;
+                        fill: #d1289b;
                     }
                 }
             }
 
             &--youtube {
-
                 svg {
-
                     &:hover {
                         opacity: 1;
                         fill: #f00;
@@ -82,14 +79,13 @@
 
     .contact-phone {
         &-link {
-            font-family: 'FuturaMediumC', sans-serif;
+            font-family: "FuturaMediumC", sans-serif;
         }
     }
 
     .decoration-line {
         width: 1px;
         height: 100px;
-        background: rgba(#fff, .25);
+        background: rgba(#fff, 0.25);
     }
 }
-

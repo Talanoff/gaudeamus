@@ -4,7 +4,7 @@
         @foreach ($slides as $slide)
             <div class="header-banner-slider-item bg-gradient" style="background-image: url('{{ $slide->banner }}');">
                 <div class="container h-100 d-flex align-items-center">
-                    <div class="col-sm-5 mx-auto">
+                    <div class="col-xl-10 mx-auto">
                         <div class="header-banner-item text-white">
                             <h1 class="header-banner-item-title text-uppercase pb-3">
                                 <span class="header-banner-item-title__text-big">{{ $slide->title }}</span><br>
