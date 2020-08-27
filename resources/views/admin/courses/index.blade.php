@@ -17,10 +17,10 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($course->hasMedia('course'))
-                        <img src="{{ $course->getFirstMediaUrl('course', 'thumb') }}" class="rounded-circle"
+                        <img src="{{ $course->getFirstMediaUrl('course', 'thumb') }}" class="rounded"
                              alt="{{ $course->name }}" style="width: 100px;">
                     @else
-                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded"
                              alt="{{ $course->name }}" style="width: 100px;">
                     @endif
                 </div>

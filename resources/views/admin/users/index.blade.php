@@ -18,10 +18,10 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($user->hasMedia('avatar'))
-                        <img src="{{ $user->getFirstMediaUrl('avatar', 'thumb') }}" class="rounded-circle"
+                        <img src="{{ $user->getFirstMediaUrl('avatar', 'thumb') }}" class="rounded"
                              alt="{{ $user->name }}" style="width: 100px;">
                     @else
-                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded"
                              alt="{{ $user->name }}" style="width: 100px;">
                     @endif
                 </div>

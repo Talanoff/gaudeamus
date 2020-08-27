@@ -45,7 +45,7 @@ class Banner extends Model implements HasMedia
         $media = asset('images/no-image.png');
 
         if ($this->hasMedia('banner')) {
-            $media = $this->getFirstMedia('banner')->getFullUrl('thumb');
+            $media = $this->getFirstMedia('banner')->getFullUrl('preview');
         }
 
         return $media;
