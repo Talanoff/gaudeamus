@@ -2,13 +2,13 @@
 
 namespace App\Models\Article;
 
-use App\Traits\SlugableTrait;
+use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
-    use SlugableTrait;
+    use SluggableTrait;
 
     protected $fillable = [
         'title',

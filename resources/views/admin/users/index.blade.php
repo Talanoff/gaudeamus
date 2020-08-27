@@ -52,6 +52,10 @@
                     </p>
                 </div>
 
+                @if ($route === 'teachers')
+                    @includeIf('partials.admin.layout.order', ['model' => $user, 'className' => \App\Models\User\User::class])
+                @endif
+
                 <div class="col-auto align-self-center">
                     <p class="mb-1">
                         <a href="{{ route('admin.'. $route .'.edit', $user) }}"
@@ -81,7 +85,7 @@
         ...
     @endforelse
 
-                {{ $users->links() }}
+    {{ $users->links() }}
 
 @endsection
 

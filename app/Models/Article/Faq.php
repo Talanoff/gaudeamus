@@ -2,7 +2,7 @@
 
 namespace App\Models\Article;
 
-use App\Traits\SlugableTrait;
+use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 use Spatie\Image\Manipulations;

@@ -2,7 +2,7 @@
 
 namespace App\Models\Page;
 
-use App\Traits\SlugableTrait;
+use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 use Spatie\Image\Manipulations;
@@ -12,7 +12,7 @@ use Spatie\MediaLibrary\Models\Media;
 
 class Vacancy extends Model implements HasMedia
 {
-    use SlugableTrait;
+    use SluggableTrait;
     use HasMediaTrait;
 
     protected $fillable = [

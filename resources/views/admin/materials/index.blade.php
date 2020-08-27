@@ -35,6 +35,10 @@
                     </p>
                 </div>
 
+                <div class="col-auto">
+                    @includeIf('partials.admin.layout.order', ['model' => $material, 'className' => \App\Models\Education\Material::class])
+                </div>
+
                 <div class="col-auto align-self-center">
                     <p class="mb-1">
                         <a href="{{ route('admin.materials.edit', $material) }}"

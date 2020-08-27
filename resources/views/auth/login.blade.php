@@ -6,7 +6,8 @@
              class="section-page-secondary section-page-secondary--registration section-page-secondary--login">
         <div class="container h-100">
             <div class="row h-100">
-                <div class="registration-img" style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
+                <div class="registration-img"
+                     style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
                 <div class="col-sm-6 h-100 mx-auto ml-lg-auto mr-lg-0 px-lg-5 d-flex align-items-center">
                     <div class="login-page-item">
                         <h2 class="registration-title text-white">Войти</h2>
@@ -46,7 +47,7 @@
                                     Войти
                                 </button>
 
-
+                                {{--
                                 <div class="social-registration d-flex">
                                     <div class="social-registration__text text-white mr-1 mr-sm-3">Войти с помощью
                                         соцсетей:</div>
@@ -74,9 +75,11 @@
                                         </li>
                                     </ul>
                                 </div>
+                                --}}
                             </div>
 
-                            <a href="{{ route('register') }}" class="registration-btn text-center d-block text-white py-4">
+                            <a href="{{ route('register') }}"
+                               class="registration-btn text-center d-block text-white py-4">
                                 ЗАРЕГЕСТРИРОВАТЬСЯ
                             </a>
 

@@ -4,22 +4,23 @@ namespace App\Models\User;
 
 use App\Http\Resources\ImageResource;
 use App\Models\Education\Course;
-use App\Traits\SlugableTrait;
+use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMedia, Sortable
 {
-    use Notifiable;
-    use HasMediaTrait;
+    use Notifiable, HasMediaTrait, SortableTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -34,10 +35,16 @@ class User extends Authenticatable implements HasMedia
         'birthday',
         'role_id',
         'is_confirmed',
+        'order'
     ];
 
     protected $casts = [
         'birthday' => 'date:d.m.Y',
+    ];
+
+    public $sortable = [
+        'order_column_name' => 'order',
+        'sort_when_creating' => true,
     ];
 
     /**
@@ -137,8 +144,8 @@ class User extends Authenticatable implements HasMedia
     {
         parent::boot();
 
-        self::addGlobalScope('ordered', function (Builder $builder) {
-            return $builder->latest('id');
+        static::addGlobalScope('global_order', function($builder) {
+            $builder->orderByDesc('created_at')->ordered();
         });
     }
 }

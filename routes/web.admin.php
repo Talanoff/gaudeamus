@@ -36,5 +36,6 @@ Route::group([
         Route::patch('/', 'SettingsController@update')->name('update');
     });
 
+    Route::patch('{model}', 'OrderController@reorder')->name('reorder');
 });
 

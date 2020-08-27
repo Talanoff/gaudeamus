@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page_title' => 'Преподаватели'])
+@extends('layouts.app', ['page_title' => __('Our team')])
 
 @section('content')
 
@@ -11,11 +11,11 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.teachers.index') }}" class="breadcrumbs-list-item__link">Преподаватели</a>
+                    <a href="{{ route('app.teachers.index') }}" class="breadcrumbs-list-item__link">{{ __('Our team') }}</a>
                 </li>
             </ul>
 
-            <h2 class="page-secondary-title mb-0 text-white">Преподаватели</h2>
+            <h2 class="page-secondary-title mb-0 text-white">{{ __('Our team') }}</h2>
 
             <div class="row">
                 <div class="col-sm-6 mt-4 mt-sm-0 ml-auto mr-0">

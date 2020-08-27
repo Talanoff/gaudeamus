@@ -2,25 +2,32 @@
 
 namespace App\Models\Education;
 
-use App\Traits\SlugableTrait;
+use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
 
-class Material extends Model implements HasMedia
+class Material extends Model implements HasMedia, Sortable
 {
-    use SlugableTrait;
-    use HasMediaTrait;
+    use SluggableTrait, HasMediaTrait, SortableTrait;
 
     protected $fillable = [
         'slug',
         'title',
         'description',
         'body',
+        'order'
+    ];
+
+    public $sortable = [
+        'order_column_name' => 'order',
+        'sort_when_creating' => true,
     ];
 
     /**
@@ -65,5 +72,14 @@ class Material extends Model implements HasMedia
         }
 
         return asset($media);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('global_order', function($builder) {
+            $builder->orderByDesc('created_at')->ordered();
+        });
     }
 }

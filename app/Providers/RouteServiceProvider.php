@@ -145,7 +145,7 @@ class RouteServiceProvider extends ServiceProvider
                             'route' => 'admin.users.index',
                         ],
                         'teachers' => [
-                            'name' => 'Преподаватели',
+                            'name' => __('Our team'),
                             'route' => 'admin.teachers.index',
                         ],
                         'students' => [
