@@ -33,7 +33,7 @@
             </div>
             --}}
 
-            <section style="margin-top: 30vh;">
+            <section style="margin-top: 55vh;">
                 @if($teachers->count())
                     @foreach($teachers as $teacher)
                         @if($loop->index == 0 || $loop->index == 2 || $loop->index == 4)
