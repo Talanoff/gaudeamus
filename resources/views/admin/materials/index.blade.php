@@ -17,7 +17,7 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($material->hasMedia('material'))
-                        <img src="{{ $material->getFirstMediaUrl('material') }}" class="rounded-circle"
+                        <img src="{{ $material->getFirstMediaUrl('material', 'thumb') }}" class="rounded-circle"
                              alt="{{ $material->name }}" style="width: 100px;">
                     @else
                         <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
@@ -35,7 +35,7 @@
                     </p>
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto align-self-center">
                     @includeIf('partials.admin.layout.order', ['model' => $material, 'className' => \App\Models\Education\Material::class])
                 </div>
 

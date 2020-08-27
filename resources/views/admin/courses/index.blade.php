@@ -39,7 +39,7 @@
                     </p>
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto align-self-center">
                     @includeIf('partials.admin.layout.order', ['model' => $course, 'className' => \App\Models\Education\Course::class])
                 </div>
 

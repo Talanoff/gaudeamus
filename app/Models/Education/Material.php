@@ -4,7 +4,6 @@ namespace App\Models\Education;
 
 use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
@@ -65,20 +64,20 @@ class Material extends Model implements HasMedia, Sortable
      */
     public function getPreviewImageAttribute()
     {
-        $media = 'images/no-image.png';
+        $media = asset('images/no-image.png');
 
         if ($this->hasMedia('material')) {
-            $media = substr($this->getFirstMediaUrl('material', 'preview'), 1);
+            $media = $this->getFirstMedia('material')->getFullUrl('preview');
         }
 
-        return asset($media);
+        return $media;
     }
 
     protected static function boot()
     {
         parent::boot();
 
-        static::addGlobalScope('global_order', function($builder) {
+        static::addGlobalScope('global_order', function ($builder) {
             $builder->orderByDesc('created_at')->ordered();
         });
     }

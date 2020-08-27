@@ -6,7 +6,6 @@ use App\Models\User\User;
 use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Image\Manipulations;
@@ -106,20 +105,20 @@ class Course extends Model implements HasMedia, Sortable
      */
     public function getPreviewImageAttribute()
     {
-        $media = 'images/no-image.png';
+        $media = asset('images/no-image.png');
 
         if ($this->hasMedia('course')) {
-            $media = substr($this->getFirstMediaUrl('course', 'preview'), 1);
+            $media = $this->getFirstMedia('course')->getFullUrl('preview');
         }
 
-        return asset($media);
+        return $media;
     }
 
     protected static function boot()
     {
         parent::boot();
 
-        static::addGlobalScope('global_order', function($builder) {
+        static::addGlobalScope('global_order', function ($builder) {
             $builder->orderByDesc('created_at')->ordered();
         });
     }
