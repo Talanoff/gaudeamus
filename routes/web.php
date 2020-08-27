@@ -2,20 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use TalvBansal\MediaManager\Routes\MediaRoutes;
+
+require_once(base_path('routes/web.admin.php'));
 
 Route::group([
-    'as' => 'admin',
-    'prefix' => 'admin',
-    'namespace' => 'Admin',
-    'middleware' => ['auth', 'user.admin'],
-], function () {
-    require_once(base_path('routes/web.admin.php'));
-    MediaRoutes::get();
-});
-
-Route::group([
-
     'as' => 'app.',
     'namespace' => 'Front',
 ], function () {

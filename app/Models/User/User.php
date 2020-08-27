@@ -130,8 +130,6 @@ class User extends Authenticatable implements HasMedia, Sortable
             });
     }
 
-
-
     /**
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */

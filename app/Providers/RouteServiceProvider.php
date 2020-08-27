@@ -31,12 +31,6 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        View::composer(['app.*', 'auth.*'], function () {
-            View::share('nav', [
-
-            ]);
-        });
-
         View::composer(['admin.*'], function () {
             View::share('nav', [
                 [
@@ -58,11 +52,10 @@ class RouteServiceProvider extends ServiceProvider
                     'icon' => 'pages',
                 ],
                 [
-
                     'name' => 'Статьи',
                     'icon' => 'news',
                     'route' => 'admin.articles.index',
-                    'compare' => ['articles', 'tags',],
+                    'compare' => ['admin.articles.*', 'admin.tags.*',],
                     'submenu' => [
                         'articles' => [
                             'name' => 'Все статьи',
@@ -73,8 +66,6 @@ class RouteServiceProvider extends ServiceProvider
                             'route' => 'admin.tags.index',
                         ],
                     ],
-
-
                 ],
                 [
                     'name' => 'Отзывы',
@@ -98,7 +89,7 @@ class RouteServiceProvider extends ServiceProvider
                 [
                     'name' => 'Страницы',
                     'route' => 'admin.pages.index',
-                    'compare' => ['page', 'quotes',],
+                    'compare' => ['admin.pages.*', 'admin.quotes.*',],
                     'icon' => 'products',
                     'submenu' => [
                         'page' => [
@@ -120,7 +111,7 @@ class RouteServiceProvider extends ServiceProvider
                 [
                     'name' => 'Вакансии',
                     'route' => 'admin.vacancies.index',
-                    'compare' => ['vacancy', 'responds'],
+                    'compare' => ['admin.vacancies.*', 'admin.responds.*'],
                     'icon' => 'envelope',
                     'unread' => Respond::where('status', 'processing')->count(),
                     'submenu' => [
@@ -137,7 +128,7 @@ class RouteServiceProvider extends ServiceProvider
                 [
                     'name' => 'Пользователи',
                     'route' => 'admin.users.index',
-                    'compare' => ['users', 'teachers', 'students'],
+                    'compare' => ['admin.users.*', 'admin.teachers.*', 'admin.students.*'],
                     'icon' => 'users',
                     'submenu' => [
                         'users' => [
