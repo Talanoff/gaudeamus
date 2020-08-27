@@ -34,10 +34,11 @@ class RouteServiceProvider extends ServiceProvider
         View::composer(['admin.*'], function () {
             View::share('nav', [
                 [
-                    'name' => 'Баннеры',
-                    'route' => 'admin.banners.index',
-                    'compare' => 'admin.banners.*',
-                    'icon' => 'dashboard',
+                    'name' => 'Записи на курс',
+                    'route' => 'admin.feedback.index',
+                    'compare' => 'admin.feedback.*',
+                    'icon' => 'orders',
+                    'unread' => Feedback::where('status', 'processing')->count(),
                 ],
                 [
                     'name' => 'Курсы',
@@ -68,6 +69,44 @@ class RouteServiceProvider extends ServiceProvider
                     ],
                 ],
                 [
+                    'name' => 'Пользователи',
+                    'route' => 'admin.users.index',
+                    'compare' => ['admin.users.*', 'admin.teachers.*', 'admin.students.*'],
+                    'icon' => 'users',
+                    'submenu' => [
+                        'users' => [
+                            'name' => 'Все пользователи',
+                            'route' => 'admin.users.index',
+                        ],
+                        'teachers' => [
+                            'name' => __('Our team'),
+                            'route' => 'admin.teachers.index',
+                        ],
+                        'students' => [
+                            'name' => 'Студенты',
+                            'route' => 'admin.students.index',
+                            'unread' => User::whereIsConfirmed(false)->count(),
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Вакансии',
+                    'route' => 'admin.vacancies.index',
+                    'compare' => ['admin.vacancies.*', 'admin.responds.*'],
+                    'icon' => 'envelope',
+                    'unread' => Respond::where('status', 'processing')->count(),
+                    'submenu' => [
+                        'vacancy' => [
+                            'name' => 'Все вакансии',
+                            'route' => 'admin.vacancies.index',
+                        ],
+                        'responds' => [
+                            'name' => 'Отклики на вакансии',
+                            'route' => 'admin.responds.index',
+                        ],
+                    ],
+                ],
+                [
                     'name' => 'Отзывы',
                     'route' => 'admin.reviews.index',
                     'compare' => 'admin.reviews.*',
@@ -75,16 +114,22 @@ class RouteServiceProvider extends ServiceProvider
                     'unread' => Review::where('status', 'processing')->count(),
                 ],
                 [
-                    'name' => 'Слайдер',
-                    'route' => 'admin.slides.index',
-                    'compare' => 'admin.slides.*',
-                    'icon' => 'image',
-                ],
-                [
                     'name' => 'Аспекты',
                     'route' => 'admin.aspects.index',
                     'compare' => 'admin.aspects.*',
                     'icon' => 'refresh',
+                ],
+                [
+                    'name' => 'Баннеры',
+                    'route' => 'admin.banners.index',
+                    'compare' => 'admin.banners.*',
+                    'icon' => 'dashboard',
+                ],
+                [
+                    'name' => 'Слайдер',
+                    'route' => 'admin.slides.index',
+                    'compare' => 'admin.slides.*',
+                    'icon' => 'image',
                 ],
                 [
                     'name' => 'Страницы',
@@ -108,45 +153,7 @@ class RouteServiceProvider extends ServiceProvider
                     'compare' => 'admin.faq.*',
                     'icon' => 'clipboard',
                 ],
-                [
-                    'name' => 'Вакансии',
-                    'route' => 'admin.vacancies.index',
-                    'compare' => ['admin.vacancies.*', 'admin.responds.*'],
-                    'icon' => 'envelope',
-                    'unread' => Respond::where('status', 'processing')->count(),
-                    'submenu' => [
-                        'vacancy' => [
-                            'name' => 'Все вакансии',
-                            'route' => 'admin.vacancies.index',
-                        ],
-                        'responds' => [
-                            'name' => 'Отклики на вакансии',
-                            'route' => 'admin.responds.index',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Пользователи',
-                    'route' => 'admin.users.index',
-                    'compare' => ['admin.users.*', 'admin.teachers.*', 'admin.students.*'],
-                    'icon' => 'users',
-                    'submenu' => [
-                        'users' => [
-                            'name' => 'Все пользователи',
-                            'route' => 'admin.users.index',
-                        ],
-                        'teachers' => [
-                            'name' => __('Our team'),
-                            'route' => 'admin.teachers.index',
-                        ],
-                        'students' => [
-                            'name' => 'Студенты',
-                            'route' => 'admin.students.index',
-                            'unread' => User::whereIsConfirmed(false)->count(),
-                        ],
-                    ],
 
-                ],
                 [
                     'name' => 'Фотогалерея',
                     'route' => 'admin.galleries.index',
@@ -158,13 +165,6 @@ class RouteServiceProvider extends ServiceProvider
                     'route' => 'admin.settings.index',
                     'compare' => 'admin.settings.*',
                     'icon' => 'settings',
-                ],
-                [
-                    'name' => 'Записи на курс',
-                    'route' => 'admin.feedback.index',
-                    'compare' => 'admin.feedback.*',
-                    'icon' => 'orders',
-                    'unread' => Feedback::where('status', 'processing')->count(),
                 ],
             ]);
         });
