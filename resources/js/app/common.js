@@ -163,11 +163,14 @@ if ($('.header-banner-slider')) {
   var elem1 = document.querySelector('.header-banner-slider');
   if (elem1) {
 
+    const mobWidth = window.innerWidth < 1200;
+
     const flkty1 = new Flickity(elem1, {
       prevNextButtons: false,
       contain: true,
-      draggable: false,
-      groupCells: 1
+      draggable: mobWidth,
+      groupCells: 1,
+      adaptiveHeight: mobWidth
     });
 
 
