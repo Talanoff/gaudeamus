@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    @includeIf('partials.favicons')
 </head>
 <body>
 @include('partials.admin.layout.icons')
