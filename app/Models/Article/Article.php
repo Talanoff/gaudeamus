@@ -3,7 +3,7 @@
 namespace App\Models\Article;
 
 use App\Models\User\User;
-use App\Traits\SlugableTrait;
+use App\Traits\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -14,7 +14,7 @@ use Spatie\MediaLibrary\Models\Media;
 
 class Article extends Model implements HasMedia
 {
-    use SlugableTrait;
+    use SluggableTrait;
     use HasMediaTrait;
 
     protected $fillable = [

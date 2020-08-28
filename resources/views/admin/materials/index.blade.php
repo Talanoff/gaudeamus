@@ -17,10 +17,10 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($material->hasMedia('material'))
-                        <img src="{{ $material->getFirstMediaUrl('material') }}" class="rounded-circle"
+                        <img src="{{ $material->getFirstMediaUrl('material', 'thumb') }}" class="rounded"
                              alt="{{ $material->name }}" style="width: 100px;">
                     @else
-                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded"
                              alt="{{ $material->name }}" style="width: 100px;">
                     @endif
                 </div>
@@ -33,6 +33,10 @@
                     <p class="mt-2 mb-0">
                         Создан {{ $material->created_at->format('d.m.Y \в H:i') }}
                     </p>
+                </div>
+
+                <div class="col-auto align-self-center">
+                    @includeIf('partials.admin.layout.order', ['model' => $material, 'className' => \App\Models\Education\Material::class])
                 </div>
 
                 <div class="col-auto align-self-center">

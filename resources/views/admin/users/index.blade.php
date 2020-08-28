@@ -18,10 +18,10 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($user->hasMedia('avatar'))
-                        <img src="{{ $user->getFirstMediaUrl('avatar', 'thumb') }}" class="rounded-circle"
+                        <img src="{{ $user->getFirstMediaUrl('avatar', 'thumb') }}" class="rounded"
                              alt="{{ $user->name }}" style="width: 100px;">
                     @else
-                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded"
                              alt="{{ $user->name }}" style="width: 100px;">
                     @endif
                 </div>
@@ -52,6 +52,10 @@
                     </p>
                 </div>
 
+                @if ($route === 'teachers')
+                    @includeIf('partials.admin.layout.order', ['model' => $user, 'className' => \App\Models\User\User::class])
+                @endif
+
                 <div class="col-auto align-self-center">
                     <p class="mb-1">
                         <a href="{{ route('admin.'. $route .'.edit', $user) }}"
@@ -81,7 +85,7 @@
         ...
     @endforelse
 
-                {{ $users->links() }}
+    {{ $users->links() }}
 
 @endsection
 

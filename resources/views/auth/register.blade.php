@@ -64,6 +64,7 @@
                                     Зарегистрироваться
                                 </button>
 
+                                {{--
                                 <div class="social-registration d-flex">
                                     <div class="social-registration__text text-white mr-1 mr-sm-3">Войти с помощью
                                         соцсетей:
@@ -92,6 +93,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                --}}
                             </div>
                             <a href="{{ route('login') }}" class="registration-btn text-center d-block text-white py-4">
                                 Войти

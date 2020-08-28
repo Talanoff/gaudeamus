@@ -16,7 +16,7 @@
 
             <div class="item-body">
                 <div class="col-auto">
-                    <img src="{{ $gallery->getFirstMediaUrl('gallery', 'thumb') }}" class="rounded-circle"
+                    <img src="{{ $gallery->getFirstMediaUrl('gallery', 'thumb') }}" class="rounded"
                          alt="{{ $gallery->title }}" style="width: 100px;">
                 </div>
                 <div class="col">

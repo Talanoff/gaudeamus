@@ -47,10 +47,15 @@ class Navigation
             ]
         ];
 
-        if (Auth::check()) {
+        if (Auth::check() && !Auth::user()->hasRole('admin')) {
             $routes[] = [
                 'route' => route('app.cabinet.index'),
                 'name' => __('Personal area')
+            ];
+        } elseif (Auth::check() && Auth::user()->hasRole('admin')) {
+            $routes[] = [
+                'route' => route('admin.users.index'),
+                'name' => __('Admin panel')
             ];
         }
 

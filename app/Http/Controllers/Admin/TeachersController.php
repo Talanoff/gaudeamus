@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Education\Course;
 use App\Models\User\Role;
 use App\Models\User\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use function redirect;
+use function view;
 
 class TeachersController extends Controller
 {
     public function index()
     {
-        return \view('admin.users.index', [
+        return view('admin.users.index', [
             'users' => User::where('role_id', 3)->paginate(20),
-            'title' => 'Преподаватели',
+            'title' => __('Our team'),
             'route' => 'teachers',
         ]);
     }
 
     public function create()
     {
-        return \view('admin.users.teachers.create', [
+        return view('admin.users.teachers.create', [
             'courses' => Course::latest()->get(),
         ]);
     }
@@ -44,7 +46,7 @@ class TeachersController extends Controller
 
         if ($request->hasFile('avatar')) {
             $user->addMediaFromRequest('avatar')
-                 ->toMediaCollection('avatar');
+                ->toMediaCollection('avatar');
         }
 
         if ($request->has('files')) {
@@ -53,13 +55,13 @@ class TeachersController extends Controller
             }
         }
 
-        return \redirect()->route('admin.teachers.index')
+        return redirect()->route('admin.teachers.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
     public function edit(User $teacher)
     {
-        return \view('admin.users.teachers.edit', [
+        return view('admin.users.teachers.edit', [
             'user' => $teacher,
             'courses' => Course::latest()->get(),
         ]);
@@ -76,7 +78,7 @@ class TeachersController extends Controller
         if ($request->hasFile('avatar')) {
             $teacher->clearMediaCollection('avatar');
             $teacher->addMediaFromRequest('avatar')
-                    ->toMediaCollection('avatar');
+                ->toMediaCollection('avatar');
         }
         if ($request->has('files')) {
             foreach ($request->input('files') as $file) {
@@ -85,7 +87,7 @@ class TeachersController extends Controller
         }
 
 
-        return \redirect()->route('admin.teachers.index')
+        return redirect()->route('admin.teachers.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
@@ -94,7 +96,7 @@ class TeachersController extends Controller
         $teacher->clearMediaCollection('avatar');
         $teacher->delete();
 
-        return \redirect()->route('admin.teachers.index')
+        return redirect()->route('admin.teachers.index')
             ->with('message', 'Запись успешно удалена.');
     }
 }

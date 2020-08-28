@@ -11,7 +11,7 @@
                     <a href="/" class="breadcrumbs-list-item__link">Главная</a>
                 </li>
                 <li class="breadcrumbs-list-item">
-                    <a href="{{ route('app.teachers.index') }}" class="breadcrumbs-list-item__link">Преподаватели</a>
+                    <a href="{{ route('app.teachers.index') }}" class="breadcrumbs-list-item__link">{{ __('Our team') }}</a>
                 </li>
                 <li class="breadcrumbs-list-item">
                     <a href="{{ route('app.teachers.show', $teacher) }}" class="breadcrumbs-list-item__link">Коваль

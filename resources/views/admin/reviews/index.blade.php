@@ -11,10 +11,10 @@
             <div class="item-body">
                 <div class="col-auto">
                     @if ($review->author)
-                        <img src="{{ $review->author->avatar }}" class="rounded-circle"
+                        <img src="{{ $review->author->avatar }}" class="rounded"
                              alt="{{ $review->author_name }}" style="width: 100px;">
                     @else
-                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded-circle"
+                        <img src="{{ asset('images/no-avatar.png') }}" class="rounded"
                              alt="{{ $review->author_name }}" style="width: 100px;">
                     @endif
                 </div>

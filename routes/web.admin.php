@@ -1,12 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', 'BannersController@index')->name('.index');
+use TalvBansal\MediaManager\Routes\MediaRoutes;
 
 Route::group([
-    'as' => '.',
+    'as' => 'admin.',
+    'prefix' => 'admin',
+    'namespace' => 'Admin',
+    'middleware' => ['auth', 'user.admin'],
 ], function () {
+    Route::get('/', function() {
+        return redirect(route('admin.users.index'));
+    });
+
     Route::resource('articles', 'ArticlesController')->except('show');
     Route::resource('tags', 'TagsController')->except('show');
     Route::resource('faq', 'FAQsController')->except('show');
@@ -36,5 +42,8 @@ Route::group([
         Route::patch('/', 'SettingsController@update')->name('update');
     });
 
+    MediaRoutes::get();
+
+    Route::patch('{model}', 'OrderController@reorder')->name('reorder');
 });
 

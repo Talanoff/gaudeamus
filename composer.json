@@ -12,8 +12,10 @@
         "ext-json": "*",
         "dawson/youtube": "^4.2",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.7.*",
+        "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "spatie/eloquent-sortable": "^3.8",
+        "spatie/laravel-sluggable": "2.2.*",
         "spatie/laravel-medialibrary": "^7.0.0",
         "talvbansal/media-manager": "^2.5"
     },

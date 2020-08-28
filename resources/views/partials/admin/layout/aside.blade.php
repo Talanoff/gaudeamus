@@ -19,7 +19,7 @@
                             <span class="ml-3">{{ $item['name'] }}</span>
                         </a>
                         <ul id="submenu-{{ $loop->iteration }}"
-                            class="submenu text-left collapse list-unstyled mb-0{{ app('router')->currentRouteNamed($item['compare']) ? ' show' : ''}}"
+                            class="submenu text-left collapse list-unstyled mb-0{{ app('router')->is($item['compare']) ? ' show' : ''}}"
                             aria-labelledby="submenu-heading-{{ $loop->iteration }}" data-parent="#app-aside">
                             @foreach($item['submenu'] as $submenu)
                                 <li class="submenu-item">

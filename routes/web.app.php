@@ -32,7 +32,7 @@ Route::group([
 
 Route::group([
     'as' => 'teachers.',
-    'prefix' => 'teachers',
+    'prefix' => 'our-team',
 ], function () {
     Route::get('/', 'TeachersController@index')->name('index');
     Route::get('{teacher}', 'TeachersController@show')->name('show');
