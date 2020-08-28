@@ -6,13 +6,22 @@
     border-bottom: 1px solid rgba(#fff, 0.25);
     z-index: 999;
     // overflow-x: hidden;
+    padding: 10px 0;
+
+    @media (min-width: map_get($grid-breakpoints, xl)) {
+        padding: 0;
+    }
 }
 
 .header-item {
     width: 50%;
 
     .logo {
-        width: 200px;
+        width: 150px;
+
+        @media (min-width: map_get($grid-breakpoints, xl)) {
+            width: 200px;
+        }
     }
 
     .login-list {
