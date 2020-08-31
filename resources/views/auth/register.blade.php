@@ -63,37 +63,6 @@
                                 <button type="submit" id="singup-btn" class="btn btn-outline-light text-secondary mb-4">
                                     Зарегистрироваться
                                 </button>
-
-                                {{--
-                                <div class="social-registration d-flex">
-                                    <div class="social-registration__text text-white mr-1 mr-sm-3">Войти с помощью
-                                        соцсетей:
-                                    </div>
-                                    <ul class="nav-social-list list-unstyled d-flex">
-                                        <li class="nav-social-list-item mr-4">
-                                            <a href="#" class="nav-social-list-item__link">
-                                                <svg width="25" height="25">
-                                                    <use xlink:href="#facebook-icon"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="nav-social-list-item mr-4">
-                                            <a href="#" class="nav-social-list-item__link">
-                                                <svg width="25" height="25">
-                                                    <use xlink:href="#instagram-icon"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                        <li class="nav-social-list-item">
-                                            <a href="#" class="nav-social-list-item__link">
-                                                <svg width="25" height="25">
-                                                    <use xlink:href="#youtube-icon"></use>
-                                                </svg>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                --}}
                             </div>
                             <a href="{{ route('login') }}" class="registration-btn text-center d-block text-white py-4">
                                 Войти

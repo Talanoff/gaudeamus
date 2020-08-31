@@ -31,20 +31,11 @@
             </div>
 
             <div class="contacts-page-content">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="contacts-page__title">
-                            {{ $contacts->description }}
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4 mb-4 mb-sm-0 mx-auto mx-lg-0 pr-5">
-                        <div class="contacts-page-item">
-                                {!! $contacts->body !!}
-                        </div>
-                    </div>
-                </div>
+                <h2 class="contacts-page__title">
+                    {{ $contacts->description }}
+                </h2>
+
+                {!! $contacts->body !!}
             </div>
         </div>
 

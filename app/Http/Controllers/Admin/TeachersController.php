@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserCreationRequest;
 use App\Models\Education\Course;
 use App\Models\User\Role;
 use App\Models\User\User;
@@ -28,15 +29,15 @@ class TeachersController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(UserCreationRequest $request)
     {
         /** @var User $user */
         $user = User::create([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => bcrypt($request->get('email')),
-            'phone' => $request->get('phone'),
-            'birthday' => $request->get('birthday'),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('email')),
+            'phone' => $request->input('phone'),
+            'birthday' => $request->input('birthday'),
             'role_id' => Role::whereName('teacher')->first()->id,
             'is_confirmed' => 1
         ]);
