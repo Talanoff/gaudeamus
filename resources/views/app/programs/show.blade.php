@@ -50,7 +50,7 @@
 
             <div class="programs-show-teachers position-relative">
 
-                <div class="programs-show-description">
+                <div class="programs-show-description mb-4">
                     <h2 class="programs-show-description__title">Преподаватели курса</h2>
                     <a href="{{ route('app.teachers.index') }}"
                        class="btn btn-outline-primary programs-show-description__btn">Все преподаватели</a>
