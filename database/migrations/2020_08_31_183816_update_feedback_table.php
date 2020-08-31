@@ -14,7 +14,7 @@ class UpdateFeedbackTable extends Migration
     public function up()
     {
         Schema::table('feedback', function (Blueprint $table) {
-            $table->json('content')->after('id');
+            $table->longText('content')->after('id');
 
             $table->dropColumn(['name', 'email', 'phone', 'course_id']);
         });
