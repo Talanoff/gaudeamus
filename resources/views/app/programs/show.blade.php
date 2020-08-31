@@ -30,17 +30,20 @@
                         <a href="#feedback" class="btn btn-dark programs-show-item__btn mb-5 mb-sm-0">Записаться</a>
                     </div>
                     <div class="col-sm-7">
-                        <p class="programs-show-item__text">
-                        {!! $description[0] !!}
-                        {!! $description[1] !!}
-                        <div class="jobs-page-item">
-                            {!! $description[2] !!}
-                        </div>
-                        </p>
+                        <div class="programs-show-item__text">
+                            {!! $description[0] !!}
+                            {!! $description[1] !!}
 
-                        <div class="text-right">
-                            <a href="#" id="open-jobs-page-all" class="more-info">Больше информации</a>
+                            @isset($description[2])
+                                <div class="jobs-page-item">
+                                    {!! $description[2] !!}
+                                </div>
+                            @endisset
                         </div>
+
+{{--                        <div class="text-right">--}}
+{{--                            <a href="#" id="open-jobs-page-all" class="more-info">Больше информации</a>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -53,33 +56,36 @@
                        class="btn btn-outline-primary programs-show-description__btn">Все преподаватели</a>
                 </div>
                 @if($teachers->count())
-                <div class="programs-show-teachers-slider">
-                    @foreach($teachers as $teacher)
-                        <div class="programs-show-teachers-slider-item">
-                            <div class="teachers-card">
-                                <div class="teachers-card-description">
-                                    <h2 class="teachers-card-description-name">{{ $teacher->name }}</h2>
-                                    <div class="teachers-card-description-position">
-                                        {{ optional($teacher->profile)->position }}
+                    <div class="programs-show-teachers-slider">
+                        @foreach($teachers as $teacher)
+                            <div class="programs-show-teachers-slider-item">
+                                <div class="teachers-card">
+                                    <div class="teachers-card-description">
+                                        <h2 class="teachers-card-description-name">{{ $teacher->name }}</h2>
+                                        <div class="teachers-card-description-position">
+                                            {{ optional($teacher->profile)->position }}
+                                        </div>
+                                        <a href="{{ route('app.teachers.show' , $teacher) }}"
+                                           class="more-info">Подробнее</a>
                                     </div>
-                                    <a href="{{ route('app.teachers.show' , $teacher) }}"
-                                       class="more-info">Подробнее</a>
+                                    <div class="teachers-card-img">
+                                        <img src="{{ $teacher->avatar }}" alt=""></div>
+                                    <div class="decoration-block"></div>
                                 </div>
-                                <div class="teachers-card-img">
-                                    <img src="{{ $teacher->avatar }}" alt=""></div>
-                                <div class="decoration-block"></div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
+                        @endforeach
+                    </div>
                 @endif
 
                 <div class="row">
                     <div class="col-sm-6 mx-auto">
                         <div class="header-banner-slider-nav d-flex align-items-center pl-5">
-                            <div class="header-banner-slider-nav-arrow mx-auto d-flex justify-content-between align-items-center">
-                                <div class="header-banner-slider-nav-arrow-prev header-banner-slider-nav-arrow-prev--programs-show-teachers"></div>
-                                <div class="header-banner-slider-nav-arrow-next header-banner-slider-nav-arrow-next--programs-show-teachers"></div>
+                            <div
+                                class="header-banner-slider-nav-arrow mx-auto d-flex justify-content-between align-items-center">
+                                <div
+                                    class="header-banner-slider-nav-arrow-prev header-banner-slider-nav-arrow-prev--programs-show-teachers"></div>
+                                <div
+                                    class="header-banner-slider-nav-arrow-next header-banner-slider-nav-arrow-next--programs-show-teachers"></div>
                             </div>
                         </div>
                     </div>
@@ -105,8 +111,9 @@
                     <div class="row">
                         @foreach($materials as $material)
                             <div class="col-sm-6 col-lg-3">
-                                <div class="materials-page-item-content-img materials-page-item-content-img--englishland"
-                                     @click="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
+                                <div
+                                    class="materials-page-item-content-img materials-page-item-content-img--englishland"
+                                    @click="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
                                     <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
                                     <div class="materials-page-item-content-img-hover">
                                         <h3 class="materials-page-item-content-img-hover__title">
@@ -119,7 +126,7 @@
                                 </div>
                             </div>
                         @endforeach
-                            <materials-modal></materials-modal>
+                        <materials-modal></materials-modal>
 
                     </div>
                 </div>
