@@ -12,6 +12,6 @@
     @endif
     @includeWhen($aspects->count(), 'partials.app.sections.aspects')
     @includeWhen($reviews->count(), 'partials.app.sections.reviews')
-    @includeWhen($courses->count(), 'partials.app.sections.feedback')
+    @includeIf('partials.app.sections.feedback')
 
 @endsection

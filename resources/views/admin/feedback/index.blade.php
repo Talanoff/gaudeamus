@@ -12,11 +12,11 @@
                 <div class="col">
                     <h3>
                         <a href="{{ route('admin.feedback.edit', $feedback) }}" class="underline">
-                            {{ $feedback->name  }}
+                            {{ $feedback->content->student_first_name }} {{ $feedback->content->student_last_name }}
                         </a>
                     </h3>
                     <p class="mt-2 mb-0">
-                        Создан {{ $feedback->created_at->format('d.m.Y \в H:i') }}
+                        Дата заполнения {{ $feedback->created_at->format('d.m.Y \в H:i') }}
                     </p>
                 </div>
                 <div class="col-auto align-self-center">
@@ -28,14 +28,14 @@
                             </svg>
                         </a>
                     </p>
-                    <p class="mb-0">
+                    <div class="mb-0">
                         <a href="{{ route('admin.feedback.destroy', $feedback) }}"
                            class="btn btn-sm btn-danger" onclick="confirmDelete({{ $feedback->id }})">
                             <svg width="16" height="16" style="fill: #fff;">
                                 <use xlink:href="#delete"></use>
                             </svg>
                         </a>
-                    </p>
+                    </div>
                     <form action="{{ route('admin.feedback.destroy', $feedback) }}"
                           id="delete-form-{{ $feedback->id }}" method="post" style="display: none;">
                         @csrf

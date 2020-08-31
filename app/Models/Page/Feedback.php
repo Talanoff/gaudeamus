@@ -13,10 +13,10 @@ class Feedback extends Model
     ];
 
     protected $fillable = [
-        'name',
-        'email',
-        'phone',
-        'course_id',
-        'status',
+        'content', 'status'
+    ];
+
+    protected $casts = [
+        'content' => 'object'
     ];
 }

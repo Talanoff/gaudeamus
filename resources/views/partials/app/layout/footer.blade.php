@@ -71,11 +71,6 @@
                     </ul>
                     </div>
                     <div class="footer-copyr__text">&copy; 2017 &ndash; {{ date('Y') }} Все права защищены.</div>
-                    <div class="footer-copyr__text footer-copyr__text--big">Дизайн и разработка
-                        <a href="https://impressionbureau.pro/" target="_blank">
-                            <span class="text-bold">Impression Bureau</span>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
