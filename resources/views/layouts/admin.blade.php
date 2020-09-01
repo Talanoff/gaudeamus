@@ -28,6 +28,8 @@
     </main>
 </div>
 
+@includeIf('partials.admin.layout.notifications')
+
 <script src="{{ asset('js/admin.js') }}" defer></script>
 @stack('scripts')
 </body>
