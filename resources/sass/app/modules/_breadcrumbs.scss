@@ -8,7 +8,7 @@
 
             .breadcrumbs-list-item__link {
                 padding-left: 0;
-                
+
                 &::before {
                     content: '';
                 }
@@ -16,13 +16,12 @@
         }
 
         &:last-of-type {
-
             .breadcrumbs-list-item__link {
                 padding-right: 0;
-                color: $primary;
+                color: #fff;
 
                 &:hover {
-                    color: $primary;
+                    color: mix($primary, #fff);
                     border-bottom: 1px solid $primary;
                 }
             }
