@@ -1,9 +1,12 @@
 #feedback {
-    padding: 240px 0 225px;
+    padding: 90px 0;
     background: url('../../../images/bg/feedback-bg.jpg') 50% 50% /cover no-repeat;
 
-    .section-description {
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        padding: 240px 0 225px;
+    }
 
+    .section-description {
         &-title {
             max-width: 100%;
         }

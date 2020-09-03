@@ -1,6 +1,10 @@
 #methods {
-    padding: 130px 0 110px;
+    padding: 90px 0;
     background: url('../../../images/bg/methods-bg.jpg') 50% 50% /cover no-repeat;
+
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        padding: 130px 0 110px;
+    }
 }
 
 .methods-item {

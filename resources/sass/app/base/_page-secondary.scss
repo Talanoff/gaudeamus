@@ -1,6 +1,10 @@
 .section-page-secondary {
-    padding-top: 180px;
+    padding-top: 90px;
     z-index: 10;
+
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        padding-top: 180px;
+    }
 
     &--login {
         padding-top: 90px;
@@ -31,7 +35,6 @@
 }
 
 .registration-title {
-
     @media (max-width: map_get($grid-breakpoints, sm)) {
         font-size: 24px;
     }
