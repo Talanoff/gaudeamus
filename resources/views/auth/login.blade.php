@@ -8,7 +8,7 @@
             <div class="row h-100">
                 <div class="registration-img"
                      style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
-                <div class="col-sm-6 h-100 mx-auto ml-lg-auto mr-lg-0 px-lg-5 d-flex align-items-center">
+                <div class="h-100 mx-auto ml-lg-auto mr-lg-0 px-lg-5 d-flex align-items-center">
                     <div class="login-page-item">
                         <h2 class="registration-title text-white">Войти</h2>
                         <form action="{{ route('login') }}" id="form-login" method="POST">

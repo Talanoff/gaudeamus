@@ -21,45 +21,45 @@
             <ul class="login-list list-unstyled d-none d-lg-flex">
                 <li class="login-list-item">
                     @guest
-                    <a href="{{ route('login') }}" class="login-list-item__link">
-                        Вход/Регистрация
-                        <svg width="20" height="20">
-                            <use xlink:href="#user-icon"></use>
-                        </svg>
-                    </a>
+                        <a href="{{ route('login') }}" class="login-list-item__link">
+                            Вход/Регистрация
+                            <svg width="20" height="20">
+                                <use xlink:href="#user-icon"></use>
+                            </svg>
+                        </a>
                     @else
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="login-list-item__link">
-                        Выйти
-                        <svg width="20" height="20">
-                            <use xlink:href="#user-icon"></use>
-                        </svg>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </a>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                           class="login-list-item__link">
+                            Выйти
+                            <svg width="20" height="20">
+                                <use xlink:href="#user-icon"></use>
+                            </svg>
+                        </a>
                     @endauth
                 </li>
             </ul>
             <div class="decoration-line d-none d-lg-block"></div>
             <ul class="nav-social-list list-unstyled d-none d-lg-flex">
                 @foreach(app('settings')['social'] as $social)
-                <li class="nav-social-list-item nav-social-list-item--{{ $social->name }} mr-3">
-                    <a href="{{ $social->value }}" class="nav-social-list-item__link">
-                        <svg width="25" height="25">
-                            <use xlink:href="#{{ $social->name }}-icon"></use>
-                        </svg>
-                    </a>
-                </li>
+                    <li class="nav-social-list-item nav-social-list-item--{{ $social->name }} mr-3">
+                        <a href="{{ $social->value }}" class="nav-social-list-item__link">
+                            <svg width="25" height="25">
+                                <use xlink:href="#{{ $social->name }}-icon"></use>
+                            </svg>
+                        </a>
+                    </li>
                 @endforeach
             </ul>
 
             <div class="contact-phone d-none d-lg-block">
                 @foreach(app('settings')['phones'] as $phone)
-                <div>
-                    <a href="tel:{{ str_replace(['(', ')', '-', ' '], '', $phone->value) }}" class="contact-phone-link text-white">
-                        {{ $phone->value }}
-                    </a>
-                </div>
+                    <div>
+                        <a href="tel:{{ str_replace(['(', ')', '-', ' '], '', $phone->value) }}"
+                           class="contact-phone-link text-white">
+                            {{ $phone->value }}
+                        </a>
+                    </div>
                 @endforeach
             </div>
 
@@ -73,15 +73,32 @@
 
             <div class="menu ">
                 <ul class="menu-nav-list list-unstyled">
-                    @foreach(app('nav')->main() as $nav)
-                    <li class="menu-nav-list-item">
-                        <a href="{{ $nav['route'] }}" class="menu-nav-list-item__link">
-                            {{ $nav['name'] }}
-                        </a>
+                    <li class="menu-nav-list-item d-md-none">
+                        @guest
+                            <a href="{{ route('login') }}" class="menu-nav-list-item__link">
+                                Вход/Регистрация
+                            </a>
+                        @else
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                               class="menu-nav-list-item__link">
+                                Выйти
+                            </a>
+                        @endauth
                     </li>
+                    @foreach(app('nav')->main() as $nav)
+                        <li class="menu-nav-list-item">
+                            <a href="{{ $nav['route'] }}" class="menu-nav-list-item__link">
+                                {{ $nav['name'] }}
+                            </a>
+                        </li>
                     @endforeach
                 </ul>
             </div>
         </div>
     </div>
 </header>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>

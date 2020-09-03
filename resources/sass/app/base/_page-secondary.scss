@@ -3,8 +3,10 @@
     z-index: 10;
 
     &--login {
+        padding-top: 90px;
 
         @media (min-width: map_get($grid-breakpoints, sm)) {
+            padding-top: 180px;
             height: 100vh;
         }
     }
@@ -40,15 +42,18 @@
 }
 
 .registration-btn {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background: #222832;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1;
+
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .page-secondary-banner {
