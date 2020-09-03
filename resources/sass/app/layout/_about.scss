@@ -21,15 +21,15 @@
         left: 0;
         right: 40%;
         height: 340px;
+
+        @media (min-width: map-get($grid-breakpoints, 'md')) {
+            height: 680px;
+        }
     }
 
     @media (min-width: map-get($grid-breakpoints, 'md')) {
         position: absolute;
         width: auto;
-
-        .about-img--left {
-            height: 680px;
-        }
     }
 
     &--right {
