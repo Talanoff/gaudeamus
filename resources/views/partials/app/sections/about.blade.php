@@ -2,7 +2,8 @@
 <section id="about">
     <div class="container">
         <div class="row">
-            <div class="about-img about-img--left position-absolute d-none d-lg-block" style="background-image: url('images/content/about/about-item-1.jpg');"></div>
+            <div class="about-img about-img--left"
+                 style="background-image: url('images/content/about/about-item-1.jpg');"></div>
             <div class="col-sm-6 ml-auto mr-0">
                 <div class="quote-item position-relative">
                     <div class="quote-item__icon position-absolute">
