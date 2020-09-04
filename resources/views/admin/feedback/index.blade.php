@@ -5,7 +5,7 @@
         <h1 class="mb-0 h2">Записи на курсы</h1>
     </div>
     @forelse($feedbacks->groupBy('content.school') as $school => $items)
-        <h3 class="{{ !$loop->first ? 'mt-4' : '' }}"><span class="text-primary">#</span> {{ $school }}</h3>
+        <h3 class="{{ !$loop->first ? 'mt-5' : '' }}"><span class="text-primary">#</span> {{ $school }}</h3>
 
         @foreach($items->groupBy('content.student_class')->sortBy('content.student_class') as $class => $items)
             <h4>Класс: <strong class="text-primary">{{ $class }}</strong></h4>
@@ -23,7 +23,9 @@
                             <p class="mt-2 mb-0">
                                 Дата заполнения {{ $feedback->created_at->format('d.m.Y \в H:i') }}
                                 &bull;
+                                <span class="{{ $feedback->status === 'confirmed' ? 'text-success' : ($feedback->status === 'declined' ? 'text-danger' : '') }}">>
                                 {{ __('statuses.' . $feedback->status) }}
+                                </span>
                             </p>
                         </div>
                         <div class="col-auto align-self-center">
