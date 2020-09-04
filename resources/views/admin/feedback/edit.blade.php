@@ -21,7 +21,7 @@
                     $contacts = array_filter((array)$feedback->content->contact, function($item) { return $item->name; })
                 @endphp
 
-                @if ($sections->count())
+                @if (count($sections))
                     <p class="mb-1"><strong>Секции:</strong></p>
                     @foreach($sections as $day => $section)
                         <p class="mb-1">{{ $day }} &mdash; {{ $section[0] ?? 'н/д' }} - {{ $section[1] ?? 'н/д' }}</p>
