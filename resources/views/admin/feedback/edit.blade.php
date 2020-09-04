@@ -17,13 +17,13 @@
                 <p><strong>Оценка по англ.:</strong> {{ $feedback->content->student_rating }}</p>
 
                 @php
-                    $sections = array_filter((array)$feedback->content->sections, function($item) { return $item[0] && $item[1]; });
+                    $sections = array_filter((array)$feedback->content->sections, function($item) { return $item[0] || $item[1]; });
                     $contacts = array_filter((array)$feedback->content->contact, function($item) { return $item->name; });
                 @endphp
 
                 <p class="mb-1"><strong>Секции</strong></p>
                 @foreach($sections as $day => $section)
-                    <p>{{ $day }} &mdash; {{ "$section[0] - $section[1]" }}</p>
+                    <p>{{ $day }} &mdash; {{ $section[0] ?? 'н/д' }} - {{ $section[1] ?? 'н/д' }}</p>
                 @endforeach
 
                 <hr>
