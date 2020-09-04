@@ -15,13 +15,15 @@
 
                     <div class="item-body">
                         <div class="col">
-                            <h4>
+                            <h5>
                                 <a href="{{ route('admin.feedback.edit', $feedback) }}" class="underline">
                                     {{ $feedback->content->student_first_name }} {{ $feedback->content->student_last_name }}
                                 </a>
-                            </h4>
+                            </h5>
                             <p class="mt-2 mb-0">
                                 Дата заполнения {{ $feedback->created_at->format('d.m.Y \в H:i') }}
+                                &bull;
+                                {{ __('statuses.' . $feedback->status) }}
                             </p>
                         </div>
                         <div class="col-auto align-self-center">
