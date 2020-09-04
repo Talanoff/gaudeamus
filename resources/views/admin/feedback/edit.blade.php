@@ -21,9 +21,9 @@
                     $contacts = array_filter((array)$feedback->content->contact, function($item) { return $item->name; });
                 @endphp
 
-                <p class="mb-1"><strong>Секции</strong></p>
+                <p class="mb-1"><strong>Секции:</strong></p>
                 @foreach($sections as $day => $section)
-                    <p>{{ $day }} &mdash; {{ $section[0] ?? 'н/д' }} - {{ $section[1] ?? 'н/д' }}</p>
+                    <p class="mb-1">{{ $day }} &mdash; {{ $section[0] ?? 'н/д' }} - {{ $section[1] ?? 'н/д' }}</p>
                 @endforeach
 
                 <hr>
