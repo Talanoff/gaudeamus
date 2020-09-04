@@ -1,5 +1,9 @@
 main {
     background-color: #fff;
-    padding: 40px;
+    padding: 15px;
     border-radius: 5px 0 0 5px;
+
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        padding: 40px;
+    }
 }

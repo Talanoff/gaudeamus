@@ -1,7 +1,7 @@
 @extends('layouts.admin', ['app_title' => 'Записи на курсы'])
 
 @section('content')
-    <div class="d-flex align-items-center mb-5">
+    <div class="d-flex align-items-center mb-3 mb-md-5">
         <h1 class="mb-0 h2">Записи на курсы</h1>
     </div>
     @forelse($feedbacks as $feedback)

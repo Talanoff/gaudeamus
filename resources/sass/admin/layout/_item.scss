@@ -1,9 +1,13 @@
 .item {
-    padding: 20px 20px 20px 40px;
+    padding: 10px 10px 10px 30px;
     margin-bottom: 10px;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     position: relative;
+
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        padding: 20px 20px 20px 40px;
+    }
 
     &:hover {
         background-color: $body-bg;
