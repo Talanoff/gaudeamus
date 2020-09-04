@@ -5,7 +5,7 @@
         <h1 class="mb-0 h2">Записи на курсы</h1>
     </div>
     @forelse($feedbacks->groupBy('content.school') as $school => $items)
-        <h3><span class="text-primary">#</span> {{ $school }}</h3>
+        <h3 class="{{ !$loop->first ? 'mt-4' : '' }}"><span class="text-primary">#</span> {{ $school }}</h3>
 
         @foreach($items->groupBy('content.student_class')->sortBy('content.student_class') as $class => $items)
             <h4>Класс: <strong class="text-primary">{{ $class }}</strong></h4>
