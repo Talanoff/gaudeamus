@@ -108,7 +108,7 @@
                         @foreach($materials as $material)
                             <div class="col-sm-6 col-lg-3">
                                 <div class="materials-page-item-content-img materials-page-item-content-img--englishland"
-                                    @click="showMaterialModal('{{ route('app.materials.modal', [$course, $material]) }}')">
+                                    @click="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
                                     <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
                                     <div class="materials-page-item-content-img-hover">
                                         <h3 class="materials-page-item-content-img-hover__title">
