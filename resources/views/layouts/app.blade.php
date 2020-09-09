@@ -21,7 +21,7 @@
 <div id="app" v-cloak>
     @includeIf('partials.app.layout.header')
 
-    <main id="app-main">
+    <main id="app-main" class="{{ app('router')->is(['login', 'register']) ? 'single-child' : '' }}">
         @yield('content')
     </main>
 

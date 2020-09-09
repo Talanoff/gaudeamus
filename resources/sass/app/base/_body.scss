@@ -12,10 +12,15 @@ body {
 
 main {
     flex: 1;
-    display: flex;
 
-    & > * {
-      width: 100%;
+    &.single-child {
+        display: flex;
+
+        & > * {
+            width: 100%;
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
     }
 }
 
