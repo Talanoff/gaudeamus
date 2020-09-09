@@ -8,7 +8,7 @@
                 <div class="registration-img" style="background-image: url({{ $banner->getFirstMediaUrl('banner') }});"></div>
                 <div class="col-sm-6 h-100 mx-auto ml-lg-auto mr-lg-0 px-lg-5 d-flex align-items-center">
                     <div class="singup-page-item">
-                        <h2 class="registration-title text-white">ЗАРЕГЕСТРИРОВАТЬСЯ</h2>
+                        <h2 class="registration-title text-white text-uppercase">{{ __('Register') }}</h2>
                         <form method="POST" action="{{ route('register') }}" id="form-singup">
                             @csrf
                             <div class="form-group-item d-flex flex-column justify-content-lg-start align-items-start">
@@ -61,7 +61,7 @@
                                     </label>
                                 </div>
                                 <button type="submit" id="singup-btn" class="btn btn-outline-light text-secondary mb-4">
-                                    Зарегистрироваться
+                                    {{ __('Register') }}
                                 </button>
                             </div>
                             <a href="{{ route('login') }}" class="registration-btn text-center d-block text-white py-4">

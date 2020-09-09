@@ -38,8 +38,6 @@
                 {!! $contacts->body !!}
             </div>
         </div>
-
-        </div>
     </section>
 
 @endsection

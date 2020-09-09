@@ -39,7 +39,7 @@
 
                 <hr>
 
-                <p class="font-weight-bold mb-2">Дата заполения</p>
+                <p class="font-weight-bold mb-2">Дата заполнения</p>
                 <p class="mb-1">{{ $feedback->created_at->format(('d.m.Y \в H:i')) }}</p>
             </div>
 

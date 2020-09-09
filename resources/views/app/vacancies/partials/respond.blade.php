@@ -1,4 +1,4 @@
-<div class="jobs-page-respond">
+<div class="jobs-page-respond" id="vacancy-form">
     <div class="row">
         <div class="col-sm-6">
             <div class="jobs-page-respond-content">

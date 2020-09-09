@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="col-sm-5 pt-sm-5 pb-5 d-flex justify-content-center align-items-start">
-                            <a href="#" id="open-jobs-page-respond"
+                            <a href="#vacancy-form" id="open-jobs-page-respond"
                                class="btn btn-outline-light text-primary py-2 px-5">Откликнуться</a>
                         </div>
                     </div>

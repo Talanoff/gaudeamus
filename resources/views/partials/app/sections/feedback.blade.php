@@ -2,7 +2,7 @@
 <section id="feedback">
     <div class="container">
         <div class="section-description pb-2 mb-5">
-            <div class="section-description-name">Запишите Вашего ребенка на курс</div>
+            <div class="section-description-name">Запишіть Вашу дитину на курс</div>
             <h2 class="section-description-title">Шановні батьки!</h2>
             <p>Курси англійської мови «Гаудеамус» проводять набір учнів 1-4 класів <strong>без вступних тестів або
                     співбесід.</strong></p>
@@ -70,7 +70,8 @@
                             <label for="testing_needed" class="label-placeholder">
                                 {{ __('Моїй дитині потрібне тестування тому, що вона') }}
                             </label>
-                            <select class="form-control" id="testing_needed" name="testing_needed" required>
+                            <select class="form-control" id="testing_needed" name="testing_needed">
+                                <option value="">-----</option>
                                 @foreach(trans('schools.testing_needed') as $item)
                                     <option value="{{ $item }}">{{ $item }}</option>
                                 @endforeach

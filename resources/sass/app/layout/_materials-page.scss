@@ -1,11 +1,6 @@
 #materials-page {
-
     .page-secondary-title {
-        margin-bottom: 280px;
-
-        @media (max-width: map_get($grid-breakpoints, md)) {
-            margin-bottom: 50px;
-        }
+        margin-bottom: 50px;
     }
 }
 
@@ -33,8 +28,6 @@
         }
 
         &__btn {
-
-
             @media (max-width: map_get($grid-breakpoints, md)) {
                 margin-bottom: 30px;
             }

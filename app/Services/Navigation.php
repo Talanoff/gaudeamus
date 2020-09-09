@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\Article\Article;
+use App\Models\Page\Gallery;
 use Illuminate\Support\Facades\Auth;
 
 class Navigation
@@ -33,18 +35,25 @@ class Navigation
                 'route' => route('app.faqs'),
                 'name' => __('FAQ')
             ],
-            [
+        ];
+
+        if (Gallery::count()) {
+            $routes[] = [
                 'route' => route('app.galleries'),
                 'name' => __('Gallery')
-            ],
-            [
+            ];
+        }
+
+        if (Article::count()) {
+            $routes[] = [
                 'route' => route('app.articles.index'),
                 'name' => __('Articles')
-            ],
-            [
-                'route' => route('app.contacts'),
-                'name' => __('Contacts')
-            ]
+            ];
+        }
+
+        $routes[] = [
+            'route' => route('app.contacts'),
+            'name' => __('Contacts')
         ];
 
         if (Auth::check() && !Auth::user()->hasRole('admin')) {
