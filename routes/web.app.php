@@ -44,7 +44,7 @@ Route::group([
 ], function () {
     Route::get('/', 'CoursesController@index')->name('index');
     Route::get('{course}', 'CoursesController@show')->name('show');
-    Route::get('{material}', 'CoursesController@getModalData')->name('modal');
+    Route::get('{course}/{material}', 'CoursesController@getModalData')->name('modal');
 });
 
 Route::group([

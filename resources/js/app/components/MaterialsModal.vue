@@ -27,7 +27,8 @@
                         <div class="show-materials-modal-item">
                             <div class="text-right">
                                 <a href="#" class="more-info" @click.prevent="visible = false">
-                                    Другие учебные материалы</a>
+                                    Другие учебные материалы
+                                </a>
                             </div>
                         </div>
                     </div>

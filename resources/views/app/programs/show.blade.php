@@ -40,10 +40,6 @@
                                 </div>
                             @endisset
                         </div>
-
-{{--                        <div class="text-right">--}}
-{{--                            <a href="#" id="open-jobs-page-all" class="more-info">Больше информации</a>--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -111,9 +107,8 @@
                     <div class="row">
                         @foreach($materials as $material)
                             <div class="col-sm-6 col-lg-3">
-                                <div
-                                    class="materials-page-item-content-img materials-page-item-content-img--englishland"
-                                    @click="showMaterialModal('{{ route('app.materials.modal', $material) }}')">
+                                <div class="materials-page-item-content-img materials-page-item-content-img--englishland"
+                                    @click="showMaterialModal('{{ route('app.materials.modal', [$course, $material]) }}')">
                                     <img src="{{ $material->getFirstMediaUrl('material') }}" alt="">
                                     <div class="materials-page-item-content-img-hover">
                                         <h3 class="materials-page-item-content-img-hover__title">
@@ -127,7 +122,6 @@
                             </div>
                         @endforeach
                         <materials-modal></materials-modal>
-
                     </div>
                 </div>
             @endif
