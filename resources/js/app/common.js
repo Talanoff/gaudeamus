@@ -13,7 +13,7 @@ window.jQuery = window.$ = jquery;
         e.preventDefault();
 
         const target = $(this).attr('href');
-        console.log(target);
+        console.log($(this));
 
         if (target) {
             $('html, body').animate({

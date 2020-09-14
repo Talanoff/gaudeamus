@@ -37400,7 +37400,7 @@ window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
     var target = $(_this).attr('href');
-    console.log(target);
+    console.log($(_this));
 
     if (target) {
       $('html, body').animate({
