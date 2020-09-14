@@ -18,6 +18,8 @@ Array.from(document.querySelectorAll('[type="file"]')).forEach(el => {
     el.addEventListener('change', e => {
         const target = el.closest('.file-name');
 
+        console.log(target)
+
         if (target) {
             target.removeAttribute('hidden');
             target.innerText = e.target.files[0].name;

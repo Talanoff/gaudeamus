@@ -37404,6 +37404,7 @@ Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(function (el
 Array.from(document.querySelectorAll('[type="file"]')).forEach(function (el) {
   el.addEventListener('change', function (e) {
     var target = el.closest('.file-name');
+    console.log(target);
 
     if (target) {
       target.removeAttribute('hidden');
