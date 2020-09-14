@@ -6,16 +6,17 @@
             <div class="container h-100 d-flex align-items-center">
                 <div class="col-xl-10 mx-auto">
                     <div class="header-banner-item text-white">
-                        <h1 class="header-banner-item-title text-uppercase pb-3">
-                            <span class="header-banner-item-title__text-big">{{ $slide->title }}</span><br>
-                            {{ $slide->description }}
-                        </h1>
-                        <div class="header-banner-item-description pt-3">
-                            {{ $slide->body }}
-                        </div>
-                        <div class="text-right mt-4">
-                            <a href="#feedback" class="btn btn-dark">Записаться</a>
-                        </div>
+                        {!! $slide->content !!}
+{{--                        <h1 class="header-banner-item-title text-uppercase pb-3">--}}
+{{--                            <span class="header-banner-item-title__text-big">{{ $slide->title }}</span><br>--}}
+{{--                            {{ $slide->description }}--}}
+{{--                        </h1>--}}
+{{--                        <div class="header-banner-item-description pt-3">--}}
+{{--                            {{ $slide->body }}--}}
+{{--                        </div>--}}
+{{--                        <div class="text-right mt-4">--}}
+{{--                            <a href="#feedback" class="btn btn-dark">Записаться</a>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
