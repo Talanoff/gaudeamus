@@ -14,9 +14,9 @@
 {{--                        <div class="header-banner-item-description pt-3">--}}
 {{--                            {{ $slide->body }}--}}
 {{--                        </div>--}}
-{{--                        <div class="text-right mt-4">--}}
-{{--                            <a href="#feedback" class="btn btn-dark">Записаться</a>--}}
-{{--                        </div>--}}
+                        <div class="text-center mt-4">
+                            <a href="#feedback" class="btn btn-dark">Записаться</a>
+                        </div>
                     </div>
                 </div>
             </div>
