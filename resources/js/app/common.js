@@ -7,17 +7,14 @@ require('paroller.js');
 
 window.jQuery = window.$ = jquery;
 
-(function () {
-
-    $('a[href^="#"]').on('click', function (e) {
+Array.from(document.querySelectorAll('a[href^="#"]')).forEach(el => {
+    el.addEventListener('click', e => {
         e.preventDefault();
-
-        const target = $(this).attr('href');
-
-        if ($(target).length) {
-            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-        }
+        el.scrollIntoView({ behavior: 'smooth' });
     })
+});
+
+(function () {
 
     $('.parallax-item').paroller();
 

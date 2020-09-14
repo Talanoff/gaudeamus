@@ -37393,18 +37393,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! paroller.js */ "./node_modules/paroller.js/dist/jquery.paroller.js");
 
 window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+Array.from(document.querySelectorAll('a[href^="#"]')).forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    el.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
 
 (function () {
-  $('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    var target = $(this).attr('href');
-
-    if ($(target).length) {
-      document.querySelector(target).scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
   $('.parallax-item').paroller();
   /**
    * Burger-menu
