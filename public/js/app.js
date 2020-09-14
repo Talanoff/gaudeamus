@@ -37395,12 +37395,9 @@ __webpack_require__(/*! paroller.js */ "./node_modules/paroller.js/dist/jquery.p
 window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 (function () {
-  var _this = this;
-
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
-    var target = $(_this).attr('href');
-    console.log($(_this));
+    var target = $(this).attr('href');
 
     if (target) {
       $('html, body').animate({

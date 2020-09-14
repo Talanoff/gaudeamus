@@ -9,11 +9,10 @@ window.jQuery = window.$ = jquery;
 
 (function () {
 
-    $('a[href^="#"]').on('click', (e) => {
+    $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
 
         const target = $(this).attr('href');
-        console.log($(this));
 
         if (target) {
             $('html, body').animate({
