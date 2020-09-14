@@ -14,20 +14,13 @@ Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(el => {
     })
 });
 
-Array.from(document.querySelectorAll('[type="file"]')).forEach(el => {
-    el.addEventListener('change', e => {
-        const target = el.closest('.file-name');
-
-        console.log(target)
-
-        if (target) {
-            target.removeAttribute('hidden');
-            target.innerText = e.target.files[0].name;
-        }
-    });
-});
-
 (function () {
+
+    $('[type="file"]').on('change', function(e) {
+        if ($(this).next('.file-name')) {
+            $(this).next('.file-name').removeAttr('hidden').text(e.target.files[0].name);
+        }
+    })
 
     $('.parallax-item').paroller();
 

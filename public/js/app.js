@@ -37401,19 +37401,13 @@ Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(function (el
     });
   });
 });
-Array.from(document.querySelectorAll('[type="file"]')).forEach(function (el) {
-  el.addEventListener('change', function (e) {
-    var target = el.closest('.file-name');
-    console.log(target);
-
-    if (target) {
-      target.removeAttribute('hidden');
-      target.innerText = e.target.files[0].name;
-    }
-  });
-});
 
 (function () {
+  $('[type="file"]').on('change', function (e) {
+    if ($(this).next('.file-name')) {
+      $(this).next('.file-name').removeAttr('hidden').text(e.target.files[0].name);
+    }
+  });
   $('.parallax-item').paroller();
   /**
    * Burger-menu
