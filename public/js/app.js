@@ -37403,8 +37403,11 @@ Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(function (el
 });
 Array.from(document.querySelectorAll('[type="file"]')).forEach(function (el) {
   el.addEventListener('change', function (e) {
-    if (el.closest('.file-name')) {
-      el.closest('.file-name').innerText = e.target.files[0].name;
+    var target = el.closest('.file-name');
+
+    if (target) {
+      target.removeAttribute('hidden');
+      target.innerText = e.target.files[0].name;
     }
   });
 });

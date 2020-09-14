@@ -16,8 +16,11 @@ Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(el => {
 
 Array.from(document.querySelectorAll('[type="file"]')).forEach(el => {
     el.addEventListener('change', e => {
-        if (el.closest('.file-name')) {
-            el.closest('.file-name').innerText = e.target.files[0].name;
+        const target = el.closest('.file-name');
+
+        if (target) {
+            target.removeAttribute('hidden');
+            target.innerText = e.target.files[0].name;
         }
     });
 });
