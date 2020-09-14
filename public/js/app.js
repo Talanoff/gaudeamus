@@ -37393,12 +37393,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! paroller.js */ "./node_modules/paroller.js/dist/jquery.paroller.js");
 
 window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
-Array.from(document.querySelectorAll('a[href^="#"]')).forEach(function (el) {
+Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelector(el.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
+  });
+});
+Array.from(document.querySelectorAll('[type="file"]')).forEach(function (el) {
+  el.addEventListener('change', function (e) {
+    if (el.closest('.file-name')) {
+      el.closest('.file-name').innerText = e.target.files[0].name;
+    }
   });
 });
 

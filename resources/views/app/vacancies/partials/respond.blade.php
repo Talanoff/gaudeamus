@@ -40,7 +40,8 @@
                             <input type="file" class="form-control-file d-none"
                                    id="file" name="resume"
                                    accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
-text/plain, application/pdf">
+text/plain, application/pdf, application/pages">
+                            <div class="file-name" hidden></div>
                         </div>
                         <div class="text-right w-100">
                             <button id="respond-btn" class="btn btn-dark text-white">Отправить</button>

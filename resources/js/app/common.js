@@ -7,11 +7,19 @@ require('paroller.js');
 
 window.jQuery = window.$ = jquery;
 
-Array.from(document.querySelectorAll('a[href^="#"]')).forEach(el => {
+Array.from(document.querySelectorAll('a[href^="#"]') || []).forEach(el => {
     el.addEventListener('click', e => {
         e.preventDefault();
         document.querySelector(el.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     })
+});
+
+Array.from(document.querySelectorAll('[type="file"]')).forEach(el => {
+    el.addEventListener('change', e => {
+        if (el.closest('.file-name')) {
+            el.closest('.file-name').innerText = e.target.files[0].name;
+        }
+    });
 });
 
 (function () {
