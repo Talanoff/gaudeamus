@@ -13,15 +13,12 @@ window.jQuery = window.$ = jquery;
         e.preventDefault();
 
         const target = $(this).attr('href');
+        console.log(target);
 
         if (target) {
-            $('html, body').animate(
-                {
-                    scrollTop: target.offset().top,
-                },
-                500,
-                'linear'
-            )
+            $('html, body').animate({
+                scrollTop: target.offset().top,
+            }, 500, 'linear')
         }
     })
 
