@@ -7,15 +7,18 @@ use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\Models\Media;
+use Spatie\Translatable\HasTranslations;
 
 class Slides extends Model implements HasMedia
 {
-    use HasMediaTrait;
+    use HasMediaTrait, HasTranslations;
 
     protected $fillable = [
-        'title',
-        'description',
-        'body'
+        'content'
+    ];
+
+    protected $translatable = [
+        'content'
     ];
 
     public function registerMediaCollections()

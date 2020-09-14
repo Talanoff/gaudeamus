@@ -18,6 +18,7 @@
         "spatie/eloquent-sortable": "^3.8",
         "spatie/laravel-medialibrary": "^7.0.0",
         "spatie/laravel-sluggable": "2.2.*",
+        "spatie/laravel-translatable": "^4.4",
         "talvbansal/media-manager": "^2.5"
     },
     "require-dev": {
