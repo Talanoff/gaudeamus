@@ -15,11 +15,7 @@ window.jQuery = window.$ = jquery;
         const target = $(this).attr('href');
 
         if ($(target).length) {
-            console.log($(target).offset().top)
-
-            $('html, body').animate({
-                scrollTop: $(target).offset().top,
-            }, 500, 'linear')
+            $(target).scrollIntoView({ behavior: 'smooth' });
         }
     })
 
