@@ -21,7 +21,6 @@ class VacanciesController extends Controller
 
     public function store(RespondStoreRequest $request)
     {
-
         $respond = Respond::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -31,7 +30,6 @@ class VacanciesController extends Controller
 
         if ($request->hasFile('resume')) {
             $respond->addMediaFromRequest('resume')->toMediaCollection('resume');
-
         }
 
         return \redirect()->route('app.thanks');

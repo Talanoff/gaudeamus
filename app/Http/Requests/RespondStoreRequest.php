@@ -27,7 +27,7 @@ class RespondStoreRequest extends FormRequest
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
-            'resume' => 'file|mimes:doc, txt, docx, pdf'
+            'resume' => 'file|mimes:doc,txt,docx,pdf'
         ];
     }
 }

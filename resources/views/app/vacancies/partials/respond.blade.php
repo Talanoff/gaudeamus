@@ -38,7 +38,9 @@
                                 <span class="label-placeholder__link text-primary">файл</span>
                                 с резюме (doc, txt)</label>
                             <input type="file" class="form-control-file d-none"
-                                   id="file" name="resume" accept=".doc, .docx, .txt, .pdf">
+                                   id="file" name="resume"
+                                   accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+text/plain, application/pdf">
                         </div>
                         <div class="text-right w-100">
                             <button id="respond-btn" class="btn btn-dark text-white">Отправить</button>
