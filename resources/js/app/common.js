@@ -15,7 +15,7 @@ window.jQuery = window.$ = jquery;
         const target = $(this).attr('href');
 
         if ($(target).length) {
-            $(target).scrollIntoView({ behavior: 'smooth' });
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
         }
     })
 
