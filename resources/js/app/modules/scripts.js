@@ -111,35 +111,6 @@ require('paroller.js');
     })
 
     /**
-     * Jobs accordion
-     */
-
-    $('#open-jobs-page-respond').on('click', function (e) {
-        e.preventDefault();
-        if (!$('.jobs-page-respond').is(':visible')) {
-            $(this).toggleClass('is-active')
-            $('.jobs-page-respond').slideDown();
-        }
-    });
-
-    $('#open-jobs-page-all').on('click', function (e) {
-        e.preventDefault();
-        $(this).toggleClass('is-active');
-        $('.jobs-page-item').slideToggle();
-        if ($('.jobs-page-respond').is(':visible') && $('#open-jobs-page-respond').hasClass('is-active')) {
-            $('.jobs-page-respond').slideDown();
-            $('#open-jobs-page-respond').removeClass('is-active');
-        } else if ($('.jobs-page-respond').is(':visible') && !$('#open-jobs-page-respond').hasClass('is-active')) {
-            $('.jobs-page-respond').slideUp();
-        } else if (!$('.jobs-page-respond').is(':visible') && !$('#open-jobs-page-respond').hasClass('is-active')) {
-            $('.jobs-page-respond').slideDown();
-        }
-
-
-        $(this).hasClass('is-active') ? $(this).text('Закрыть') : $(this).text('Больше информации');
-    });
-
-    /**
      * Cabinet
      */
     $('.cabinet-page-tabs-header-list').on('click', 'li:not(.active)', function () {

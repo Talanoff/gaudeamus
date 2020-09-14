@@ -2,7 +2,7 @@
     position: relative;
     margin-bottom: 80px;
     @extend %decor-content-big;
-    
+
     @media (max-width: map_get($grid-breakpoints, sm)) {
         margin-top: 120px;
     }
@@ -25,7 +25,7 @@
     }
 
     &-content {
-        margin-bottom: 50px;   
+        margin-bottom: 50px;
     }
 
     &-list-title {
@@ -78,8 +78,6 @@
 }
 
 .jobs-page-respond {
-    display: none;
-
     &-img {
         @extend %pos;
         right: -85px;
