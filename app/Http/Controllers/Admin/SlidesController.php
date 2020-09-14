@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Common\Slides;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use function redirect;
 
 class SlidesController extends Controller
 {
@@ -30,13 +30,14 @@ class SlidesController extends Controller
 
     public function store(Request $request)
     {
+        $slide = Slides::create($request->only('content'));
 
-        $slide = Slides::create($request->only('title', 'description', 'body'));
         if ($request->hasFile('slides')) {
             $slide->addMediaFromRequest('slides')
                 ->toMediaCollection('slides');
         }
-        return \redirect()->route('admin.slides.index')
+
+        return redirect()->route('admin.slides.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
@@ -53,12 +54,15 @@ class SlidesController extends Controller
 
     public function update(Request $request, Slides $slide)
     {
-        $slide->update($request->only('title', 'description', 'body'));
+        $slide->update($request->only('content'));
+
         if ($request->hasFile('slides')) {
             $slide->clearMediaCollection('slides');
             $slide->addMediaFromRequest('slides')
-                ->toMediaCollection('slides');}
-        return \redirect()->route('admin.slides.index')
+                ->toMediaCollection('slides');
+        }
+
+        return redirect()->route('admin.slides.index')
             ->with('message', 'Запись успешно сохранена.');
     }
 
@@ -66,7 +70,8 @@ class SlidesController extends Controller
     {
         $slide->clearMediaCollection('slides');
         $slide->delete();
-        return \redirect()->route('admin.slides.index')
+
+        return redirect()->route('admin.slides.index')
             ->with('message', 'Запись успешно удалена.');
     }
 }
