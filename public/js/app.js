@@ -37399,7 +37399,7 @@ window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
     e.preventDefault();
     var target = $(this).attr('href');
 
-    if (target) {
+    if ($(target).length) {
       $('html, body').animate({
         scrollTop: $(target).offset().top
       }, 500, 'linear');

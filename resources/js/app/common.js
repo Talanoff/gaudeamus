@@ -14,7 +14,7 @@ window.jQuery = window.$ = jquery;
 
         const target = $(this).attr('href');
 
-        if (target) {
+        if ($(target).length) {
             $('html, body').animate({
                 scrollTop: $(target).offset().top,
             }, 500, 'linear')
