@@ -10,7 +10,7 @@ window.jQuery = window.$ = jquery;
 Array.from(document.querySelectorAll('a[href^="#"]')).forEach(el => {
     el.addEventListener('click', e => {
         e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(el.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     })
 });
 
