@@ -37396,7 +37396,7 @@ window.jQuery = window.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 Array.from(document.querySelectorAll('a[href^="#"]')).forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
-    el.scrollIntoView({
+    document.querySelector(el.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
     });
   });
